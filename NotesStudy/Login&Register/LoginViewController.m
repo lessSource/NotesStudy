@@ -11,8 +11,10 @@
 #import "LSSingleButton.h"
 #import "LSSingleLabel.h"
 #import "AppDelegate.h"
+#import "zhAlertView.h"
+#import "zhPopupController.h"
 
-@interface LoginViewController ()
+@interface LoginViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UIImageView *headImage;
 @property (nonatomic, strong) LSSingleLabel *nameLabel;
@@ -40,6 +42,7 @@
     [self _reminderNotification];
     [self setUpUI];
     [self viewLayout];
+    [self _changeIcon];
 }
 
 
@@ -55,16 +58,13 @@
     [self.view addSubview:self.nameLabel];
     
     self.codingTextField = [[LSSingleTextField alloc]init];
-    self.codingTextField.border([UIColor boderLineColor], 1, 25).leftImage(@"icon_coding", 50).buttonMode(UITextFieldViewModeWhileEditing).placeholderStr(@"使用语言").placeholderColor([UIColor boderLineColor]);
-    @WeakObj(self);
-    self.codingTextField.action(^(NSString *str) {
-        [selfWeak _buttonSelect];
-    });
-    
+    self.codingTextField.border([UIColor boderLineColor], 1, 25).leftImage(@"icon_coding", 50).buttonMode(UITextFieldViewModeWhileEditing).placeholderStr(@"请选择使用语言").placeholderColor([UIColor boderLineColor]);
+    self.codingTextField.delegate = self;
     [self.view addSubview:self.codingTextField];
     
     self.phoneTextField = [[LSSingleTextField alloc]init];
     self.phoneTextField.border([UIColor boderLineColor], 1, 25).buttonMode(UITextFieldViewModeWhileEditing).leftImage(@"icon_ user", 50).placeholderStr(@"请输入手机号").placeholderColor([UIColor boderLineColor]);
+    @WeakObj(self);
     self.phoneTextField.action(^(NSString *str) {
         [selfWeak _buttonSelect];
     });
@@ -125,6 +125,11 @@
     }];
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    [self _alertController];
+    return NO;
+}
+
 #pragma mark -
 - (void)_reminderNotification {
     NSDate *now = [NSDate date];
@@ -150,11 +155,97 @@
     }
 }
 
+- (void)_alertController {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"请选择" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *ocAction = [UIAlertAction actionWithTitle:@"OC" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.codingTextField.text = @"OC";
+        [self _buttonSelect];
+
+    }];
+    
+    UIAlertAction *swiftAction = [UIAlertAction actionWithTitle:@"Swift" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.codingTextField.text = @"Swift";
+            [self _buttonSelect];
+      }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertController addAction:ocAction];
+    [alertController addAction:swiftAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)_changeIcon {
+    if (@available(iOS 10.3, *)) {
+        if ([UIApplication sharedApplication].supportsAlternateIcons) {
+            //应用是否跟新过图标
+            NSString *iconName = [[UIApplication sharedApplication] alternateIconName];
+            if (iconName) {
+                //IconName: 要换图标的名字，如果写nil，系统默认是最初图标名字
+                //方法执行的回调
+                [[UIApplication sharedApplication] setAlternateIconName:nil completionHandler:^(NSError * _Nullable error) {
+                    if (error) {
+                        NSLog(@"error = %@",error);
+                    }else {
+                        NSLog(@"success");
+                    }
+                }];
+            }else {
+                [[UIApplication sharedApplication] setAlternateIconName:@"head" completionHandler:^(NSError * _Nullable error) {
+                    if (error) {
+                        NSLog(@"error = %@",error);
+                    }else {
+                        NSLog(@"success");
+                    }
+                }];
+            }
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+}
 
 #pragma mark - 按钮
 - (void)loginClick:(UIButton *)sender {
-    [(AppDelegate *)[UIApplication sharedApplication].delegate gotoMian];
+    if ([LSSettingUtil dataAndStringIsNull:self.codingTextField.text]) {
+        
+    }else {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:[self.codingTextField.text lowercaseString] forKey:LSCoding_State];
+        [(AppDelegate *)[UIApplication sharedApplication].delegate gotoMian];
+    }
 }
+
+- (zhAlertView *)alertView1 {
+    zhAlertView *alertView = [[zhAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"切换城市失败，是否重试？"
+                                                  constantWidth:290];
+    return alertView;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    /**
+    zhAlertView *alert = [self alertView1];
+    zhAlertButton *cancelButton = [zhAlertButton buttonWithTitle:@"取消" handler:NULL];
+    zhAlertButton *okButton = [zhAlertButton buttonWithTitle:@"确定" handler:^(zhAlertButton * _Nonnull button) {
+        [self.zh_popupController dismiss];
+    }];
+    
+    cancelButton.lineColor = [UIColor boderLineColor];
+    okButton.lineColor = cancelButton.lineColor;
+    [cancelButton setTitleColor:[UIColor mainColor] forState:UIControlStateNormal];
+    [okButton setTitleColor:[UIColor mainColor] forState:UIControlStateNormal];
+    cancelButton.edgeInsets = UIEdgeInsetsMake(15, 0, 0, 0);
+    [alert adjoinWithLeftAction:cancelButton rightAction:okButton];
+    
+    self.zh_popupController = [[zhPopupController alloc] init];
+    [self.zh_popupController dropAnimatedWithRotateAngle:30];
+    [self.zh_popupController presentContentView:alert duration:0.75 springAnimated:YES];
+     */
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

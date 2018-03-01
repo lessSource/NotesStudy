@@ -5,5 +5,7 @@ use_frameworks!
 target "NotesStudy" do
 
    pod 'SnapKit'
-
+   pod 'RxSwift'
+   pod 'RxCocoa'
+   
 end

@@ -11,3 +11,9 @@
 
 UIKIT_EXTERN NSString *const LoginButton;
 
+UIKIT_EXTERN NSString *const LSCoding_State;
+
+UIKIT_EXTERN NSString *const LSCoding_Swift;
+
+UIKIT_EXTERN NSString *const LSCoding_OC;
+

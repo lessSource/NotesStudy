@@ -7,13 +7,18 @@
 //
 
 
+
 #import <UIKit/UIKit.h>
 @class HomePageMenuView;
+
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol HomePageMenuDelegate <NSObject>
 
 @optional
 - (void)menuView:(HomePageMenuView *)menuView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+
+- (void)menuView:(HomePageMenuView *)menuView didSleectCell:(UICollectionViewCell *)cell itemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -22,10 +27,11 @@
 @required
 /** 名字 */
 - (NSArray *)homePageMenuName:(HomePageMenuView *)menuView;
-
-@optional
 /** 图片 */
 - (NSArray *)homePageMenuImage:(HomePageMenuView *)menuView;
+
+
+@optional
 /** 消息条数 */
 - (NSArray *)homePageMenuNumber:(HomePageMenuView *)menuView;
 /** Cell大小 */
@@ -61,7 +67,7 @@
 
 @end
 
-
+NS_ASSUME_NONNULL_END
 
 
 

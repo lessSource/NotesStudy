@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A23ACF62042AEC9003935E5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23ACF52042AEC9003935E5 /* ViewModel.swift */; };
 		2A372D4F201EB07F005A5F14 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A372D4D201EB07F005A5F14 /* LoginViewController.m */; };
 		2A372D52201EC4EF005A5F14 /* LSSingleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A372D51201EC4EF005A5F14 /* LSSingleLabel.m */; };
 		2A372D56201EEE95005A5F14 /* LSLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A372D55201EEE95005A5F14 /* LSLineView.m */; };
@@ -41,12 +42,31 @@
 		2A688165202616B5000FDD0F /* LSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A688164202616B5000FDD0F /* LSConstants.m */; };
 		2A68816920261901000FDD0F /* NSBundle+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68816820261901000FDD0F /* NSBundle+Category.m */; };
 		2A68816C20274874000FDD0F /* LSSettingUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68816B20274874000FDD0F /* LSSettingUtil.m */; };
+		2A75D03C204502E700AF77BD /* AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A75D03B204502E700AF77BD /* AboutApp.swift */; };
+		2A75D03E204505F000AF77BD /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A75D03D204505F000AF77BD /* UIView+Frame.swift */; };
+		2A75D04020450A2400AF77BD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A75D03F20450A2400AF77BD /* UIViewController+Extension.swift */; };
+		2A75D04220450AE600AF77BD /* NSObject+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A75D04120450AE600AF77BD /* NSObject+String.swift */; };
+		2A75D044204520FF00AF77BD /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A75D043204520FF00AF77BD /* NSDate+Extension.swift */; };
 		2A7A80A120201FD000998B66 /* BaseSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A80A020201FD000998B66 /* BaseSwiftViewController.swift */; };
+		2A89521F20289AF000D7C58E /* zhPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A89521D20289AEF00D7C58E /* zhPopupController.m */; };
+		2A89522220289B2E00D7C58E /* zhAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A89522020289B2E00D7C58E /* zhAlertView.m */; };
+		2A89522820289D1A00D7C58E /* UIWindow+FHH.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A89522420289D1900D7C58E /* UIWindow+FHH.m */; };
+		2A89522920289D1A00D7C58E /* FHHFPSIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A89522720289D1900D7C58E /* FHHFPSIndicator.m */; };
 		2AC5272C2021671D00E8D67D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC5272B2021671D00E8D67D /* HomeViewController.m */; };
 		2AC5272F2021672600E8D67D /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC5272E2021672600E8D67D /* MineViewController.m */; };
 		2AC527332021680800E8D67D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC527322021680800E8D67D /* BaseNavigationController.m */; };
 		2AC527372021685400E8D67D /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC527362021685400E8D67D /* BaseTabBarController.m */; };
 		2AC5273B2021AF9B00E8D67D /* ReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC5273A2021AF9B00E8D67D /* ReleaseViewController.m */; };
+		2AC94C9B2028A28100362EC9 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC94C9A2028A28100362EC9 /* UIView+Layout.m */; };
+		2AC94CA32028A7B500362EC9 /* PopUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC94CA22028A7B500362EC9 /* PopUpController.m */; };
+		2AC94CAA202A9DD400362EC9 /* BaseSwiftNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC94CA9202A9DD400362EC9 /* BaseSwiftNavigationController.swift */; };
+		2AC94CAD202AA3BF00362EC9 /* BaseSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC94CAC202AA3BF00362EC9 /* BaseSwiftTabBarController.swift */; };
+		2AC94CB3202AA45500362EC9 /* HomeSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC94CB2202AA45500362EC9 /* HomeSwiftViewController.swift */; };
+		2AC94CB5202AA46300362EC9 /* ReleaseSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC94CB4202AA46300362EC9 /* ReleaseSwiftViewController.swift */; };
+		2AC94CB7202AA47000362EC9 /* MineSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC94CB6202AA47000362EC9 /* MineSwiftViewController.swift */; };
+		2ACCFF5E2042AA15002E0F93 /* LoginSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCFF5D2042AA15002E0F93 /* LoginSwiftViewController.swift */; };
+		2ACCFF602042AB09002E0F93 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCFF5F2042AB09002E0F93 /* Protocols.swift */; };
+		2ACCFF622042AC13002E0F93 /* ValidatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCFF612042AC13002E0F93 /* ValidatedModel.swift */; };
 		53E176AC7B780AAB6CD19F42 /* Pods_NotesStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA050A8576B454B18BA67824 /* Pods_NotesStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A23ACF52042AEC9003935E5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2A372D4D201EB07F005A5F14 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		2A372D4E201EB07F005A5F14 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		2A372D50201EC4EF005A5F14 /* LSSingleLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSSingleLabel.h; sourceTree = "<group>"; };
@@ -146,8 +167,21 @@
 		2A68816820261901000FDD0F /* NSBundle+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Category.m"; sourceTree = "<group>"; };
 		2A68816A20274874000FDD0F /* LSSettingUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSSettingUtil.h; sourceTree = "<group>"; };
 		2A68816B20274874000FDD0F /* LSSettingUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSSettingUtil.m; sourceTree = "<group>"; };
+		2A75D03B204502E700AF77BD /* AboutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutApp.swift; sourceTree = "<group>"; };
+		2A75D03D204505F000AF77BD /* UIView+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		2A75D03F20450A2400AF77BD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		2A75D04120450AE600AF77BD /* NSObject+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+String.swift"; sourceTree = "<group>"; };
+		2A75D043204520FF00AF77BD /* NSDate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		2A7A809D20200A3000998B66 /* NotesStudy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotesStudy-Bridging-Header.h"; sourceTree = "<group>"; };
 		2A7A80A020201FD000998B66 /* BaseSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwiftViewController.swift; sourceTree = "<group>"; };
+		2A89521D20289AEF00D7C58E /* zhPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhPopupController.m; sourceTree = "<group>"; };
+		2A89521E20289AEF00D7C58E /* zhPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhPopupController.h; sourceTree = "<group>"; };
+		2A89522020289B2E00D7C58E /* zhAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhAlertView.m; sourceTree = "<group>"; };
+		2A89522120289B2E00D7C58E /* zhAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhAlertView.h; sourceTree = "<group>"; };
+		2A89522420289D1900D7C58E /* UIWindow+FHH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FHH.m"; sourceTree = "<group>"; };
+		2A89522520289D1900D7C58E /* FHHFPSIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHHFPSIndicator.h; sourceTree = "<group>"; };
+		2A89522620289D1900D7C58E /* UIWindow+FHH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FHH.h"; sourceTree = "<group>"; };
+		2A89522720289D1900D7C58E /* FHHFPSIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHHFPSIndicator.m; sourceTree = "<group>"; };
 		2AC5272A2021671D00E8D67D /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2AC5272B2021671D00E8D67D /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2AC5272D2021672600E8D67D /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -158,6 +192,18 @@
 		2AC527362021685400E8D67D /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		2AC527392021AF9B00E8D67D /* ReleaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseViewController.h; sourceTree = "<group>"; };
 		2AC5273A2021AF9B00E8D67D /* ReleaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseViewController.m; sourceTree = "<group>"; };
+		2AC94C992028A28000362EC9 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		2AC94C9A2028A28100362EC9 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		2AC94CA12028A7B500362EC9 /* PopUpController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopUpController.h; sourceTree = "<group>"; };
+		2AC94CA22028A7B500362EC9 /* PopUpController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopUpController.m; sourceTree = "<group>"; };
+		2AC94CA9202A9DD400362EC9 /* BaseSwiftNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwiftNavigationController.swift; sourceTree = "<group>"; };
+		2AC94CAC202AA3BF00362EC9 /* BaseSwiftTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwiftTabBarController.swift; sourceTree = "<group>"; };
+		2AC94CB2202AA45500362EC9 /* HomeSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftViewController.swift; sourceTree = "<group>"; };
+		2AC94CB4202AA46300362EC9 /* ReleaseSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseSwiftViewController.swift; sourceTree = "<group>"; };
+		2AC94CB6202AA47000362EC9 /* MineSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSwiftViewController.swift; sourceTree = "<group>"; };
+		2ACCFF5D2042AA15002E0F93 /* LoginSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftViewController.swift; sourceTree = "<group>"; };
+		2ACCFF5F2042AB09002E0F93 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		2ACCFF612042AC13002E0F93 /* ValidatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedModel.swift; sourceTree = "<group>"; };
 		A8B9505FF0C0E1A61B700913 /* Pods-NotesStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotesStudy/Pods-NotesStudy.release.xcconfig"; sourceTree = "<group>"; };
 		AA050A8576B454B18BA67824 /* Pods_NotesStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotesStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E940CA2538DDBBF22844B56D /* Pods-NotesStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotesStudy/Pods-NotesStudy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +355,8 @@
 		2A58EF53201C715400DA8115 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				2A75D03A204502D000AF77BD /* Helpers */,
+				2AC94CAE202AA41300362EC9 /* Controllers */,
 				2A7A809C2020092C00998B66 /* Base */,
 				2A7A809B2020092C00998B66 /* Libs */,
 			);
@@ -318,6 +366,7 @@
 		2A58EF54201C719200DA8115 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				2A89522320289D1900D7C58E /* FHHFPSIndicator */,
 				2A58EF55201C71B700DA8115 /* Masonry */,
 			);
 			path = Libs;
@@ -359,6 +408,7 @@
 		2A58EF7B201C72B600DA8115 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				2AC94CA02028A7AB00362EC9 /* PopUpController */,
 				2A58EF7C201C72F300DA8115 /* HomePageMenu */,
 			);
 			path = Commons;
@@ -486,6 +536,18 @@
 			path = NSBundle;
 			sourceTree = "<group>";
 		};
+		2A75D03A204502D000AF77BD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2A75D03B204502E700AF77BD /* AboutApp.swift */,
+				2A75D03D204505F000AF77BD /* UIView+Frame.swift */,
+				2A75D03F20450A2400AF77BD /* UIViewController+Extension.swift */,
+				2A75D04120450AE600AF77BD /* NSObject+String.swift */,
+				2A75D043204520FF00AF77BD /* NSDate+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2A7A809B2020092C00998B66 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,10 +558,23 @@
 		2A7A809C2020092C00998B66 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2AC94CAB202AA3AA00362EC9 /* UITabBarController */,
+				2AC94CA8202A9DB900362EC9 /* UINavigation */,
 				2A7A809D20200A3000998B66 /* NotesStudy-Bridging-Header.h */,
 				2A7A80A020201FD000998B66 /* BaseSwiftViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2A89522320289D1900D7C58E /* FHHFPSIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				2A89522620289D1900D7C58E /* UIWindow+FHH.h */,
+				2A89522420289D1900D7C58E /* UIWindow+FHH.m */,
+				2A89522520289D1900D7C58E /* FHHFPSIndicator.h */,
+				2A89522720289D1900D7C58E /* FHHFPSIndicator.m */,
+			);
+			path = FHHFPSIndicator;
 			sourceTree = "<group>";
 		};
 		2AC527282021670100E8D67D /* Mine */ = {
@@ -514,6 +589,12 @@
 		2AC527292021670100E8D67D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2AC94C992028A28000362EC9 /* UIView+Layout.h */,
+				2AC94C9A2028A28100362EC9 /* UIView+Layout.m */,
+				2A89522120289B2E00D7C58E /* zhAlertView.h */,
+				2A89522020289B2E00D7C58E /* zhAlertView.m */,
+				2A89521E20289AEF00D7C58E /* zhPopupController.h */,
+				2A89521D20289AEF00D7C58E /* zhPopupController.m */,
 				2AC5272A2021671D00E8D67D /* HomeViewController.h */,
 				2AC5272B2021671D00E8D67D /* HomeViewController.m */,
 			);
@@ -545,6 +626,77 @@
 				2AC5273A2021AF9B00E8D67D /* ReleaseViewController.m */,
 			);
 			path = Release;
+			sourceTree = "<group>";
+		};
+		2AC94CA02028A7AB00362EC9 /* PopUpController */ = {
+			isa = PBXGroup;
+			children = (
+				2AC94CA12028A7B500362EC9 /* PopUpController.h */,
+				2AC94CA22028A7B500362EC9 /* PopUpController.m */,
+			);
+			path = PopUpController;
+			sourceTree = "<group>";
+		};
+		2AC94CA8202A9DB900362EC9 /* UINavigation */ = {
+			isa = PBXGroup;
+			children = (
+				2AC94CA9202A9DD400362EC9 /* BaseSwiftNavigationController.swift */,
+			);
+			path = UINavigation;
+			sourceTree = "<group>";
+		};
+		2AC94CAB202AA3AA00362EC9 /* UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				2AC94CAC202AA3BF00362EC9 /* BaseSwiftTabBarController.swift */,
+			);
+			path = UITabBarController;
+			sourceTree = "<group>";
+		};
+		2AC94CAE202AA41300362EC9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2ACCFF5C2042A9FA002E0F93 /* Login&Register */,
+				2AC94CAF202AA41300362EC9 /* Home */,
+				2AC94CB0202AA41300362EC9 /* Release */,
+				2AC94CB1202AA41300362EC9 /* Mine */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2AC94CAF202AA41300362EC9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2AC94CB2202AA45500362EC9 /* HomeSwiftViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2AC94CB0202AA41300362EC9 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				2AC94CB4202AA46300362EC9 /* ReleaseSwiftViewController.swift */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		2AC94CB1202AA41300362EC9 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				2AC94CB6202AA47000362EC9 /* MineSwiftViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		2ACCFF5C2042A9FA002E0F93 /* Login&Register */ = {
+			isa = PBXGroup;
+			children = (
+				2ACCFF5D2042AA15002E0F93 /* LoginSwiftViewController.swift */,
+				2ACCFF5F2042AB09002E0F93 /* Protocols.swift */,
+				2ACCFF612042AC13002E0F93 /* ValidatedModel.swift */,
+				2A23ACF52042AEC9003935E5 /* ViewModel.swift */,
+			);
+			path = "Login&Register";
 			sourceTree = "<group>";
 		};
 		6881C8D5BADECE8628897D58 /* Frameworks */ = {
@@ -740,10 +892,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NotesStudy/Pods-NotesStudy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,23 +914,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A89522820289D1A00D7C58E /* UIWindow+FHH.m in Sources */,
+				2ACCFF602042AB09002E0F93 /* Protocols.swift in Sources */,
 				2A58EF73201C71B700DA8115 /* MASConstraintMaker.m in Sources */,
+				2ACCFF622042AC13002E0F93 /* ValidatedModel.swift in Sources */,
 				2A58EF9C201DFD6600DA8115 /* BaseViewController.m in Sources */,
 				2A372D52201EC4EF005A5F14 /* LSSingleLabel.m in Sources */,
 				2AC5272C2021671D00E8D67D /* HomeViewController.m in Sources */,
 				2A372D56201EEE95005A5F14 /* LSLineView.m in Sources */,
+				2AC94C9B2028A28100362EC9 /* UIView+Layout.m in Sources */,
+				2AC94CB3202AA45500362EC9 /* HomeSwiftViewController.swift in Sources */,
 				2A58EF98201DF92900DA8115 /* LSSingleTextField.m in Sources */,
 				2A58EF4F201C50D100DA8115 /* main.m in Sources */,
 				2A372D4F201EB07F005A5F14 /* LoginViewController.m in Sources */,
 				2AC527372021685400E8D67D /* BaseTabBarController.m in Sources */,
 				2A7A80A120201FD000998B66 /* BaseSwiftViewController.swift in Sources */,
 				2AC5273B2021AF9B00E8D67D /* ReleaseViewController.m in Sources */,
+				2A75D03E204505F000AF77BD /* UIView+Frame.swift in Sources */,
+				2A75D044204520FF00AF77BD /* NSDate+Extension.swift in Sources */,
 				2A58EF71201C71B700DA8115 /* ViewController+MASAdditions.m in Sources */,
 				2A58EF85201C72F300DA8115 /* HomePageMenuView.m in Sources */,
+				2AC94CB5202AA46300362EC9 /* ReleaseSwiftViewController.swift in Sources */,
 				2A58EF78201C71B700DA8115 /* MASViewConstraint.m in Sources */,
+				2A75D04020450A2400AF77BD /* UIViewController+Extension.swift in Sources */,
 				2A58EF0B201C4E5700DA8115 /* ViewController.m in Sources */,
 				2A58EF83201C72F300DA8115 /* HomePageMenuViewController.m in Sources */,
+				2A23ACF62042AEC9003935E5 /* ViewModel.swift in Sources */,
 				2A58EF74201C71B700DA8115 /* MASLayoutConstraint.m in Sources */,
+				2ACCFF5E2042AA15002E0F93 /* LoginSwiftViewController.swift in Sources */,
+				2AC94CB7202AA47000362EC9 /* MineSwiftViewController.swift in Sources */,
 				2AC5272F2021672600E8D67D /* MineViewController.m in Sources */,
 				2A68816C20274874000FDD0F /* LSSettingUtil.m in Sources */,
 				2A68816920261901000FDD0F /* NSBundle+Category.m in Sources */,
@@ -782,14 +950,22 @@
 				2A58EF75201C71B700DA8115 /* NSArray+MASAdditions.m in Sources */,
 				2A58EF51201C50D100DA8115 /* AppDelegate.m in Sources */,
 				2A688165202616B5000FDD0F /* LSConstants.m in Sources */,
+				2AC94CAD202AA3BF00362EC9 /* BaseSwiftTabBarController.swift in Sources */,
 				2A58EF72201C71B700DA8115 /* MASCompositeConstraint.m in Sources */,
 				2A58EF76201C71B700DA8115 /* View+MASAdditions.m in Sources */,
+				2A89522220289B2E00D7C58E /* zhAlertView.m in Sources */,
+				2AC94CA32028A7B500362EC9 /* PopUpController.m in Sources */,
+				2A75D03C204502E700AF77BD /* AboutApp.swift in Sources */,
 				2A372D5A201F0854005A5F14 /* LSSingleButton.m in Sources */,
 				2A58EF70201C71B700DA8115 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				2A89521F20289AF000D7C58E /* zhPopupController.m in Sources */,
 				2AC527332021680800E8D67D /* BaseNavigationController.m in Sources */,
+				2AC94CAA202A9DD400362EC9 /* BaseSwiftNavigationController.swift in Sources */,
+				2A89522920289D1A00D7C58E /* FHHFPSIndicator.m in Sources */,
 				2A58EF79201C71B700DA8115 /* MASViewAttribute.m in Sources */,
 				2A58EF84201C72F300DA8115 /* HomePageMenuCell.m in Sources */,
 				2A58EFA4201E1A5F00DA8115 /* UIImage+Category.m in Sources */,
+				2A75D04220450AE600AF77BD /* NSObject+String.swift in Sources */,
 				2A68815420260580000FDD0F /* UIColor+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -914,7 +1090,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -964,7 +1140,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

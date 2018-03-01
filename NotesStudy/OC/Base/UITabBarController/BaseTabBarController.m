@@ -66,7 +66,7 @@
 }
 
 - (UIViewController *)createController:(UIViewController *)controller normalImg:(NSString *)normalImg selectImg:(NSString *)selectImg title:(NSString *)title {
-    UINavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:controller];
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:controller];
     nav.tabBarItem = [BaseTabBarController createTabbarItemTitle:title ForImage:[UIImage imageNamed:normalImg] ForSelectImage:[UIImage imageNamed:selectImg]];
 //    [nav.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:TabBar_NormalColor,NSForegroundColorAttributeName,[UIFont systemFontOfSize:TabBarItem_FontSize],NSFontAttributeName, nil]forState:UIControlStateNormal];
 //    [nav.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:TabBar_SelectColor,NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];

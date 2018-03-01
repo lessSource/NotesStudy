@@ -11,3 +11,8 @@
 
 NSString *const LoginButton = @"Login";
 
+NSString *const LSCoding_State = @"LSCoding_State";
+
+NSString *const LSCoding_Swift = @"swift";
+
+NSString *const LSCoding_OC = @"oc";

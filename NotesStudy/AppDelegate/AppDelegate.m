@@ -6,6 +6,11 @@
 //  Copyright © 2018年 lj. All rights reserved.
 //
 
+
+#if defined(DEBUG) || defined(_DEBUG)
+#import "FHHFPSIndicator.h"
+#endif
+
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "NotesStudy-Swift.h"
@@ -15,6 +20,7 @@
 
 @interface AppDelegate ()
 @property (nonatomic, strong) BaseTabBarController *tabBarController;
+@property (nonatomic, strong) BaseSwiftTabBarController *swiftTabBarController;
 
 @end
 
@@ -23,6 +29,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+#if defined(DEBUG) || defined(_DEBUG)
+    [[FHHFPSIndicator sharedFPSIndicator] show];
+#endif
     
 //    LoginViewController *LoginVc = [[LoginViewController alloc]init];
 //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:LoginVc];
@@ -92,12 +102,21 @@
 }
 
 - (void)gotoMian {
-    self.tabBarController = [[BaseTabBarController alloc] init];
-
-    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:self.tabBarController];
-    [nav setNavigationBarHidden:YES];
-    self.window.backgroundColor = MAIN_COLOR;
-    self.window.rootViewController = nav;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *stateStr = [userDefaults stringForKey:LSCoding_State];
+    if ([stateStr isEqualToString:LSCoding_Swift]) {
+        self.swiftTabBarController = [[BaseSwiftTabBarController alloc]init];
+        BaseSwiftNavigationController *swiftNav = [[BaseSwiftNavigationController alloc]initWithRootViewController:self.swiftTabBarController];
+        [swiftNav setNavigationBarHidden:YES];
+        self.window.backgroundColor = MAIN_COLOR;
+        self.window.rootViewController = swiftNav;
+    }else if ([stateStr isEqualToString:LSCoding_OC]) {
+        self.tabBarController = [[BaseTabBarController alloc] init];
+        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:self.tabBarController];
+        [nav setNavigationBarHidden:YES];
+        self.window.backgroundColor = MAIN_COLOR;
+        self.window.rootViewController = nav;
+    }
 }
 
 

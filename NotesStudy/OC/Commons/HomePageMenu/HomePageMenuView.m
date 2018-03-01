@@ -128,6 +128,10 @@ static NSString *homePageMenuCell = @"HomePageMenuCell";
     if (self.menuDelegate && [self.menuDelegate respondsToSelector:@selector(menuView:didSelectItemAtIndexPath:)]) {
         [self.menuDelegate menuView:self didSelectItemAtIndexPath:indexPath];
     }
+    if (self.menuDelegate && [self.menuDelegate respondsToSelector:@selector(menuView:didSleectCell:itemAtIndexPath:)]) {
+        HomePageMenuCell *cell = (HomePageMenuCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        [self.menuDelegate menuView:self didSleectCell:cell itemAtIndexPath:indexPath];
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

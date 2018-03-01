@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view.
     self.navigationBar.translucent = YES;
     
-    self.barBackgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, - kStatusHeight, self.view.frame.size.width, kNavbarAndStatusBar)];
+    self.barBackgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, - kStatusHeight, kScreenWidth, kNavbarAndStatusBar)];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     UIColor *color1= [UIColor colorWithRed:255.0/255.0 green:70.0/255.0 blue:93.0/255.0 alpha:1.0];
