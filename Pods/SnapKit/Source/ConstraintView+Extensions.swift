@@ -140,7 +140,7 @@ public extension ConstraintView {
         self.snp.updateConstraints(closure)
     }
     
-    @objc @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
+    @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
     public func snp_removeConstraints() {
         self.snp.removeConstraints()
     }

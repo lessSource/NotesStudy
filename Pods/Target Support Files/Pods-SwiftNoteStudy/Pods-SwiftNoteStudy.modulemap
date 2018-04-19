@@ -1,0 +1,6 @@
+module Pods_SwiftNoteStudy [system] {
+  umbrella header "Pods-SwiftNoteStudy-umbrella.h"
+
+  export *
+  module * { export * }
+}

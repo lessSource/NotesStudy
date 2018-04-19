@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  iOSNoteStudy
+//
+//  Created by Lj on 2018/4/18.
+//  Copyright © 2018年 lj. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#ifdef __OBJC__
+
+#import "UIColor+Category.h"
+#import "LSGlobleUtil.h"
+
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+
+
+#endif
+
+#endif /* PrefixHeader_pch */

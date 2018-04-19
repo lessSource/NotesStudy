@@ -1,2 +1,0 @@
-# NotesStudy
-Learning record

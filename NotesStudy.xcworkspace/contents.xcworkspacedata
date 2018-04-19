@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NotesStudy.xcodeproj">
+      location = "group:iOSNoteStudy/iOSNoteStudy.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftNoteStudy/SwiftNoteStudy.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
