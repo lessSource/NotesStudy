@@ -46,9 +46,32 @@
 #define DegreesToRadian(x) M_PI * (x) / 180.0
 #define RadianToDegrees(radian) radian * 180.0 / M_PI
 
-
 //通知中心
 #define NotificationCenter [NSNotificationCenter defaultCenter]
+
+
+#pragma mark - 字体大小
+#define LSFont_Size_9 [UIFont systemFontOfSize:SizeScale *9.0]
+
+#define LSFont_Size_10 [UIFont systemFontOfSize:SizeScale *10.0]
+
+#define LSFont_Size_11 [UIFont systemFontOfSize:SizeScale *11.0]
+
+#define LSFont_Size_12 [UIFont systemFontOfSize:SizeScale *12.0]
+
+#define LSFont_Size_13 [UIFont systemFontOfSize:SizeScale *13.0]
+
+#define LSFont_Size_14 [UIFont systemFontOfSize:SizeScale *14.0]
+
+#define LSFont_Size_15 [UIFont systemFontOfSize:SizeScale *15.0]
+
+#define LSFont_Size_16 [UIFont systemFontOfSize:SizeScale *16.0]
+
+#define LSFont_Size_17 [UIFont systemFontOfSize:SizeScale *17.0]
+
+#define LSFont_Size_18 [UIFont systemFontOfSize:SizeScale *18.0]
+
+
 
 /* 快速查询一段代码的执行时间 */
 /** 用法

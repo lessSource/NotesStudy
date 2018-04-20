@@ -35,6 +35,9 @@
 /** 背景色 */
 + (UIColor *)mainBackgroundColor;
 
+/** 随机颜色 */
++ (UIColor *)randomColor;
+
 
 
 @end

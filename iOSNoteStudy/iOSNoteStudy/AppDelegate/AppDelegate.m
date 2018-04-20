@@ -14,6 +14,7 @@
 #import "BaseNavigationController.h"
 #import "BaseTabBarController.h"
 #import "AppDelegate+PushNotification.h"
+#import "ContactDataObject.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) BaseTabBarController *tabBarController;
@@ -28,6 +29,9 @@
     [self.window makeKeyAndVisible]; //让当前UIWindow变成keyWindow,并显示出来
     [self pushNotificationAuthorization:application];
     [self gotoMain];
+    
+    [[ContactDataObject shareInstance]createDataBase];
+
     
 #if defined(DEBUG) || defined(_DEBUG)
     [[FHHFPSIndicator sharedFPSIndicator] show];

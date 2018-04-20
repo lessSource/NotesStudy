@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A18885A2085FBF100524FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1888592085FBF100524FA1 /* AppDelegate.swift */; };
 		2A18885C2085FBF100524FA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18885B2085FBF100524FA1 /* ViewController.swift */; };
-		2A18885F2085FBF100524FA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A18885D2085FBF100524FA1 /* Main.storyboard */; };
-		2A1888612085FBF200524FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1888602085FBF200524FA1 /* Assets.xcassets */; };
-		2A1888642085FBF200524FA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1888622085FBF200524FA1 /* LaunchScreen.storyboard */; };
 		2A18886F2085FBF200524FA1 /* SwiftNoteStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18886E2085FBF200524FA1 /* SwiftNoteStudyTests.swift */; };
 		2A18887A2085FBF200524FA1 /* SwiftNoteStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1888792085FBF200524FA1 /* SwiftNoteStudyUITests.swift */; };
+		2A57208A2089C27B0062F038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720662089C27A0062F038 /* AppDelegate.swift */; };
+		2A57208B2089C27B0062F038 /* BaseSwiftNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720692089C27A0062F038 /* BaseSwiftNavigationController.swift */; };
+		2A57208C2089C27B0062F038 /* BaseSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A57206B2089C27A0062F038 /* BaseSwiftTabBarController.swift */; };
+		2A57208D2089C27B0062F038 /* BaseSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A57206D2089C27A0062F038 /* BaseSwiftViewController.swift */; };
+		2A57208E2089C27B0062F038 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A57206F2089C27A0062F038 /* UIView+Frame.swift */; };
+		2A57208F2089C27B0062F038 /* NSObject+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720702089C27A0062F038 /* NSObject+String.swift */; };
+		2A5720902089C27B0062F038 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720712089C27A0062F038 /* UIViewController+Extension.swift */; };
+		2A5720912089C27B0062F038 /* AboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720722089C27A0062F038 /* AboutApp.swift */; };
+		2A5720922089C27B0062F038 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720732089C27A0062F038 /* NSDate+Extension.swift */; };
+		2A5720932089C27B0062F038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5720762089C27B0062F038 /* Assets.xcassets */; };
+		2A5720942089C27B0062F038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5720772089C27B0062F038 /* LaunchScreen.storyboard */; };
+		2A5720952089C27B0062F038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5720792089C27B0062F038 /* Main.storyboard */; };
+		2A5720962089C27B0062F038 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A57207D2089C27B0062F038 /* Info.plist */; };
+		2A5720972089C27B0062F038 /* HomeSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720802089C27B0062F038 /* HomeSwiftViewController.swift */; };
+		2A5720982089C27B0062F038 /* ReleaseSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720822089C27B0062F038 /* ReleaseSwiftViewController.swift */; };
+		2A5720992089C27B0062F038 /* MineSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720842089C27B0062F038 /* MineSwiftViewController.swift */; };
+		2A57209A2089C27B0062F038 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720862089C27B0062F038 /* ViewModel.swift */; };
+		2A57209B2089C27B0062F038 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720872089C27B0062F038 /* Protocols.swift */; };
+		2A57209C2089C27B0062F038 /* LoginSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720882089C27B0062F038 /* LoginSwiftViewController.swift */; };
+		2A57209D2089C27B0062F038 /* ValidatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720892089C27B0062F038 /* ValidatedModel.swift */; };
 		66374734CE313A562561EA72 /* libPods-SwiftNoteStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664EBA81359D5956976EEB25 /* libPods-SwiftNoteStudy.a */; };
 /* End PBXBuildFile section */
 
@@ -36,19 +52,34 @@
 
 /* Begin PBXFileReference section */
 		2A1888562085FBF100524FA1 /* SwiftNoteStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNoteStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A1888592085FBF100524FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A18885B2085FBF100524FA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2A18885E2085FBF100524FA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A1888602085FBF200524FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2A1888632085FBF200524FA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2A1888652085FBF200524FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A18886A2085FBF200524FA1 /* SwiftNoteStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftNoteStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A18886E2085FBF200524FA1 /* SwiftNoteStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNoteStudyTests.swift; sourceTree = "<group>"; };
 		2A1888702085FBF200524FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1888752085FBF200524FA1 /* SwiftNoteStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftNoteStudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1888792085FBF200524FA1 /* SwiftNoteStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNoteStudyUITests.swift; sourceTree = "<group>"; };
 		2A18887B2085FBF200524FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A1888EE20864BBA00524FA1 /* SwiftNoteStudy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftNoteStudy-Bridging-Header.h"; sourceTree = "<group>"; };
+		2A5720662089C27A0062F038 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A5720692089C27A0062F038 /* BaseSwiftNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwiftNavigationController.swift; sourceTree = "<group>"; };
+		2A57206B2089C27A0062F038 /* BaseSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwiftTabBarController.swift; sourceTree = "<group>"; };
+		2A57206D2089C27A0062F038 /* BaseSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwiftViewController.swift; sourceTree = "<group>"; };
+		2A57206F2089C27A0062F038 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		2A5720702089C27A0062F038 /* NSObject+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+String.swift"; sourceTree = "<group>"; };
+		2A5720712089C27A0062F038 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		2A5720722089C27A0062F038 /* AboutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutApp.swift; sourceTree = "<group>"; };
+		2A5720732089C27A0062F038 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		2A5720762089C27B0062F038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A5720782089C27B0062F038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A57207A2089C27B0062F038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A57207C2089C27B0062F038 /* SwiftNoteStudy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftNoteStudy-Bridging-Header.h"; sourceTree = "<group>"; };
+		2A57207D2089C27B0062F038 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A5720802089C27B0062F038 /* HomeSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSwiftViewController.swift; sourceTree = "<group>"; };
+		2A5720822089C27B0062F038 /* ReleaseSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseSwiftViewController.swift; sourceTree = "<group>"; };
+		2A5720842089C27B0062F038 /* MineSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineSwiftViewController.swift; sourceTree = "<group>"; };
+		2A5720862089C27B0062F038 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2A5720872089C27B0062F038 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		2A5720882089C27B0062F038 /* LoginSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSwiftViewController.swift; sourceTree = "<group>"; };
+		2A5720892089C27B0062F038 /* ValidatedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatedModel.swift; sourceTree = "<group>"; };
 		565D48851B96A8AB23BA9DC6 /* Pods-SwiftNoteStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNoteStudy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftNoteStudy/Pods-SwiftNoteStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		664EBA81359D5956976EEB25 /* libPods-SwiftNoteStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftNoteStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD14178D804A1C0DAC3D3BF /* Pods-SwiftNoteStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNoteStudy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftNoteStudy/Pods-SwiftNoteStudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,13 +144,13 @@
 		2A1888582085FBF100524FA1 /* SwiftNoteStudy */ = {
 			isa = PBXGroup;
 			children = (
-				2A1888ED20864BBA00524FA1 /* Bridging */,
-				2A1888592085FBF100524FA1 /* AppDelegate.swift */,
+				2A5720652089C27A0062F038 /* AppDelegate */,
+				2A5720672089C27A0062F038 /* Base */,
+				2A57207E2089C27B0062F038 /* Controllers */,
+				2A57206E2089C27A0062F038 /* Helpers */,
+				2A5720742089C27A0062F038 /* Libs */,
+				2A5720752089C27B0062F038 /* Supporting Flies */,
 				2A18885B2085FBF100524FA1 /* ViewController.swift */,
-				2A18885D2085FBF100524FA1 /* Main.storyboard */,
-				2A1888602085FBF200524FA1 /* Assets.xcassets */,
-				2A1888622085FBF200524FA1 /* LaunchScreen.storyboard */,
-				2A1888652085FBF200524FA1 /* Info.plist */,
 			);
 			path = SwiftNoteStudy;
 			sourceTree = "<group>";
@@ -142,12 +173,131 @@
 			path = SwiftNoteStudyUITests;
 			sourceTree = "<group>";
 		};
-		2A1888ED20864BBA00524FA1 /* Bridging */ = {
+		2A5720652089C27A0062F038 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				2A1888EE20864BBA00524FA1 /* SwiftNoteStudy-Bridging-Header.h */,
+				2A5720662089C27A0062F038 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		2A5720672089C27A0062F038 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2A5720682089C27A0062F038 /* UINavigation */,
+				2A57206A2089C27A0062F038 /* UITabBarController */,
+				2A57206C2089C27A0062F038 /* ViewController */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2A5720682089C27A0062F038 /* UINavigation */ = {
+			isa = PBXGroup;
+			children = (
+				2A5720692089C27A0062F038 /* BaseSwiftNavigationController.swift */,
+			);
+			path = UINavigation;
+			sourceTree = "<group>";
+		};
+		2A57206A2089C27A0062F038 /* UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				2A57206B2089C27A0062F038 /* BaseSwiftTabBarController.swift */,
+			);
+			path = UITabBarController;
+			sourceTree = "<group>";
+		};
+		2A57206C2089C27A0062F038 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2A57206D2089C27A0062F038 /* BaseSwiftViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2A57206E2089C27A0062F038 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2A57206F2089C27A0062F038 /* UIView+Frame.swift */,
+				2A5720702089C27A0062F038 /* NSObject+String.swift */,
+				2A5720712089C27A0062F038 /* UIViewController+Extension.swift */,
+				2A5720722089C27A0062F038 /* AboutApp.swift */,
+				2A5720732089C27A0062F038 /* NSDate+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2A5720742089C27A0062F038 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		2A5720752089C27B0062F038 /* Supporting Flies */ = {
+			isa = PBXGroup;
+			children = (
+				2A5720762089C27B0062F038 /* Assets.xcassets */,
+				2A5720772089C27B0062F038 /* LaunchScreen.storyboard */,
+				2A5720792089C27B0062F038 /* Main.storyboard */,
+				2A57207B2089C27B0062F038 /* Bridging */,
+				2A57207D2089C27B0062F038 /* Info.plist */,
+			);
+			path = "Supporting Flies";
+			sourceTree = "<group>";
+		};
+		2A57207B2089C27B0062F038 /* Bridging */ = {
+			isa = PBXGroup;
+			children = (
+				2A57207C2089C27B0062F038 /* SwiftNoteStudy-Bridging-Header.h */,
 			);
 			path = Bridging;
+			sourceTree = "<group>";
+		};
+		2A57207E2089C27B0062F038 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A57207F2089C27B0062F038 /* Home */,
+				2A5720812089C27B0062F038 /* Release */,
+				2A5720832089C27B0062F038 /* Mine */,
+				2A5720852089C27B0062F038 /* Login&Register */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2A57207F2089C27B0062F038 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2A5720802089C27B0062F038 /* HomeSwiftViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2A5720812089C27B0062F038 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				2A5720822089C27B0062F038 /* ReleaseSwiftViewController.swift */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		2A5720832089C27B0062F038 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				2A5720842089C27B0062F038 /* MineSwiftViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		2A5720852089C27B0062F038 /* Login&Register */ = {
+			isa = PBXGroup;
+			children = (
+				2A5720862089C27B0062F038 /* ViewModel.swift */,
+				2A5720872089C27B0062F038 /* Protocols.swift */,
+				2A5720882089C27B0062F038 /* LoginSwiftViewController.swift */,
+				2A5720892089C27B0062F038 /* ValidatedModel.swift */,
+			);
+			path = "Login&Register";
 			sourceTree = "<group>";
 		};
 		5BE080BFBA2B8CD42393D7A7 /* Pods */ = {
@@ -265,9 +415,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1888642085FBF200524FA1 /* LaunchScreen.storyboard in Resources */,
-				2A1888612085FBF200524FA1 /* Assets.xcassets in Resources */,
-				2A18885F2085FBF100524FA1 /* Main.storyboard in Resources */,
+				2A5720962089C27B0062F038 /* Info.plist in Resources */,
+				2A5720952089C27B0062F038 /* Main.storyboard in Resources */,
+				2A5720932089C27B0062F038 /* Assets.xcassets in Resources */,
+				2A5720942089C27B0062F038 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,8 +464,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A57209B2089C27B0062F038 /* Protocols.swift in Sources */,
+				2A5720982089C27B0062F038 /* ReleaseSwiftViewController.swift in Sources */,
+				2A5720912089C27B0062F038 /* AboutApp.swift in Sources */,
+				2A5720902089C27B0062F038 /* UIViewController+Extension.swift in Sources */,
+				2A57208F2089C27B0062F038 /* NSObject+String.swift in Sources */,
+				2A57208A2089C27B0062F038 /* AppDelegate.swift in Sources */,
+				2A5720972089C27B0062F038 /* HomeSwiftViewController.swift in Sources */,
+				2A57209A2089C27B0062F038 /* ViewModel.swift in Sources */,
+				2A5720922089C27B0062F038 /* NSDate+Extension.swift in Sources */,
 				2A18885C2085FBF100524FA1 /* ViewController.swift in Sources */,
-				2A18885A2085FBF100524FA1 /* AppDelegate.swift in Sources */,
+				2A57208E2089C27B0062F038 /* UIView+Frame.swift in Sources */,
+				2A57209D2089C27B0062F038 /* ValidatedModel.swift in Sources */,
+				2A5720992089C27B0062F038 /* MineSwiftViewController.swift in Sources */,
+				2A57208D2089C27B0062F038 /* BaseSwiftViewController.swift in Sources */,
+				2A57208C2089C27B0062F038 /* BaseSwiftTabBarController.swift in Sources */,
+				2A57209C2089C27B0062F038 /* LoginSwiftViewController.swift in Sources */,
+				2A57208B2089C27B0062F038 /* BaseSwiftNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,20 +516,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2A18885D2085FBF100524FA1 /* Main.storyboard */ = {
+		2A5720772089C27B0062F038 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2A18885E2085FBF100524FA1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2A1888622085FBF200524FA1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A1888632085FBF200524FA1 /* Base */,
+				2A5720782089C27B0062F038 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2A5720792089C27B0062F038 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A57207A2089C27B0062F038 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -491,7 +657,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5P2JD4K827;
-				INFOPLIST_FILE = SwiftNoteStudy/Info.plist;
+				INFOPLIST_FILE = "SwiftNoteStudy/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,7 +665,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lj.SwiftNoteStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNoteStudy/Bridging/SwiftNoteStudy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNoteStudy/Supporting Flies/Bridging/SwiftNoteStudy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -514,7 +680,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5P2JD4K827;
-				INFOPLIST_FILE = SwiftNoteStudy/Info.plist;
+				INFOPLIST_FILE = "SwiftNoteStudy/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,7 +688,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lj.SwiftNoteStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNoteStudy/Bridging/SwiftNoteStudy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNoteStudy/Supporting Flies/Bridging/SwiftNoteStudy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

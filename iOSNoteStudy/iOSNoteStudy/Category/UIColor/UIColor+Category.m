@@ -51,4 +51,9 @@
     return [UIColor groupTableViewBackgroundColor];
 }
 
+/** 随机颜色 */
++ (UIColor *)randomColor {
+    return [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:arc4random_uniform(256)/255.0];
+}
+
 @end

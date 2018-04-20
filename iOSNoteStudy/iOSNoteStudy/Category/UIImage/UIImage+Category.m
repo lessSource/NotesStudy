@@ -28,7 +28,7 @@
 
 /** color生成image */
 + (UIImage *)convertColorToImage:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    CGRect rect = CGRectMake(0.0f, 0.0f, 10.0f, 10.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, color.CGColor);
@@ -36,6 +36,21 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
+/** 设置图片不透明度 */
++ (UIImage *)imageByAppleingImage:(UIImage *)image alpha:(CGFloat)alpha {
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, 0.0f);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGRect area = CGRectMake(0, 0, image.size.width, image.size.height);
+    CGContextScaleCTM(ctx, 1, -1);
+    CGContextTranslateCTM(ctx, 0, - area.size.height);
+    CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
+    CGContextSetAlpha(ctx, alpha);
+    CGContextDrawImage(ctx, area, image.CGImage);
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 @end

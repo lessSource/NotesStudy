@@ -41,4 +41,11 @@
 
 @interface BaseViewController : UIViewController
 
+//将tabbar隐藏的push
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
+
+//返回
+- (void)popViewControllerIndex:(NSInteger)index;
+
+
 @end

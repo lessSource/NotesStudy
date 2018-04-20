@@ -12,6 +12,9 @@
 
 #import "UIColor+Category.h"
 #import "LSGlobleUtil.h"
+#import "LSSettingUtil.h"
+#import <Masonry.h>
+#import "UIImage+Category.h"
 
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>

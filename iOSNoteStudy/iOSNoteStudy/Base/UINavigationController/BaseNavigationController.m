@@ -28,7 +28,7 @@
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     
     gradientLayer.colors = @[(__bridge id)[UIColor navigationStartColor].CGColor,(__bridge id)[UIColor navigationEndColor].CGColor];
-    gradientLayer.locations = @[@0.5,@1.0];
+    gradientLayer.locations = @[@0.1,@1.0];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(1.0, 0);
     gradientLayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), kNavbarAndStatusBar);

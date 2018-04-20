@@ -16,4 +16,7 @@
 /** color生成image */
 + (UIImage *)convertColorToImage:(UIColor *)color;
 
+/** 设置图片不透明度 */
++ (UIImage *)imageByAppleingImage:(UIImage *)image alpha:(CGFloat)alpha;
+
 @end
