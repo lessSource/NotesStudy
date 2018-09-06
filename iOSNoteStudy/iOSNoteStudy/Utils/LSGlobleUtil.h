@@ -11,6 +11,9 @@
 
 #define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
 
+// 计算字符串size
+#define L_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
+
 // 颜色方法
 #define COLOR(R, G, B, A) [UIColor colorWithRed:R/255.00 green:G/255.00 blue:B/255.00 alpha:A]
 
@@ -70,7 +73,6 @@
 #define LSFont_Size_17 [UIFont systemFontOfSize:SizeScale *17.0]
 
 #define LSFont_Size_18 [UIFont systemFontOfSize:SizeScale *18.0]
-
 
 
 /* 快速查询一段代码的执行时间 */

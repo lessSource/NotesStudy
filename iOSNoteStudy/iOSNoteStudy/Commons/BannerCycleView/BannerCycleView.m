@@ -30,6 +30,7 @@
         flowLayout.minimumLineSpacing = 1;
         flowLayout.minimumInteritemSpacing = 1;
         _collectioView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectioView.backgroundColor = [UIColor whiteColor];
         _collectioView.delegate = self;
         _collectioView.dataSource = self;
         _collectioView.showsHorizontalScrollIndicator = NO;
@@ -93,6 +94,7 @@
             cell = [self.dataSource cycleView:self cellForItemAtRow:0];
         }
     }
+    cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 
@@ -123,7 +125,6 @@
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfRowsInCycleView:)]) {
         self.itemCount = MAX([self.dataSource numberOfRowsInCycleView:self], self.itemCount);
     }
-    
     [self startTimer];
 }
 
@@ -145,7 +146,6 @@
         }
     }
     NSIndexPath *nextIndex = [NSIndexPath indexPathForRow:item inSection:section];
-//    NSLog(@"%@",nextIndex);
     [self.collectioView scrollToItemAtIndexPath:nextIndex atScrollPosition:UICollectionViewScrollPositionLeft animated:true];
 }
 

@@ -13,6 +13,8 @@
 #import "LSGlobleUtil.h"
 #import "HomePageViewController.h"
 #import "MineViewController.h"
+#import "GitHubViewController.h"
+#import "MessageViewController.h"
 
 @interface BaseTabBarController ()
 
@@ -35,9 +37,9 @@
 - (void)initControllers {
     UIViewController *homePageVC = [self createController:[HomePageViewController new] norImage:@"icon_norHomePage" selImage:@"icon_selHomePage" title:@"首页"];
     
-    UIViewController *functionVC = [self createController:[HomePageViewController new] norImage:@"icon_norHomePage" selImage:@"icon_selHomePage" title:@"功能"];
+    UIViewController *functionVC = [self createController:[GitHubViewController new] norImage:@"icon_norHomePage" selImage:@"icon_selHomePage" title:@"搜索"];
 
-    UIViewController *animationVC = [self createController:[HomePageViewController new] norImage:@"icon_norHomePage" selImage:@"icon_selHomePage" title:@"动画"];
+    UIViewController *animationVC = [self createController:[MessageViewController new] norImage:@"icon_norHomePage" selImage:@"icon_selHomePage" title:@"消息"];
 
     
     UIViewController *mineVC = [self createController:[MineViewController new] norImage:@"icon_norHomePage" selImage:@"icon_selHomePage" title:@"我的"];

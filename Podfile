@@ -9,6 +9,15 @@ target 'iOSNoteStudy' do
    pod 'Masonry'
    pod 'FMDB'
    pod 'FHHFPSIndicator'
+   pod 'MJRefresh'
+   pod 'SDWebImage'
+   pod 'AFNetworking'
+   pod 'PPNetworkHelper'
+   pod 'YYModel'
+   pod 'YYText'
+   pod 'MBProgressHUD'
+   pod 'UITextView+Placeholder'
+   pod 'VTMagic'
 
 end
 
@@ -19,5 +28,6 @@ target 'SwiftNoteStudy' do
    pod 'RxCocoa'
    pod 'SnapKit'
    pod 'RxSwift'
+   pod 'Then'
 
 end

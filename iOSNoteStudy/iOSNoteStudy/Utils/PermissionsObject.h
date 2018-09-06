@@ -10,9 +10,11 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
+typedef void(^permissionsSuccess)(BOOL, NSString *message);
+
 @interface PermissionsObject : NSObject
 
-+ (void)shareInstance;
++ (PermissionsObject *)shareInstance;
 
 /** 相册权限 */
 - (void)photoAlbumPermissions:(void(^)(BOOL, NSString *message))success;
@@ -25,6 +27,9 @@
 
 /** 定位权限 */
 - (void)locationPermissions:(void(^)(BOOL, NSString *message))success;
+
+/** 语音识别权限 */
+- (void)speechPermissions:(void(^)(BOOL, NSString *message))success API_AVAILABLE(ios(10.0));
 
 
 @end

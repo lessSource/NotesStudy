@@ -43,7 +43,6 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(selectViewData:showView:)]) {
         [self.delegate selectViewData:@[@"ddd",@"czcx"] showView:self];
     }
-    
     [[PopUpViewObjeect sharrPopUpView]cancalContentView:self direction:PopUpViewDirectionTypeNone];
 }
 

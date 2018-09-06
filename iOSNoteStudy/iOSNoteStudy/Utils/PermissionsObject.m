@@ -13,21 +13,23 @@
 #import <ContactsUI/ContactsUI.h>
 #endif
 #import <AddressBook/AddressBook.h>
+#import <Speech/Speech.h>
 
 static PermissionsObject *permissionsObject;
 
 @implementation PermissionsObject
 
-+ (void)shareInstance {
++ (PermissionsObject *)shareInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (permissionsObject) {
+        if (!permissionsObject) {
             permissionsObject = [[PermissionsObject alloc]init];
         }
     });
+    return permissionsObject;
 }
 
-- (id)init {
+- (instancetype)init {
     if (self = [super init]) {
     }
     return self;
@@ -55,7 +57,7 @@ static PermissionsObject *permissionsObject;
 }
 
 //麦克风、相机权限
-- (void)cameraOrMicrophonePermissions:(void(^)(BOOL, NSString *message))success mediaType:(AVMediaType)mediaType {
+- (void)cameraOrMicrophonePermissions:(void(^)(BOOL success, NSString *message))success mediaType:(AVMediaType)mediaType {
     AVAuthorizationStatus authorizationStatas = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
     switch (authorizationStatas) {
         case AVAuthorizationStatusAuthorized:
@@ -132,25 +134,50 @@ static PermissionsObject *permissionsObject;
     }
 }
 
+/** 语音识别权限 */
+- (void)speechPermissions:(void(^)(BOOL, NSString *message))success API_AVAILABLE(ios(10.0)) {
+    SFSpeechRecognizerAuthorizationStatus authorizationStatus = [SFSpeechRecognizer authorizationStatus];
+    switch (authorizationStatus) {
+        case SFSpeechRecognizerAuthorizationStatusAuthorized:
+            success(YES, @"允许授权");
+            break;
+        case SFSpeechRecognizerAuthorizationStatusDenied:
+            success(NO, @"禁止授权");
+            break;
+        case SFSpeechRecognizerAuthorizationStatusNotDetermined:
+            break;
+        case SFSpeechRecognizerAuthorizationStatusRestricted:
+            success(NO, @"限制授权");
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - private
 //相册权限回调
 - (void)_requestPhotoAuthorization:(void(^)(BOOL, NSString *message))success {
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-        if (status == PHAuthorizationStatusAuthorized) {
-            success(YES, @"允许授权");
-        }else {
-            success(NO, @"拒绝授权");
-        }
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (status == PHAuthorizationStatusAuthorized) {
+                success(YES, @"允许授权");
+            }else {
+                success(NO, @"拒绝授权");
+            }
+        });
     }];
 }
 
 //麦克风、相机权限回调
 - (void)_requestCameraOrMicrophoneAuthorization:(void(^)(BOOL, NSString *message))success mediaType:(AVMediaType)mediaType {
     [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
-        if (granted) {
-            success(YES, @"允许授权");
-        }else {
-            success(NO, @"拒绝授权");
-        }
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (granted) {
+                success(YES, @"允许授权");
+            }else {
+                success(NO, @"拒绝授权");
+            }
+        });
     }];
 }
 
@@ -158,11 +185,26 @@ static PermissionsObject *permissionsObject;
 - (void)_requestAddressBookAuthorization:(void(^)(BOOL, NSString *message))success API_AVAILABLE(ios(9.0)) {
     CNContactStore *contactStore = [[CNContactStore alloc]init];
     [contactStore requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (granted) {
-            success(YES, @"允许授权");
-        }else {
-            success(NO, @"禁止授权");
-        }
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (granted) {
+                success(YES, @"允许授权");
+            }else {
+                success(NO, @"禁止授权");
+            }
+        });
+    }];
+}
+
+//语音识别权限回调
+- (void)_requestSpeechAuthorization:(void(^)(BOOL, NSString *message))success API_AVAILABLE(ios(10.0)) {
+    [SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (status == SFSpeechRecognizerAuthorizationStatusAuthorized) {
+                success(YES, @"允许授权");
+            }else {
+                success(NO, @"禁止授权");
+            }
+        });
     }];
 }
 
@@ -222,20 +264,9 @@ static PermissionsObject *permissionsObject;
      - (void)performSelectorInBackground:(SEL)aSelector withObject:(nullable id)arg NS_AVAILABLE(10_5, 2_0);
      */
     //后台执行
-    
 }
 
 
 @end
-
-
-
-
-
-
-
-
-
-
 
 

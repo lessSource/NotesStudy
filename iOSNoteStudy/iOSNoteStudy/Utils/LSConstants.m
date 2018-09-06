@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+NSString *const PicturePath = @"/Users/lj/Desktop/svn/NotesStudy/Picture/";
+
+NSString *const JSONPath = @"/Users/lj/Desktop/Document/Josn/";
+
+NSString *const PoetryPath = @"/Users/lj/Desktop/Document/Sqlite/Poetry/";
 
 NSString *const LoginButton = @"Login";
 
-NSString *const LSCoding_State = @"LSCoding_State";
-
-NSString *const LSCoding_Swift = @"swift";
-
-NSString *const LSCoding_OC = @"oc";
+CGFloat const HomeActivityHeight = 200;

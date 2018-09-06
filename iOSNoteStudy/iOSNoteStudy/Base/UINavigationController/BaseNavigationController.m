@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationBar.translucent = YES;
+    self.navigationBar.translucent = NO;  //半透明属性
     
     self.barBackgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, - kStatusHeight, kScreenWidth, kNavbarAndStatusBar)];
     

@@ -62,6 +62,7 @@ static NSString *homePageMenuCell = @"HomePageMenuCell";
     _column = 4;
     _iconImageSize = 50;
     _itemSizeHeight = 90;
+    self.scrollDirection = UICollectionViewScrollDirectionVertical;
 }
 
 
@@ -72,11 +73,12 @@ static NSString *homePageMenuCell = @"HomePageMenuCell";
     self.itemSize = CGSizeMake(allWidth/_column, _itemSizeHeight);
     self.nameArray = [self.menuDataSource homePageMenuName:self];
     CGRect frame = self.frame;
+    CGFloat height = self.collectionViewLayout.collectionViewContentSize.height;
     if (self.nameArray.count == 0) frame.size.height = 0;
     else {
-        frame.size.height = (_itemSize.height + _lineSpacing) * (self.nameArray.count/_column + (self.nameArray.count%_column == 0 ? 0 : 1)) + CorrectNumber - _lineSpacing;
+        self.height = height;
+//        frame.size.height = (_itemSize.height + _lineSpacing) * (self.nameArray.count/_column + (self.nameArray.count%_column == 0 ? 0 : 1)) + CorrectNumber - _lineSpacing;
     }
-    self.frame = frame;
     if (self.menuDataSource && [self.menuDataSource respondsToSelector:@selector(homePageMenuImage:)]) {
         self.iconArray = [self.menuDataSource homePageMenuImage:self];
     }
@@ -87,24 +89,6 @@ static NSString *homePageMenuCell = @"HomePageMenuCell";
 
 - (void)dealloc {
     NSLog(@"------dealloc------");
-}
-
-- (void)setColumn:(NSInteger)column {
-    _column = column;
-}
-
-- (void)setLineSpacing:(CGFloat)lineSpacing {
-    _lineSpacing = lineSpacing;
-    self.flowLayout.minimumLineSpacing = _lineSpacing;
-}
-
-- (void)setInteritemSpacing:(CGFloat)interitemSpacing {
-    _interitemSpacing = interitemSpacing;
-    self.flowLayout.minimumInteritemSpacing = _interitemSpacing;
-}
-
-- (void)setItemSize:(CGSize)itemSize {
-    _itemSize = itemSize;
 }
 
 #pragma mark - UICollectionViewDelegate,UICollectionViewDataSource
@@ -145,7 +129,6 @@ static NSString *homePageMenuCell = @"HomePageMenuCell";
 
 #pragma mark -
 - (void)_collectionView:(HomePageMenuCell *)cell cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     cell.iconImageSize = self.iconImageSize;
     cell.nameLabel.text = self.nameArray[indexPath.item];
     cell.nameLabel.textColor = self.menuColor;
@@ -159,5 +142,27 @@ static NSString *homePageMenuCell = @"HomePageMenuCell";
 }
 
 
+- (void)setColumn:(NSInteger)column {
+    _column = column;
+}
+
+- (void)setLineSpacing:(CGFloat)lineSpacing {
+    _lineSpacing = lineSpacing;
+    self.flowLayout.minimumLineSpacing = _lineSpacing;
+}
+
+- (void)setInteritemSpacing:(CGFloat)interitemSpacing {
+    _interitemSpacing = interitemSpacing;
+    self.flowLayout.minimumInteritemSpacing = _interitemSpacing;
+}
+
+- (void)setItemSize:(CGSize)itemSize {
+    _itemSize = itemSize;
+}
+
+- (void)setScrollDirection:(UICollectionViewScrollDirection)scrollDirection {
+    _scrollDirection = scrollDirection;
+    self.flowLayout.scrollDirection = scrollDirection;
+}
 
 @end

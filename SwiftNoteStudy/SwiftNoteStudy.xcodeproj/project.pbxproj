@@ -22,7 +22,6 @@
 		2A5720932089C27B0062F038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5720762089C27B0062F038 /* Assets.xcassets */; };
 		2A5720942089C27B0062F038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5720772089C27B0062F038 /* LaunchScreen.storyboard */; };
 		2A5720952089C27B0062F038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5720792089C27B0062F038 /* Main.storyboard */; };
-		2A5720962089C27B0062F038 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A57207D2089C27B0062F038 /* Info.plist */; };
 		2A5720972089C27B0062F038 /* HomeSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720802089C27B0062F038 /* HomeSwiftViewController.swift */; };
 		2A5720982089C27B0062F038 /* ReleaseSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720822089C27B0062F038 /* ReleaseSwiftViewController.swift */; };
 		2A5720992089C27B0062F038 /* MineSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720842089C27B0062F038 /* MineSwiftViewController.swift */; };
@@ -373,7 +372,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = lj;
 				TargetAttributes = {
 					2A1888552085FBF100524FA1 = {
@@ -415,7 +414,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A5720962089C27B0062F038 /* Info.plist in Resources */,
 				2A5720952089C27B0062F038 /* Main.storyboard in Resources */,
 				2A5720932089C27B0062F038 /* Assets.xcassets in Resources */,
 				2A5720942089C27B0062F038 /* LaunchScreen.storyboard in Resources */,
@@ -568,8 +566,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5P2JD4K827;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -589,6 +589,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "018fbcdb-c850-41b7-8793-01235a63bb2a";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -628,8 +630,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5P2JD4K827;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -642,6 +646,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "018fbcdb-c850-41b7-8793-01235a63bb2a";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -655,6 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5P2JD4K827;
 				INFOPLIST_FILE = "SwiftNoteStudy/Supporting Flies/Info.plist";
@@ -665,6 +672,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lj.SwiftNoteStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNoteStudy/Supporting Flies/Bridging/SwiftNoteStudy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -678,6 +687,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5P2JD4K827;
 				INFOPLIST_FILE = "SwiftNoteStudy/Supporting Flies/Info.plist";
@@ -688,6 +698,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lj.SwiftNoteStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNoteStudy/Supporting Flies/Bridging/SwiftNoteStudy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

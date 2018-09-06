@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -20,11 +25,29 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>NoteStudy想访问您的照片，以便您正常使用图片上传、图片保存等服务</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>NoteStudy想访问您的麦克风，以便您正常使用语音等服务</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>NoteStudy想使用语音识别，以便您正常使用识别等服务</string>
+	<key>NSCameraUsageDescription</key>
+	<string>NoteStudy想访问您的相机，以便您正常使用拍摄等服务</string>
+	<key>NSContactsUsageDescription</key>
+	<string>NoteStudy想访问您的通讯录，以便您正常使用好友等服务</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>NoteStudy想访问您的位置，以便您正常使用周边等服务</string>
+	<key>NSLocationUsageDescription</key>
+	<string>您的位置将被展示在地图上来提供如实时位置等相关服务</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>您的位置将被展示在地图上来提供如实时位置等相关服务</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
 		<string>remote-notification</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

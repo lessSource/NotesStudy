@@ -23,12 +23,12 @@
 
 /** 导航栏起始颜色 */
 + (UIColor *)navigationStartColor {
-    return [self colorWithHexString:@"#FF465D" alpha:1.0];
+    return [self colorWithHexString:@"#E44D26" alpha:1.0];
 }
 
 /** 导航栏终止颜色 */
 + (UIColor *)navigationEndColor {
-    return [self colorWithHexString:@"#FB6C2A" alpha:1.0];
+    return [self colorWithHexString:@"#F16529" alpha:1.0];
 }
 
 /** tabBar点击时颜色 */
@@ -44,11 +44,13 @@
 /** 主色 */
 + (UIColor *)mainColor {
     return [self colorWithHexString:@"#FB6C2A" alpha:1.0];
+    
+    //#ED242D    #F17720  #FFCD34  #0080A4   #FCFCFC
 }
 
 /** 背景色 */
 + (UIColor *)mainBackgroundColor {
-    return [UIColor groupTableViewBackgroundColor];
+    return [self colorWithHexString:@"#FCFCFC" alpha:1.0];
 }
 
 /** 随机颜色 */

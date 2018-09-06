@@ -6,6 +6,10 @@
 //  Copyright © 2018年 lj. All rights reserved.
 //
 
+// Bundle identifier 应用唯一标识
+
+
+
 #import "AppDelegate.h"
 #if defined(DEBUG) || defined(_DEBUG)
 #import <FHHFPSIndicator/FHHFPSIndicator.h>
@@ -15,6 +19,7 @@
 #import "BaseTabBarController.h"
 #import "AppDelegate+PushNotification.h"
 #import "ContactDataObject.h"
+#import "UIViewController+Category.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) BaseTabBarController *tabBarController;
@@ -31,12 +36,17 @@
     [self gotoMain];
     
     [[ContactDataObject shareInstance]createDataBase];
-
     
 #if defined(DEBUG) || defined(_DEBUG)
-    [[FHHFPSIndicator sharedFPSIndicator] show];
+//    [[FHHFPSIndicator sharedFPSIndicator] show];
 #endif
     
+    //登录成功
+    UIViewController *topmostVC = [UIViewController topViewController];
+    SEL selector = NSSelectorFromString(@"LViewOverloadingData");
+    if ([topmostVC respondsToSelector:selector]) {
+        ((void (*)(id , SEL))[topmostVC methodForSelector:selector])(topmostVC, selector);
+    }
     return YES;
 }
 
@@ -56,7 +66,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-
+    [[ContactDataObject shareInstance] closeData];
 }
 
 

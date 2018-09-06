@@ -103,7 +103,6 @@ static PopUpViewObjeect *popUpViewObject;
         if (directionType == PopUpViewDirectionTypeRight) {
             self.contentView.transform = CGAffineTransformMakeTranslation(kScreenWidth, CGFLOAT_MIN);
         }else if (directionType == PopUpViewDirectionTypeCenter) {
-            
         }else {
             self.contentView.transform = CGAffineTransformMakeTranslation(CGFLOAT_MIN, kScreenHeight);
         }
@@ -111,6 +110,7 @@ static PopUpViewObjeect *popUpViewObject;
         self.contentView.alpha = 0.0;
     } completion:^(BOOL finished) {
         if (self.contentView) {
+            [self.contentView didCancelView];
             [self.contentView removeFromSuperview];
             self.contentView = nil;
         }
@@ -167,6 +167,8 @@ static PopUpViewObjeect *popUpViewObject;
 - (void)willShowView { }
 
 - (void)willCancelView { }
+
+- (void)didCancelView { }
 
 - (void)dealloc {
     NSLog(@"ContentView--------dealloc");

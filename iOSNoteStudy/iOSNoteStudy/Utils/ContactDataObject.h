@@ -15,6 +15,12 @@
 //链接数据库
 - (void)createDataBase;
 
+//导入数据
+- (void)insertPoetryData:(id)data;
+
+//关闭数据库
+- (void)closeData;
+
 //插入数据
 - (void)insertData:(id)data;
 

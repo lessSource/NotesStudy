@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class HomeSwiftViewController: BaseSwiftViewController {
 
@@ -14,6 +16,17 @@ class HomeSwiftViewController: BaseSwiftViewController {
         super.viewDidLoad()
 
         navigationItem.title = "首页"
+        
+        let stack = Stack()
+        stack.push(object: "ddd" as AnyObject)
+        print(stack.peek ?? "")
+        
+        let nameLabel = UILabel().then {
+            $0.text = "ddd"
+            
+        }
+        view.addSubview(nameLabel)
+        
         
         // Do any additional setup after loading the view.
         let imageView  = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -28,7 +41,6 @@ class HomeSwiftViewController: BaseSwiftViewController {
         if let _ = data {
             image = CIImage(data: data!)!
         }
-        
         
         
 //        let blurRadius = 5.0
@@ -115,4 +127,28 @@ class HomeSwiftViewController: BaseSwiftViewController {
     }
     */
 
+}
+
+
+class Stack {
+    var stack: [AnyObject] = []
+    var isEmpty: Bool { return stack.isEmpty }
+    var peek: AnyObject? { return stack.last }
+    
+    init() {
+        stack = [AnyObject]()
+    }
+    
+    func push(object: AnyObject) {
+        stack.append(object)
+    }
+    
+    func pop() -> AnyObject? {
+        if !isEmpty {
+            return stack.removeLast()
+        }else {
+            return nil
+        }
+    }
+    
 }

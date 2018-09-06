@@ -23,6 +23,7 @@
 - (void)initView {
     self.image = [[UIImageView alloc]initWithFrame:self.bounds];
     self.clipsToBounds = YES;
+    self.image.contentMode = UIViewContentModeScaleAspectFill;
     self.image.image = [UIImage imageNamed:@"moren_zhanwei"];
     [self addSubview:self.image];
 }

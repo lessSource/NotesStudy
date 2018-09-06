@@ -12,10 +12,12 @@
 #import "CardCollectionView.h"
 #import "CardCollectionViewCell.h"
 #import "CardCollectionViewLayout.h"
+#import "UIView+Category.h"
+#import "LSWebViewController.h"
 
 static NSString *const cardCollectionViewCell = @"CardCollectionViewCell";
 
-@interface CardCollectionView () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface CardCollectionView () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIViewControllerPreviewingDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, assign) CGFloat startX;
 @property (nonatomic, assign) CGFloat endX;
@@ -70,17 +72,44 @@ static NSString *const cardCollectionViewCell = @"CardCollectionViewCell";
     CardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cardCollectionViewCell forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[CardCollectionViewCell alloc]init];
+    }    
+    if ([self respondsToSelector:@selector(traitCollection)]) {
+        if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)]) {
+            if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+                [self.viewController registerForPreviewingWithDelegate:self sourceView:cell];
+            }
+        }
     }
-    cell.backgroundColor = [UIColor randomColor];
+    
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(150, 200);
+    return CGSizeMake(150, CGRectGetHeight(self.bounds));
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return self.edgeInsets;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cardCollectionView:didSelectItemAtIndexPath:)]) {
+        [self.delegate cardCollectionView:self didSelectItemAtIndexPath:indexPath];
+    }
+}
+
+#pragma mark -UIViewControllerPreviewingDelegate
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    //    NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)[previewingContext sourceView]];
+    LSWebViewController *webVC = [[LSWebViewController alloc]init];
+    //调整不被虚化的范围，按压的那个cell不被虚化
+//    CGRect rect = CGRectMake(0, 0, kScreenWidth, 40);
+//    previewingContext.sourceRect = rect;
+    return webVC;
+}
+
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self.viewController showViewController:viewControllerToCommit sender:self];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

@@ -26,6 +26,20 @@
     return image;
 }
 
+
+/** 生成渐变色image */
++ (UIImage *)convertGradientToImage:(UIView *)view {
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(__bridge id)[UIColor navigationStartColor].CGColor, (__bridge id)[UIColor navigationEndColor].CGColor];
+    gradientLayer.locations = @[@0.1,@1.0];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1.0, 0.0);
+    gradientLayer.frame = view.bounds;
+    [view.layer insertSublayer:gradientLayer above:gradientLayer];
+    UIImage *image = [self convertViewToImage:view];
+    return image;
+}
+
 /** color生成image */
 + (UIImage *)convertColorToImage:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 10.0f, 10.0f);
@@ -48,6 +62,18 @@
     CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
     CGContextSetAlpha(ctx, alpha);
     CGContextDrawImage(ctx, area, image.CGImage);
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
++ (UIImage *)imageResize:(UIImage *)image resizeTo:(CGSize)newSize {
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    CGSize size = image.size;
+    CGFloat height = (kScreenWidth - 30) * size.height / size.width;
+    newSize = CGSizeMake(kScreenWidth - 30, height);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, scale);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;

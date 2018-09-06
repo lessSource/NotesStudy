@@ -9,14 +9,6 @@
 
 #import "BaseViewController.h"
 
-typedef NS_OPTIONS(NSUInteger, HomePageType) {
-//    HomePageTypeNone     = 0,
-    HomePageTypeText1    = 1 << 0,
-    HomePageTypeText2    = 1 << 1,
-    HomePageTypeText3    = 1 << 2,
-};
-
-
 @interface HomePageViewController : BaseViewController
 
 @end

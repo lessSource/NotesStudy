@@ -6,9 +6,18 @@
 //  Copyright © 2018年 lj. All rights reserved.
 //
 
-#import "MineViewController.h"
+#define headPortrait_Height kScreenWidth/5*4
 
-@interface MineViewController ()
+#import "MineViewController.h"
+#import "BaseTableView.h"
+#import "AnimationViewController.h"
+#import "MineHeaderView.h"
+#import <objc/message.h>
+
+@interface MineViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) BaseTableView *tableView;
+@property (nonatomic, strong) MineHeaderView *mineHeaderView;
+@property (nonatomic, strong) CAGradientLayer *gradientLayer;
 
 @end
 
@@ -18,26 +27,86 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"我的";
+//    
+//    //NSObject *obj = [NSObject alloc]];
+//    NSObject *obj = objc_msgSend(objc_getClass("NSObject"), sel_registerName("alloc"));
+//    
+//    //obj = [obj init]
+//    obj = objc_msgSend(obj, sel_registerName("init"));
+//    
+//    //[obj eat]
+//    
+//    objc_msgSend(obj, @selector(eat));
+//    objc_msgSend(obj, @selector(run:),20);
+//    
+//    
+//    //id = objc = [NSObject alloc];
+//    id  objc = objc_msgSend([NSObject class], @selector(alloc));
+//    
+//    //objc = [objc init]
+//    objc = objc_msgSend(objc, @selector(init));
+    
+    
+    
+    
+    
+    
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, headPortrait_Height)];
+    self.mineHeaderView = [[MineHeaderView alloc]initWithFrame:headerView.bounds];
+    self.mineHeaderView.layer.contents = (__bridge id _Nullable)([UIImage convertGradientToImage:headerView].CGImage);
+    [headerView addSubview:self.mineHeaderView];
+    
+    self.tableView = [[BaseTableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kBottomBarHeight - kNavbarAndStatusBar) style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = false;
+    self.tableView.tableFooterView = [[UIView alloc]init];
+    [self.view addSubview:self.tableView];
+    self.tableView.tableHeaderView = headerView;
 }
 
-- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
-    NSMutableArray *arrItem = [NSMutableArray array];
-    
-    UIPreviewAction *cancelAction = [UIPreviewAction actionWithTitle:@"取消" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-        NSLog(@"didClickCancel");
-    }];
-    
-    UIPreviewAction *previewAction = [UIPreviewAction actionWithTitle:@"替换该元素" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
-       
-    }];
-    
-    UIPreviewActionGroup *actionGroup = [UIPreviewActionGroup actionGroupWithTitle:@"选项组" style:UIPreviewActionStyleDefault actions:@[cancelAction, previewAction]];
-    
-    [arrItem addObjectsFromArray:@[cancelAction, previewAction, actionGroup]];
-    
-    return arrItem;
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 30;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * identifire = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifire];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifire];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = @"ddd";
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat scrollViewY = scrollView.contentOffset.y;
+    if (scrollViewY < 0) {
+        CGRect frame = self.mineHeaderView.frame;
+        frame.origin.y = scrollViewY;
+        frame.size.height = headPortrait_Height - scrollViewY;
+        self.mineHeaderView.frame = frame;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    AnimationViewController *animationVC = [[AnimationViewController alloc]init];
+    [self pushViewController:animationVC animated:YES];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

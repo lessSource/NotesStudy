@@ -48,7 +48,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat lineSpacing;
 /** 横向间隔 */
 @property (nonatomic, assign) CGFloat interitemSpacing;
-
 /** itemHeight */
 @property (nonatomic, assign) CGFloat itemSizeHeight;
 /** itemSize */
@@ -64,6 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** name margin top */
 @property (nonatomic, assign) CGFloat nameMarginTop;
 
+@property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;
 
 @end
 

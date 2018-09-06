@@ -10,4 +10,13 @@
 
 @implementation CardCollectionViewCell
 
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor mainColor];
+        self.layer.cornerRadius = 10;
+        self.clipsToBounds = YES;
+    }
+    return self;
+}
+
 @end
