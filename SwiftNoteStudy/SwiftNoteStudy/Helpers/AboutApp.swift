@@ -10,10 +10,11 @@ import UIKit
 import AdSupport
 
 public struct App {
+    /** 名称 */
     public static var appName: String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
     }
-    
+    /** 版本 */
     public static var appVersion: String {
         return Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     }
@@ -45,22 +46,6 @@ public struct App {
     
     public static var IDFV: String {
         return UIDevice.current.identifierForVendor!.uuidString
-    }
-    
-    public static var screenOrientation: UIInterfaceOrientation {
-        return UIApplication.shared.statusBarOrientation
-    }
-    
-    public static var screenSattusBarHeight: CGFloat {
-        return UIApplication.shared.statusBarFrame.height
-    }
-    
-    public static var screenHeightWithoutStatusBar: CGFloat {
-        if UIInterfaceOrientationIsPortrait(screenOrientation) {
-            return UIScreen.main.bounds.size.height - screenSattusBarHeight
-        }else {
-            return UIScreen.main.bounds.size.width - screenSattusBarHeight
-        }
     }
 }
 

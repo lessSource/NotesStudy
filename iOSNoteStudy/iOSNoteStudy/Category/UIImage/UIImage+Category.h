@@ -25,5 +25,7 @@
 /** 修改图片尺寸（等比） */
 + (UIImage *)imageResize:(UIImage *)image resizeTo:(CGSize)newSize;
 
+/** 保存图片到相册 */
+- (void)loadImageSave:(void(^)(BOOL saveSuccess, BOOL createSuccess))successBlock;
 
 @end

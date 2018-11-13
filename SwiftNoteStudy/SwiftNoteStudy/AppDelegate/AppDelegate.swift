@@ -12,8 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let tableBarController = BaseSwiftTabBarController()
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FHHFPSIndicator().show()
         #endif
         gotoMain()
-        
+                
         return true
     }
 
@@ -50,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func gotoMain() {
-        let nav = BaseSwiftNavigationController(rootViewController: tableBarController)
-        window?.rootViewController = nav;
+        let tableBarController = BaseSwiftTabBarController()
+        window?.rootViewController = tableBarController;
     }
 
 }

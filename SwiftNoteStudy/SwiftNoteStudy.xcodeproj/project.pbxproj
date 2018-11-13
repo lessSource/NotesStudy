@@ -30,6 +30,10 @@
 		2A57209C2089C27B0062F038 /* LoginSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720882089C27B0062F038 /* LoginSwiftViewController.swift */; };
 		2A57209D2089C27B0062F038 /* ValidatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720892089C27B0062F038 /* ValidatedModel.swift */; };
 		66374734CE313A562561EA72 /* libPods-SwiftNoteStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664EBA81359D5956976EEB25 /* libPods-SwiftNoteStudy.a */; };
+		CA6B08F8218BE98700CCA43C /* HomePageMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B08F7218BE98700CCA43C /* HomePageMenuView.swift */; };
+		CA6B08FA218BF91C00CCA43C /* HomePageMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B08F9218BF91C00CCA43C /* HomePageMenuCell.swift */; };
+		CA994EE9219AA59700563C25 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA994EE8219AA59700563C25 /* UIDevice+Extension.swift */; };
+		CA994EEB219AA83900563C25 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA994EEA219AA83900563C25 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		2A5720892089C27B0062F038 /* ValidatedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatedModel.swift; sourceTree = "<group>"; };
 		565D48851B96A8AB23BA9DC6 /* Pods-SwiftNoteStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNoteStudy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftNoteStudy/Pods-SwiftNoteStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		664EBA81359D5956976EEB25 /* libPods-SwiftNoteStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftNoteStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA6B08F7218BE98700CCA43C /* HomePageMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageMenuView.swift; sourceTree = "<group>"; };
+		CA6B08F9218BF91C00CCA43C /* HomePageMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageMenuCell.swift; sourceTree = "<group>"; };
+		CA994EE8219AA59700563C25 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		CA994EEA219AA83900563C25 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FBD14178D804A1C0DAC3D3BF /* Pods-SwiftNoteStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNoteStudy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftNoteStudy/Pods-SwiftNoteStudy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +151,7 @@
 		2A1888582085FBF100524FA1 /* SwiftNoteStudy */ = {
 			isa = PBXGroup;
 			children = (
+				CA6B08F5218BE96500CCA43C /* Commons */,
 				2A5720652089C27A0062F038 /* AppDelegate */,
 				2A5720672089C27A0062F038 /* Base */,
 				2A57207E2089C27B0062F038 /* Controllers */,
@@ -222,6 +231,8 @@
 				2A5720712089C27A0062F038 /* UIViewController+Extension.swift */,
 				2A5720722089C27A0062F038 /* AboutApp.swift */,
 				2A5720732089C27A0062F038 /* NSDate+Extension.swift */,
+				CA994EE8219AA59700563C25 /* UIDevice+Extension.swift */,
+				CA994EEA219AA83900563C25 /* Constant.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -306,6 +317,23 @@
 				FBD14178D804A1C0DAC3D3BF /* Pods-SwiftNoteStudy.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA6B08F5218BE96500CCA43C /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B08F6218BE97300CCA43C /* HomePageMenu */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		CA6B08F6218BE97300CCA43C /* HomePageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B08F7218BE98700CCA43C /* HomePageMenuView.swift */,
+				CA6B08F9218BF91C00CCA43C /* HomePageMenuCell.swift */,
+			);
+			path = HomePageMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,14 +499,18 @@
 				2A5720972089C27B0062F038 /* HomeSwiftViewController.swift in Sources */,
 				2A57209A2089C27B0062F038 /* ViewModel.swift in Sources */,
 				2A5720922089C27B0062F038 /* NSDate+Extension.swift in Sources */,
+				CA6B08FA218BF91C00CCA43C /* HomePageMenuCell.swift in Sources */,
 				2A18885C2085FBF100524FA1 /* ViewController.swift in Sources */,
 				2A57208E2089C27B0062F038 /* UIView+Frame.swift in Sources */,
 				2A57209D2089C27B0062F038 /* ValidatedModel.swift in Sources */,
+				CA994EE9219AA59700563C25 /* UIDevice+Extension.swift in Sources */,
+				CA994EEB219AA83900563C25 /* Constant.swift in Sources */,
 				2A5720992089C27B0062F038 /* MineSwiftViewController.swift in Sources */,
 				2A57208D2089C27B0062F038 /* BaseSwiftViewController.swift in Sources */,
 				2A57208C2089C27B0062F038 /* BaseSwiftTabBarController.swift in Sources */,
 				2A57209C2089C27B0062F038 /* LoginSwiftViewController.swift in Sources */,
 				2A57208B2089C27B0062F038 /* BaseSwiftNavigationController.swift in Sources */,
+				CA6B08F8218BE98700CCA43C /* HomePageMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

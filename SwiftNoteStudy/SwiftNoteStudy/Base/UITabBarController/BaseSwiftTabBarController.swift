@@ -37,7 +37,7 @@ class BaseSwiftTabBarController: UITabBarController {
         childController.tabBarItem.selectedImage = UIImage(named: selectedImage)
         
         //添加子控制器        
-        let chidNav = BaseSwiftNavigationController(rootViewController:childController)
+        let chidNav = BaseSwiftNavigationController(rootViewController: childController)
         addChildViewController(chidNav)
     }
 }

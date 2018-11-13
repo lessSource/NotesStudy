@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+Category.h"
+#import <Photos/Photos.h>
 
 @implementation UIImage (Category)
 
@@ -78,5 +79,70 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
+
+/** 保存图片到相册 */
+- (void)loadImageSave:(void(^)(BOOL saveSuccess, BOOL createSuccess))successBlock {
+    NSMutableArray *imageIds = [NSMutableArray array];
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest *request = [PHAssetChangeRequest creationRequestForAssetFromImage:self];
+        [imageIds addObject:request.placeholderForCreatedAsset.localIdentifier];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        if (success) {
+            PHFetchResult *result = [PHAsset fetchAssetsWithLocalIdentifiers:imageIds options:nil];
+            // 获取自定义相册
+            PHAssetCollection *assetCollection = [self _getAssetCollectionWithAppNameAndCreateIfNo];
+            if (assetCollection == nil) {
+                successBlock(true, false);
+            }else {
+                // 将保存的图片添加到自定义相册中
+                NSError *error = nil;
+                [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+                    // 需要操作的相册
+                    PHAssetCollectionChangeRequest *request = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
+                    // 添加到自定义相册---追加---不能成为封面
+                    //                [request addAssets:result];
+                    // 插入到自定义相册---插入---可以成为封面
+                    [request insertAssets:result atIndexes:[NSIndexSet indexSetWithIndex:0]];
+                } error:&error];
+                if (error) {
+                    successBlock(true, false);
+                }else {
+                    successBlock(true, true);
+                }
+            }
+        }else {
+            successBlock(false, false);
+        }
+    }];
+}
+
+
+#pragma mark - private
+/** 自定义相册 -- 如果没有则创建 */
+- (PHAssetCollection *)_getAssetCollectionWithAppNameAndCreateIfNo {
+    // 获取APP的名称
+    NSString *title = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
+    // 获取与APP名称相同的自定义相册
+    PHFetchResult<PHAssetCollection *> *collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    for (PHAssetCollection *collection in collections) {
+        if ([collection.localizedTitle isEqualToString:title]) {
+            return collection;
+        }
+    }
+    // 创建
+    NSError *error = nil;
+    __block NSString *createID = nil;
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        // 发起创建相册请求，并拿到ID
+        PHAssetCollectionChangeRequest *request = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:title];
+        createID = request.placeholderForCreatedAssetCollection.localIdentifier;
+    } error:&error];
+    if (error) {
+        return nil;
+    }
+    return [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[createID] options:nil].firstObject;
+    
+}
+
 
 @end

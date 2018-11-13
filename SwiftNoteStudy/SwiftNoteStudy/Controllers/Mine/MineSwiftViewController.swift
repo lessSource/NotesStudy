@@ -483,15 +483,15 @@ class MineSwiftViewController: BaseSwiftViewController {
         
         //Deley
         //Deley延迟操作
-        let deleyObserver = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
-        _ = deleyObserver.subscribe {
-            print("第一次走 \($0)")
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            _ = deleyObserver.subscribe {
-                print("延迟5s走的 \($0)")
-            }
-        }
+//        let deleyObserver = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+//        _ = deleyObserver.subscribe {
+//            print("第一次走 \($0)")
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//            _ = deleyObserver.subscribe {
+//                print("延迟5s走的 \($0)")
+//            }
+//        }
         
     }
 

@@ -184,6 +184,9 @@ API_AVAILABLE(ios(10.0))
     if (indexPath.item == 0) {
         MallViewController *mallVC = [[MallViewController alloc]init];
         [self pushViewController:mallVC animated:YES];
+        [[UIImage convertGradientToImage:self.view] loadImageSave:^(BOOL saveSuccess, BOOL createSuccess) {
+            NSLog(@"");
+        }];
     }else if (indexPath.item == 1) {
         CircleFriendsViewController *circleFriendsVC = [[CircleFriendsViewController alloc]init];
         [self pushViewController:circleFriendsVC animated:YES];

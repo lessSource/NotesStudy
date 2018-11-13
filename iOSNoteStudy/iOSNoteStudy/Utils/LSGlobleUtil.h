@@ -25,8 +25,8 @@
 #define kStatusHeight           (rectStatus.size.height)
 #define kTopBarHeight           (44.f)
 #define kNavbarAndStatusBar     (kStatusHeight + kTopBarHeight)
-#define kBottomBarHeight        (kDevice_Is_iPhoneX ? 83.f : 49.f)
-#define kBarHeight              (kDevice_Is_iPhoneX ? 34.f : 0.f)
+#define kBottomBarHeight        (kDevice_Is_iPhone_X ? 83.f : 49.f)
+#define kBarHeight              (kDevice_Is_iPhone_X ? 34.f : 0.f)
 
 #define SizeScale ((kScreenWidth > 320.00) ? kScreenWidth/375.00 : 1)
 
@@ -37,7 +37,15 @@
 #define isSimulator NSNotFound != [[[UIDevice currentDevice] model] rangeOfString:@"Simulator"].location
 #define isIphone UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone
 #define isIpad UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+
+//机型
 #define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kDevice_Is_iPhoneXr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kDevice_Is_iPhoneXs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kDevice_Is_iPhone_X ((kDevice_Is_iPhoneX || kDevice_Is_iPhoneXr || kDevice_Is_iPhoneXs_Max) ? YES : NO)
 
 //系统版本判断
 #define IOS9 [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0
