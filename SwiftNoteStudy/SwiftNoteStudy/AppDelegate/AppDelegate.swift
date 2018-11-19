@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FHHFPSIndicator().show()
         #endif
         gotoMain()
+        
+        let str = "123456"
+        let md5 = str.md5()
+        print(md5)
                 
         return true
     }

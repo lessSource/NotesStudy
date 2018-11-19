@@ -1,4 +1,4 @@
-module RxCocoa [system] {
+module RxCocoa {
   umbrella header "RxCocoa-umbrella.h"
 
   export *
