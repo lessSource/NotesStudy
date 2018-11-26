@@ -1,0 +1,6 @@
+module EZSwiftExtensions {
+  umbrella header "EZSwiftExtensions-umbrella.h"
+
+  export *
+  module * { export * }
+}

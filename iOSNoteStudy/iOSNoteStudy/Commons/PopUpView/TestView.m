@@ -12,7 +12,6 @@
 @implementation TestView
 
 - (void)willShowView {
-//    [super willShowView];
     NSLog(@"willShowView");
 }
 

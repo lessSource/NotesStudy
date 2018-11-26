@@ -76,7 +76,6 @@ static PopUpViewObjeect *popUpViewObject;
     }
 }
 
-
 - (void)cancalContentView:(ContentView *)contentView {
     [self _cancelAnimation:PopUpViewDirectionTypeNone];
 }
@@ -94,7 +93,10 @@ static PopUpViewObjeect *popUpViewObject;
     }
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.transform = CGAffineTransformMakeTranslation(CGFLOAT_MIN, CGFLOAT_MIN);
+    } completion:^(BOOL finished) {
+        [self.contentView didShwoView];
     }];
+
 }
 
 - (void)_cancelAnimation:(PopUpViewDirectionType)directionType {
@@ -135,6 +137,7 @@ static PopUpViewObjeect *popUpViewObject;
     }else {
         [self cancalContentView:_contentView direction:self.directionType];
     }
+    [self.contentView endEditing:YES];
 }
 
 //#pragma mark - UIPanGestureRecognizer(拖动)
@@ -165,6 +168,8 @@ static PopUpViewObjeect *popUpViewObject;
 @implementation ContentView
 
 - (void)willShowView { }
+
+- (void)didShwoView { }
 
 - (void)willCancelView { }
 

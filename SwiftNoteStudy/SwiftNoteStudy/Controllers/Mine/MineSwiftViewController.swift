@@ -16,7 +16,7 @@ class MineSwiftViewController: BaseSwiftViewController {
 
         // Do any additional setup after loading the view.‘
         
-        
+        /*
         
         //Observable
         //Observable<Element>是一个观察者模式中被观察的对象，相当于一个事件序列，会向订阅者发送新产生的事件信息
@@ -492,6 +492,7 @@ class MineSwiftViewController: BaseSwiftViewController {
 //                print("延迟5s走的 \($0)")
 //            }
 //        }
+ */
         
     }
 

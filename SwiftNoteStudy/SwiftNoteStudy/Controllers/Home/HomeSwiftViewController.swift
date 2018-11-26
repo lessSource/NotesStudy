@@ -30,93 +30,77 @@ extension String {
 }
 
 
-class HomeSwiftViewController: BaseSwiftViewController, HomePageMenuDataSource, HomePageMenuDelegate {
+class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate, ShowImageProtocol, UIViewControllerTransitioningDelegate {
+    
 
     var menuView: HomePageMenuView!
-    
+    var mediaView: SelectMediaView!
+
+    private var delegate: ModelAnimationDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//
+//        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
+//        menuView.isAdaptiveHeight = true
+//        menuView.column = 5
+//
+////        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
+//        //        menuView.itemSizeHeight = 100
+//        //        menuView.interitemSpacing = 10
+//        //        menuView.lineSpacing = 10
+//        //        menuView.
+//
+//        menuView.menuDataSource = self
+//        menuView.menuDelegate = self
+//        view.addSubview(menuView)
         
-        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-        menuView.isAdaptiveHeight = true
-        menuView.column = 2
-    
-//        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
-        //        menuView.itemSizeHeight = 100
-        //        menuView.interitemSpacing = 10
-        //        menuView.lineSpacing = 10
-        //        menuView.
-        
-        menuView.menuDataSource = self
-        menuView.menuDelegate = self
-        view.addSubview(menuView)
-        
-//        let array = getAllFilePath("‎⁨Desktop/svn/BlackFish")
-//        print(array)
-        let manager = FileManager.default
-        let urlForDocument = manager.urls(for: .desktopDirectory, in: .userDomainMask)
-        let url = urlForDocument[0]
-        craeteFile(name: "test.txt", fileBaseUrl: url)
+        mediaView = SelectMediaView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
+//        mediaView.isEditor = false
+        mediaView.isAdaptiveHeight = true
+        mediaView.mediaDelegate = self
+        mediaView.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15)
+        mediaView.interitemSpacing = 5
+        mediaView.lineSpace = 5
+        view.addSubview(mediaView)
+
     }
     
-    func craeteFile(name: String, fileBaseUrl: URL) {
-        let manager = FileManager.default
-        let file = fileBaseUrl.appendingPathComponent(name)
-        print("文件：\(file)")
-        let exist = manager.fileExists(atPath: file.path)
-        if !exist {
-            // 在文件中随便写入一些内容
-            let data = Data(base64Encoded: "adadswewew", options: .ignoreUnknownCharacters)
-            let createSuccess = manager.createFile(atPath: file.path, contents: data, attributes: nil)
-            print("文件创建结果：\(createSuccess)")
-        }
+    func mediaViewImage(_ mediaView: SelectMediaView) -> [String] {
+        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"]
     }
     
-    func menuViewName(_ menuView: HomePageMenuView) -> [String] {
-        return ["菜单1","菜单2","菜单3","菜单4","菜单5","菜单2","菜单3","菜单4","菜单5"]
+    func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int) {
+//        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: item)
+        let cell = mediaView.cellForItem(at: IndexPath(item: item, section: 0)) as! SelectMediaCollectionViewCell
+        delegate = ModelAnimationDelegate(originalView: cell.imageView)
+        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: item, delegate: delegate!)
     }
     
-    func menuViewImage(_ menuView: HomePageMenuView) -> [String] {
-        return ["菜单1","菜单2","菜单3","菜单4","菜单5","菜单2","菜单3","菜单4","菜单5"]
-    }
+//    func menuViewName(_ menuView: HomePageMenuView) -> [String] {
+//        return ["菜单1","菜单2","菜单3","菜单4","菜单5","菜单2","菜单3","菜单4","菜单5"]
+//    }
+//
+//    func menuViewImage(_ menuView: HomePageMenuView) -> [String] {
+//        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","","hp_pc_bacao","hp_pc_bacao"]
+//    }
+//
+//    func menuView(_ menuView: HomePageMenuView, didSelectItemAt indexPath: IndexPath) {
+//        print("\(indexPath.item)")
+////        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: 0)
+////        showImages(["hp_pc_bacao","hp_pc_bacao"], currentIndex: 0, delegate: ModelAnimationDelegate(originalView: <#T##UIImageView#>))
+//
+//    }
     
-    func menuView(_ menuView: HomePageMenuView, didSelectItemAt indexPath: IndexPath) {
-        print("\(indexPath.item)")
-        
-    }
-    
-    func menuView(_ menuView: HomePageMenuView, collectionCell: UICollectionViewCell, ItemAt indexPath: IndexPath) {
-        let cell = collectionCell as! HomePageMenuCell
-        print("\(indexPath.item)")
-        print(cell)
-    }
-    
-    func getAllFilePath(_ dirPath: String) -> [String]? {
-        var filePaths = [String]()
-        
-        do {
-            let array = try FileManager.default.contentsOfDirectory(atPath: dirPath)
-            
-            for fileName in array {
-                var isDir: ObjCBool = true
-                
-                let fullPath = "\(dirPath)/\(fileName)"
-                
-                if FileManager.default.fileExists(atPath: fullPath, isDirectory: &isDir) {
-                    if !isDir.boolValue {
-                        filePaths.append(fullPath)
-                    }
-                }
-            }
-            
-        } catch let error as NSError {
-            print("get file path error: \(error)")
-        }
-        
-        return filePaths;
-    }
-    
+//    func menuView(_ menuView: HomePageMenuView, collectionCell: UICollectionViewCell, ItemAt indexPath: IndexPath) {
+//        let cell = collectionCell as! HomePageMenuCell
+//        delegate = ModelAnimationDelegate.reset(delegate, imageView: cell.iconImage)
+//
+//        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: 0, delegate: delegate!)
+//        print(cell)
+//    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

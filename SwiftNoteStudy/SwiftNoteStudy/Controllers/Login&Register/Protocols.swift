@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Enum
+// MARK:- Enum
 enum LoginResult {
     case invalidatedUserName
     case invalidatedPassword
@@ -16,7 +16,7 @@ enum LoginResult {
     case failure
 }
 
-// MARK: - Protocol
+// MARK:- Protocol
 protocol ValidatedModelType {
     func validatedUserName(_ username: String) -> String
     func validatedPassword(_ password: String) -> String

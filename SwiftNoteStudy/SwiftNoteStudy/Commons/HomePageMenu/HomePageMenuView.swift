@@ -3,16 +3,21 @@
 //  SwiftNoteStudy
 //
 //  Created by less on 2018/11/2.
-//  Copyright © 2018 lj. All rights reserved.
+//  Copyright © 2018 less. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
 protocol HomePageMenuDelegate: NSObjectProtocol {
+    /** item点击 */
     func menuView(_ menuView: HomePageMenuView, didSelectItemAt indexPath: IndexPath)
-    
-    func menuView(_ menuView: HomePageMenuView, collectionCell: UICollectionViewCell,ItemAt indexPath: IndexPath)
+    /** item点击 */
+    func menuView(_ menuView: HomePageMenuView, collectionCell: UICollectionViewCell,didSelectItemAt indexPath: IndexPath)
+    /** View高度 */
+    func menuViewHeight(_ menuView: HomePageMenuView, viewHeight: CGFloat)
+    /** 3D touch */
+    func menuView(_ menuView: HomePageMenuView, previewingContext: UIViewControllerPreviewing, touchItemAt indexPath: IndexPath) -> UIViewController?
 }
 
 protocol HomePageMenuDataSource: NSObjectProtocol {
@@ -25,14 +30,16 @@ protocol HomePageMenuDataSource: NSObjectProtocol {
     func menuViewNumber(_ menuView: HomePageMenuView) -> [Int]
     /** cell大小 */
     func menuViewSize(_ menuView: HomePageMenuView, forItemAt indexPath: IndexPath) -> CGSize
-    /** View高度 */
-    func menuViewHeight(_ menuView: HomePageMenuView, viewHeight: CGFloat)
-    
+
 }
 
 extension HomePageMenuDelegate {
     func menuView(_ menuView: HomePageMenuView, didSelectItemAt indexPath: IndexPath) {}
-    func menuView(_ menuView: HomePageMenuView, collectionCell: UICollectionViewCell,ItemAt indexPath: IndexPath) {}
+    func menuView(_ menuView: HomePageMenuView, collectionCell: UICollectionViewCell,didSelectItemAt indexPath: IndexPath) {}
+    func menuViewHeight(_ menuView: HomePageMenuView, viewHeight: CGFloat) {}
+    func menuView(_ menuView: HomePageMenuView, previewingContext: UIViewControllerPreviewing, touchItemAt indexPath: IndexPath) -> UIViewController? {
+        return nil
+    }
 }
 
 extension HomePageMenuDataSource {
@@ -44,7 +51,6 @@ extension HomePageMenuDataSource {
         return CGSize.zero
     }
     
-    func menuViewHeight(_ menuView: HomePageMenuView, viewHeight: CGFloat) {}
 }
 
 
@@ -58,6 +64,9 @@ class HomePageMenuView: UICollectionView {
     
     /** 是否自适应高度 */
     public var isAdaptiveHeight: Bool = false
+    
+    /** 是否支持3D touch */
+    public var is3DTouch: Bool = false
     
     /** 横向间隔 */
     public var interitemSpacing: CGFloat = 1 {
@@ -102,10 +111,10 @@ class HomePageMenuView: UICollectionView {
         backgroundColor = UIColor.clear
         flowLayout = layout as? UICollectionViewFlowLayout
         collectionViewLayout = layout
-        setUpUI()
+        initView()
     }
     
-    fileprivate func setUpUI() {
+    fileprivate func initView() {
         self.delegate = self
         self.dataSource = self
         self.alwaysBounceVertical = false
@@ -128,8 +137,8 @@ class HomePageMenuView: UICollectionView {
             nameArray = menuData.menuViewName(self)
             iconArray = menuData.menuViewImage(self)
             numberArray = menuData.menuViewNumber(self)
-            menuData.menuViewHeight(self, viewHeight: flowLayout.collectionViewContentSize.height)
         }
+        menuDelegate?.menuViewHeight(self, viewHeight: flowLayout.collectionViewContentSize.height)
         if nameArray.count == 0 { frame.size.height = 0 }
         assert(nameArray.count == iconArray.count, "The name is not equal to the number of images")
         if isAdaptiveHeight {
@@ -155,13 +164,12 @@ class HomePageMenuView: UICollectionView {
     }
     
     fileprivate func registerForPreviewingView(_ cell: HomePageMenuCell, cellForItemAt indexPath: IndexPath) {
-        if traitCollection.forceTouchCapability == .available {
+        if traitCollection.forceTouchCapability == .available && is3DTouch {
             // 支持3D Touch
             // 注册Peek & Pop功能
             self.viewController()?.registerForPreviewing(with: self, sourceView: cell)
         }
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -192,24 +200,23 @@ extension HomePageMenuView: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         menuDelegate?.menuView(self, didSelectItemAt: indexPath)
         let cell = collectionView.cellForItem(at: indexPath)
-        menuDelegate?.menuView(self, collectionCell: cell!, ItemAt: indexPath)
+        menuDelegate?.menuView(self, collectionCell: cell!, didSelectItemAt: indexPath)
     }
     
 }
 
 extension HomePageMenuView: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let index = self.indexPath(for: previewingContext.sourceView as! UICollectionViewCell)
-        print(index ?? 0)
-        let mineSwiftVC = MineSwiftViewController()
-        return mineSwiftVC
+        let indexPath = self.indexPath(for: previewingContext.sourceView as! UICollectionViewCell)
+        if let index = indexPath {
+            return menuDelegate?.menuView(self, previewingContext: previewingContext, touchItemAt: index)
+        }
+        return nil
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         self.viewController()?.show(viewControllerToCommit, sender: self)
     }
-    
-    
 }
 
 struct MenuCellStruct {

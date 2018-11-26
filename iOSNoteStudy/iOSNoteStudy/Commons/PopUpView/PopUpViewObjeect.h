@@ -43,6 +43,8 @@ typedef NS_ENUM(NSInteger, PopUpViewDirectionType) {
 
 - (void)willShowView;
 
+- (void)didShwoView;
+
 - (void)willCancelView;
 
 - (void)didCancelView;

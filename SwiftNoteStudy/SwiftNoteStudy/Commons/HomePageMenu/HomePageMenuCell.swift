@@ -40,17 +40,18 @@ class HomePageMenuCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUpUI()
+        initView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setUpUI() {
+    fileprivate func initView() {
         iconImage = UIImageView()
         iconImage.backgroundColor = UIColor.red
         iconImage.contentMode = .scaleAspectFill
+        iconImage.clipsToBounds = true
         contentView.addSubview(iconImage)
         
         nameLabel = UILabel()

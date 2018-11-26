@@ -90,7 +90,6 @@ static NSString *const selectMediaCell = @"SelectMediaCell";
     }
     [self _collectionView:cell cellForItemAtIndexPath:indexPath];
     [self _registerForPreviewingView:cell cellForItemAtIndexPath:indexPath];
-    
     return cell;
 }
 
@@ -159,7 +158,7 @@ static NSString *const selectMediaCell = @"SelectMediaCell";
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan:
-            if (!indexPath) {
+            if (!indexPath || indexPath.item == self.imageArray.count - 1) {
                 break;
             }
             [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexPath];

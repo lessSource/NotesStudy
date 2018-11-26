@@ -25,21 +25,21 @@
     self.title = @"商品详情";
     self.dataArray = @[@"1",@"2",@"3",@"4",@"5"];
     
-//    self.mediaView = [[SelectMediaView alloc]initWithFrame:CGRectMake(0, 100, kScreenWidth, 120)];
-//    self.mediaView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//    self.mediaView.backgroundColor = [UIColor redColor];
-//    self.mediaView.delegate = self;
-//    [self.view addSubview:self.mediaView];
+    self.mediaView = [[SelectMediaView alloc]initWithFrame:CGRectMake(0, 100, kScreenWidth, 120)];
+    self.mediaView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.mediaView.backgroundColor = [UIColor redColor];
+    self.mediaView.delegate = self;
+    [self.view addSubview:self.mediaView];
 //
-//    [self.mediaView reloadDataSelectMediaView];
+    [self.mediaView reloadDataSelectMediaView];
     
-    self.optionView = [[OptionsView alloc]initWithFrame:CGRectMake(0, 100, kScreenWidth, 120)];
-    self.optionView.delegate = self;
-    self.optionView.horizontalCount = 3;
-    self.optionView.isWidthFixed = YES;
+//    self.optionView = [[OptionsView alloc]initWithFrame:CGRectMake(0, 100, kScreenWidth, 120)];
+//    self.optionView.delegate = self;
+//    self.optionView.horizontalCount = 3;
+//    self.optionView.isWidthFixed = YES;
 //    self.optionView.isMultiSelect = YES;
 //    self.optionView.maxSelect = 3;
-    [self.view addSubview:self.optionView];
+//    [self.view addSubview:self.optionView];
 }
 
 - (NSArray *)optionsViewData:(OptionsView *)optionsView {

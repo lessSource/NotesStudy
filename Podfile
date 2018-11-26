@@ -33,5 +33,6 @@ target 'SwiftNoteStudy' do
    pod 'RxSwift'
    pod 'Then'
    pod 'Kingfisher'
+   pod 'EZSwiftExtensions'
 
 end
