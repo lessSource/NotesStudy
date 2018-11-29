@@ -88,11 +88,19 @@ extension ShowImageViewController {
     fileprivate func imageClick(_ cell: ShowImageCollectionViewCell, cellForItemAt indexPath: IndexPath, type: ShowImageCollectionViewCell.ActionEnum) {
         switch type {
         case .tap: self.dismiss(animated: true, completion: nil)
-        case .long: break
+        case .long: alertView()
         }
     }
     
-//    fileprivate func alert
+    fileprivate func alertView() {
+        let alertVC = UIAlertController(title: "提示", message: nil, preferredStyle: .actionSheet)
+        let saveAction = UIAlertAction(title: "保存", style: .default, handler: nil)
+        let cancleAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alertVC.addAction(saveAction)
+        alertVC.addAction(cancleAction)
+        self.navigationController?.presentViewController(alertVC, completion: nil)
+        
+    }
     
     
 }

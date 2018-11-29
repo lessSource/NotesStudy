@@ -26,6 +26,9 @@ extension ShowImageProtocol where Self: UIViewController {
 extension ShowImageProtocol where Self: UIViewController, Self: UIViewControllerTransitioningDelegate {
     // 带动画的显示大图 --- 必须遵循UIViewControllerTransitioningDelegate
     func showImages(_ imageArray: [String], currentIndex: Int, delegate: ModelAnimationDelegate) {
+        guard imageArray.count - 1 >= currentIndex else {
+            return
+        }
         let showImageVC = ShowImageViewController(imageArray: imageArray, currentIndex: currentIndex)
         showImageVC.transitioningDelegate = delegate
         showImageVC.modalPresentationStyle = .custom
