@@ -97,8 +97,8 @@ API_AVAILABLE(ios(10.0))
 //        NSString *str = [sortintArr componentsJoinedByString:@","];
 //        [LSSettingUtil writeFileData:str];
 //    }
-    
-    
+
+
 //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
 //        NSFileManager *file = [NSFileManager defaultManager];
 //        NSError *error;
@@ -132,8 +132,8 @@ API_AVAILABLE(ios(10.0))
 //            [dataArray addObject:array];
 //        }
 //    });
-    
-  
+//
+
     
 
 }

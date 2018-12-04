@@ -6,8 +6,6 @@
 //  Copyright © 2018年 lj. All rights reserved.
 //
 
-// Bundle identifier 应用唯一标识
-
 
 
 #import "AppDelegate.h"

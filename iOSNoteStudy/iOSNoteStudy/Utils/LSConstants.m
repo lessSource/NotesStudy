@@ -10,9 +10,9 @@
 
 NSString *const PicturePath = @"/Users/lj/Desktop/svn/NotesStudy/Picture/";
 
-NSString *const JSONPath = @"/Users/lj/Desktop/Document/Josn/";
+NSString *const JSONPath = @"/Users/less/Desktop/chinese-poetry-master/json/";
 
-NSString *const PoetryPath = @"/Users/lj/Desktop/Document/Sqlite/Poetry/";
+NSString *const PoetryPath = @"/Users/less/Desktop/Document/Sqlite/Poetry/";
 
 NSString *const LoginButton = @"Login";
 

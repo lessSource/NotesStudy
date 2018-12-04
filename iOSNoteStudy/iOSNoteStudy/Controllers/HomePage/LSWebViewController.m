@@ -21,12 +21,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"网页";
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
-    NSURL *url = [NSURL fileURLWithPath:path];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
+    NSURL *url = [NSURL URLWithString:self.urlStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
     self.webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kNavbarAndStatusBar) configuration:configuration];
+    self.webView.backgroundColor = [UIColor mainBackgroundColor];
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
     [self.webView loadRequest:request];
@@ -71,7 +72,7 @@
 //js调用OC方法(多参数)
 - (void)dome5 {
     //创建JSContext对象
-    NSString *jsCode = [NSString stringWithFormat:@"alert(\"要输出的内容\"); "];
+    NSString *jsCode = [NSString stringWithFormat:@"test3(\"我是参数a\",\"我是参数b\")"];
 
     [self.webView evaluateJavaScript:jsCode completionHandler:^(id _Nullable count, NSError * _Nullable error) {
         NSLog(@"1123");

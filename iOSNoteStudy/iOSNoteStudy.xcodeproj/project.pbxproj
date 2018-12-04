@@ -111,6 +111,7 @@
 		2AFF301C210875640095284B /* PersonalContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301B210875640095284B /* PersonalContentViewController.m */; };
 		2AFF301F21088F950095284B /* PersonalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301E21088F950095284B /* PersonalTableView.m */; };
 		664DD1A0DF8E2716C2488041 /* libPods-iOSNoteStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB6F7063AEB8A13CD2207B5 /* libPods-iOSNoteStudy.a */; };
+		CAECD4BF21B66F6600EEDB09 /* HorizontalMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -335,6 +336,8 @@
 		2AFF301E21088F950095284B /* PersonalTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalTableView.m; sourceTree = "<group>"; };
 		5DB6F7063AEB8A13CD2207B5 /* libPods-iOSNoteStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSNoteStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		821C6CE96C0753A103045736 /* Pods-iOSNoteStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNoteStudy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy.release.xcconfig"; sourceTree = "<group>"; };
+		CAECD4BD21B66F6600EEDB09 /* HorizontalMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuView.h; sourceTree = "<group>"; };
+		CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuView.m; sourceTree = "<group>"; };
 		EB622AB2DEE5AE4F90DD509C /* Pods-iOSNoteStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNoteStudy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1003,6 +1006,7 @@
 		2AFA0BBD2089B50C009A7B5A /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CAECD4BC21B66F4300EEDB09 /* HorizontalMenuView */,
 				2A98A2B2212E9CA400279E93 /* Problem */,
 				2AFF301621086EDA0095284B /* PublicPersonal */,
 				2AC2051420F34EC600AEC2AC /* ArticlePublished */,
@@ -1109,6 +1113,15 @@
 				821C6CE96C0753A103045736 /* Pods-iOSNoteStudy.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CAECD4BC21B66F4300EEDB09 /* HorizontalMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				CAECD4BD21B66F6600EEDB09 /* HorizontalMenuView.h */,
+				CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */,
+			);
+			path = HorizontalMenuView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1329,6 +1342,7 @@
 				2A695BF420BE856300C00583 /* ShoppingCartHeaderView.m in Sources */,
 				2AF8D95420F4909B00AB03EC /* NSTextAttachment+LMText.m in Sources */,
 				2A5EC67220C5181600C4FD12 /* BHStarsView.m in Sources */,
+				CAECD4BF21B66F6600EEDB09 /* HorizontalMenuView.m in Sources */,
 				2AFA0BE02089B50C009A7B5A /* HomePageMenuCell.m in Sources */,
 				2A1888E82086494F00524FA1 /* HomePageViewController.m in Sources */,
 				2A011D5520E2921500F67B81 /* LBrowserImageView.m in Sources */,

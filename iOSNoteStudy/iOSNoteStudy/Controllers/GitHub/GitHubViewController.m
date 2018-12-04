@@ -38,6 +38,7 @@ static NSString *const GitHubCell = @"GitHubCell";
     self.tabelView = [[BaseTableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kNavbarAndStatusBar - kBottomBarHeight) style:UITableViewStylePlain];
     self.tabelView.delegate = self;
     self.tabelView.dataSource = self;
+    self.tabelView.isRefresh = YES;
     self.tabelView.estimatedRowHeight = 44;
     self.tabelView.tableFooterView = [[UIView alloc]init];
     [self.view addSubview:self.tabelView];
@@ -88,7 +89,6 @@ static NSString *const GitHubCell = @"GitHubCell";
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self requestGetGitHubSearch:searchBar.text];
     [searchBar resignFirstResponder];
-    searchBar.text = @"";
 }
 
 #pragma mark - request

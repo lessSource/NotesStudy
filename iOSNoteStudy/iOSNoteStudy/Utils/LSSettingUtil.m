@@ -231,7 +231,7 @@
 
 //打印数据
 + (void)writeFileData:(NSString *)data {
-    NSString *directoryPath= @"/Users/lj/Desktop/";
+    NSString *directoryPath= @"/Users/less/Desktop/";
     NSString *filePath= [directoryPath stringByAppendingPathComponent:@"text.txt"];
     NSString *fileContent = data;
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
