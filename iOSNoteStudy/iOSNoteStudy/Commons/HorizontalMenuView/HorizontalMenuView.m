@@ -59,13 +59,17 @@
 
 #pragma mark - initView
 - (void)initView {
+    if (!self.delegate) { return; }
     self.frameWidth = self.frame.size.width;
     self.titleWidth = 0;
     
     NSArray *nameArray = [self.delegate horizontalMenuArray:self];
-    NSArray<NSArray *> *imageArray = [self.delegate horizontalMenuImageArray:self];
+    NSArray<NSArray *> *imageArray;
+    if ([self.delegate respondsToSelector:@selector(horizontalMenuImageArray:)]) {
+        imageArray = [self.delegate horizontalMenuImageArray:self];
+    }    
     NSAssert(nameArray.count != 0, @"数组为空");
-    NSAssert(imageArray.count != 0 && imageArray.count == nameArray.count, @"图标和名字数量不等");
+//    NSAssert(imageArray.count != 0 && imageArray.count == nameArray.count, @"图标和名字数量不等");
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.menuWidthArray removeAllObjects];
     NSInteger imageCount = imageArray.count;
@@ -89,7 +93,10 @@
     }
     CGFloat buttonX = 0.0;
     for (int i = 0; i < nameArray.count; i ++) {
+        NSString *nameString = nameArray[i];
+        
         MenuButton *button = [[MenuButton alloc]initSoreType:MenuSoreTypeNone];
+        button.isMoreClick = NO;
         button.tag = BUTTONTAG + i;
         if (i == 0) {
             button.selected = YES;
@@ -99,32 +106,42 @@
         }
         button.frame = CGRectMake(buttonX, 0, [self.menuWidthArray[i] floatValue] + self.SPACE, CGRectGetHeight(self.scrollView.bounds));
         // 设置按钮的字体大小、颜色、状态、图片
-        NSMutableAttributedString *norString = [[NSMutableAttributedString alloc]initWithString:nameArray[i]];
-        [norString addAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:self.uncheckSize], NSForegroundColorAttributeName: self.uncheckColor} range:NSMakeRange(0, [norString length])];
+        NSMutableAttributedString *norString = [[NSMutableAttributedString alloc]initWithString:nameString];
+        [norString addAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:self.uncheckSize], NSForegroundColorAttributeName: self.uncheckColor} range:NSMakeRange(0, nameString.length)];
         if (imageCount > 0 && imageArray[i].count == 2) {
-            NSTextAttachment *norTextAtt = [[NSTextAttachment alloc]init];
-            norTextAtt.image = [UIImage imageNamed:imageArray[i][0]];
-            norTextAtt.bounds = CGRectMake(0, 0, 12, 14);
-            NSAttributedString *imageStr = [NSAttributedString attributedStringWithAttachment:norTextAtt];
-            [norString appendAttributedString:imageStr];
+            button.isMoreClick = YES;
+            [button setImage:[UIImage imageNamed:imageArray[i][1]] forState:UIControlStateNormal];
         }
         [button setAttributedTitle:norString forState:UIControlStateNormal];
         
         // 点击后
-        NSMutableAttributedString *selString = [[NSMutableAttributedString alloc]initWithString:nameArray[i]];
-        [selString addAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:self.uncheckSize], NSForegroundColorAttributeName: self.uncheckColor} range:NSMakeRange(0, [norString length])];
-        if (imageCount > 0 && imageArray[i].count == 2) {
-            NSTextAttachment *selTextAtt = [[NSTextAttachment alloc]init];
-            selTextAtt.image = [UIImage imageNamed:imageArray[i][1]];
-            selTextAtt.bounds = CGRectMake(0, 0, 12, 14);
-            NSAttributedString *imageStr = [NSAttributedString attributedStringWithAttachment:selTextAtt];
-            [selString appendAttributedString:imageStr];
-        }
-        [button setAttributedTitle:selString forState:UIControlStateDisabled];
+        NSMutableAttributedString *selString = [[NSMutableAttributedString alloc]initWithString:nameString];
+        [selString addAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:self.selectedSize], NSForegroundColorAttributeName: self.selectedColor} range:NSMakeRange(0, [selString length])];
+        [button setAttributedTitle:selString forState:UIControlStateSelected];
+        
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:button];
     }
 }
 
+#pragma mark - Event
+- (void)buttonClick:(UIButton *)sender {
+    for (UIView *subView in self.scrollView.subviews) {
+        if ([subView isKindOfClass:[UIButton class]]) {
+            MenuButton *menuButton = (MenuButton *)subView;
+            if (menuButton.tag == sender.tag) {
+                
+            }
+            
+            if (menuButton.tag == sender.tag) {
+                [menuButton setSelected:YES];
+            }else {
+                [menuButton setSelected:NO];
+            }
+        }
+    }
+    
+}
 
 #pragma mark - Private
 // 计算Lable的宽度
@@ -167,14 +184,9 @@
 - (instancetype)initSoreType:(MenuSoreType)soreType {
     if (self = [self init]) {
         self.soreType = soreType;
-        [self initView];
     }
     return self;
 }
 
-#pragma mark - initView
-- (void)initView {
-    
-}
 
 @end

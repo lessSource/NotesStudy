@@ -43,6 +43,7 @@
 //    [self.view addSubview:self.optionView];
     
     HorizontalMenuView *menuView = [[HorizontalMenuView alloc]initWithFrame:CGRectMake(0, 300, kScreenWidth, 44)];
+    menuView.backgroundColor = [UIColor mainColor];
     menuView.delegate = self;
     [self.view addSubview:menuView];
     
@@ -50,6 +51,10 @@
 
 - (NSArray *)horizontalMenuArray:(UIView *)menuView {
     return @[@"综合",@"销量",@"价格",@"新品",@"品牌筛选"];
+}
+
+- (NSArray<NSArray *> *)horizontalMenuImageArray:(UIView *)menuView {
+    return @[@[],@[@"sortDescending",@"sortAscending"],@[@"sortDescending",@"sortAscending"],@[@"sortDescending",@"sortAscending"],@[@"sortDescending",@"sortAscending"]];
 }
 
 - (NSArray *)optionsViewData:(OptionsView *)optionsView {

@@ -58,8 +58,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MenuButton : UIButton
 
 - (instancetype)initSoreType:(MenuSoreType)soreType;
-
+/** 排序字段 */
 @property (nonatomic, assign) MenuSoreType soreType;
+/** 是否可以多次点击 */
+@property (nonatomic, assign) BOOL isMoreClick;
 
 @end
 
