@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 - (void)menuView:(UIView *)menuView didSelectButton:(NSInteger)buttonSerial sort:(MenuSoreType)sortType;
 
+/** 图标（必须包含默认、未选中、选中） */
 - (NSArray <NSArray *>*)horizontalMenuImageArray:(UIView *)menuView;
 
 @end
@@ -49,8 +50,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL intervalLineHidden;
 /** 间隔线高度 */
 @property (nonatomic, assign) CGFloat intervalLineHeight;
-
+//@property
 @property(nonatomic, assign)id <HorizontalMenuDelegate>delegate;
+
+- (void)setSelectButton:(NSInteger)item;
 
 
 @end
@@ -62,6 +65,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) MenuSoreType soreType;
 /** 是否可以多次点击 */
 @property (nonatomic, assign) BOOL isMoreClick;
+
+- (void)lefttTtleImageHorizontalAlignmentWithSpace:(CGFloat)space;
 
 @end
 

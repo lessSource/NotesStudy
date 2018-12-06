@@ -54,8 +54,13 @@
 }
 
 - (NSArray<NSArray *> *)horizontalMenuImageArray:(UIView *)menuView {
-    return @[@[],@[@"sortDescending",@"sortAscending"],@[@"sortDescending",@"sortAscending"],@[@"sortDescending",@"sortAscending"],@[@"sortDescending",@"sortAscending"]];
+    return @[@[],@[@"sortNone",@"sortDescending",@"sortAscending"],@[@"sortNone",@"sortDescending",@"sortAscending"],@[@"sortNone",@"sortDescending",@"sortAscending"],@[@"sortNone",@"sortDescending",@"sortAscending"]];
 }
+
+- (void)menuView:(UIView *)menuView didSelectButton:(NSInteger)buttonSerial sort:(MenuSoreType)sortType {
+    NSLog(@"ddd");
+}
+
 
 - (NSArray *)optionsViewData:(OptionsView *)optionsView {
     return @[@"大海",@"天地",@"中的",@"上下",@"左右",@"前后",@"得你"];

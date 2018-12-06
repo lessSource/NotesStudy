@@ -14,8 +14,10 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) NSMutableArray *menuWidthArray;
 @property (nonatomic, assign) CGFloat frameWidth;
-@property (nonatomic, assign) CGFloat titleWidth;
-@property (nonatomic, assign) CGFloat SPACE;
+@property (nonatomic, assign) CGFloat titleWidth;   // 所有按钮的宽度
+@property (nonatomic, assign) CGFloat SPACE;        // 按钮直接间隔
+@property (nonatomic, assign) NSInteger lastSelect; // 上次点击
+@property (nonatomic, strong) NSArray<NSArray *> *iconArray;  // 图标
 
 @end
 
@@ -64,20 +66,19 @@
     self.titleWidth = 0;
     
     NSArray *nameArray = [self.delegate horizontalMenuArray:self];
-    NSArray<NSArray *> *imageArray;
     if ([self.delegate respondsToSelector:@selector(horizontalMenuImageArray:)]) {
-        imageArray = [self.delegate horizontalMenuImageArray:self];
+        self.iconArray = [self.delegate horizontalMenuImageArray:self];
     }    
     NSAssert(nameArray.count != 0, @"数组为空");
 //    NSAssert(imageArray.count != 0 && imageArray.count == nameArray.count, @"图标和名字数量不等");
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.menuWidthArray removeAllObjects];
-    NSInteger imageCount = imageArray.count;
+    NSInteger imageCount = self.iconArray.count;
     
     /** 计算文字宽度 */
     for (int i = 0; i < nameArray.count; i ++) {
         CGFloat width = [self widthForText:nameArray[i] strSize:self.selectedSize];
-        if (imageCount > 0 && imageArray[i].count == 2) {
+        if (imageCount > 0 && self.iconArray[i].count == 3) {
             width += 20;
         }
         self.titleWidth += width;
@@ -94,12 +95,12 @@
     CGFloat buttonX = 0.0;
     for (int i = 0; i < nameArray.count; i ++) {
         NSString *nameString = nameArray[i];
-        
         MenuButton *button = [[MenuButton alloc]initSoreType:MenuSoreTypeNone];
         button.isMoreClick = NO;
         button.tag = BUTTONTAG + i;
         if (i == 0) {
             button.selected = YES;
+            self.lastSelect = button.tag;
         }else {
             buttonX += ([self.menuWidthArray[i - 1] floatValue] + self.SPACE);
             button.selected = NO;
@@ -108,10 +109,6 @@
         // 设置按钮的字体大小、颜色、状态、图片
         NSMutableAttributedString *norString = [[NSMutableAttributedString alloc]initWithString:nameString];
         [norString addAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:self.uncheckSize], NSForegroundColorAttributeName: self.uncheckColor} range:NSMakeRange(0, nameString.length)];
-        if (imageCount > 0 && imageArray[i].count == 2) {
-            button.isMoreClick = YES;
-            [button setImage:[UIImage imageNamed:imageArray[i][1]] forState:UIControlStateNormal];
-        }
         [button setAttributedTitle:norString forState:UIControlStateNormal];
         
         // 点击后
@@ -119,8 +116,17 @@
         [selString addAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:self.selectedSize], NSForegroundColorAttributeName: self.selectedColor} range:NSMakeRange(0, [selString length])];
         [button setAttributedTitle:selString forState:UIControlStateSelected];
         
+        if (imageCount > 0 && self.iconArray[i].count == 3) {
+            button.isMoreClick = YES;
+            [button setImage:[UIImage imageNamed:self.iconArray[i][0]] forState:UIControlStateNormal];
+            [button lefttTtleImageHorizontalAlignmentWithSpace:5];
+        }
+        
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:button];
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(menuView:didSelectButton:sort:)]) {
+        [self.delegate menuView:self didSelectButton:0 sort:MenuSoreTypeNone];
     }
 }
 
@@ -130,16 +136,41 @@
         if ([subView isKindOfClass:[UIButton class]]) {
             MenuButton *menuButton = (MenuButton *)subView;
             if (menuButton.tag == sender.tag) {
-                
-            }
-            
-            if (menuButton.tag == sender.tag) {
                 [menuButton setSelected:YES];
             }else {
+                menuButton.soreType = MenuSoreTypeNone;
+                if (menuButton.isMoreClick) {
+                    [menuButton setImage:[UIImage imageNamed:self.iconArray[menuButton.tag - BUTTONTAG][0]] forState:UIControlStateNormal];
+                }
                 [menuButton setSelected:NO];
             }
         }
     }
+    MenuButton *menuButton = (MenuButton *)sender;
+    NSInteger row = menuButton.tag - BUTTONTAG;
+    if (menuButton.isMoreClick) {
+        switch (menuButton.soreType) {
+            case MenuSoreTypeNone:
+            case MenuSoreTypeAscending:
+                menuButton.soreType = MenuSoreTypeDescending;
+                [menuButton setImage:[UIImage imageNamed:self.iconArray[row][1]] forState:UIControlStateNormal];
+                break;
+            default:
+                menuButton.soreType = MenuSoreTypeAscending;
+                [menuButton setImage:[UIImage imageNamed:self.iconArray[row][2]] forState:UIControlStateNormal];
+                break;
+        }
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(menuView:didSelectButton:sort:)]) {
+        if (!(!menuButton.isMoreClick && sender.tag == self.lastSelect)) {
+            [self.delegate menuView:self didSelectButton:row sort:menuButton.soreType];
+        }
+    }
+    self.lastSelect = sender.tag;
+}
+
+#pragma mark - Public
+- (void)setSelectButton:(NSInteger)item {
     
 }
 
@@ -187,6 +218,29 @@
     }
     return self;
 }
+
+
+- (void)lefttTtleImageHorizontalAlignmentWithSpace:(CGFloat)space {
+    [self resetEdgeInsets];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    
+    CGRect contentRect = [self contentRectForBounds:self.bounds];
+    CGSize titleSize = [self titleRectForContentRect:contentRect].size;
+    CGSize imageSize = [self imageRectForContentRect:contentRect].size;
+    
+    
+    [self setContentEdgeInsets:UIEdgeInsetsMake(0, 0, 0, space)];
+    [self setTitleEdgeInsets:UIEdgeInsetsMake(0, - imageSize.width, 0, imageSize.width)];
+    [self setImageEdgeInsets:UIEdgeInsetsMake(0, titleSize.width + space, 0, - titleSize.width - space)];
+}
+
+- (void)resetEdgeInsets {
+    [self setContentEdgeInsets:UIEdgeInsetsZero];
+    [self setImageEdgeInsets:UIEdgeInsetsZero];
+    [self setTitleEdgeInsets:UIEdgeInsetsZero];
+}
+
 
 
 @end
