@@ -23,8 +23,6 @@ static NSString *const cardCollectionViewCell = @"CardCollectionViewCell";
 @property (nonatomic, assign) CGFloat endX;
 @property (nonatomic, assign) NSInteger currentIndex;
 
-
-
 @end
 
 @implementation CardCollectionView
