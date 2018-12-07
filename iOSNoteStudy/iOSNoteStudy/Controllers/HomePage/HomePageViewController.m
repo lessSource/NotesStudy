@@ -12,16 +12,13 @@
 #import "BannerCycleView.h"
 #import "BannerViewCell.h"
 #import "HomePageMenuView.h"
-#import "MallViewController.h"
-#import "CardCollectionView.h"
-#import "CircleFriendsViewController.h"
+#import "MallViewController.h" //
+#import "CardCollectionView.h" //
+#import "CircleFriendsViewController.h" //
 #import "AnimationViewController.h"
-#import "PopUpViewController.h"
 #import "ThreadViewController.h"
-#import "ArticlePublishedViewController.h"
-#import "PublicPersonalViewController.h"
-#import "ContactDataObject.h"
 #import "InterviewViewController.h"
+#import "HardwareViewController.h"
 
 API_AVAILABLE(ios(10.0))
 @interface HomePageViewController () <BannerCycleViewDataSource,HomePageMenuDelegate,HomePageMenuDataSource,CardCollectionDelegate>
@@ -41,11 +38,12 @@ API_AVAILABLE(ios(10.0))
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.title = @"首页";
     [self loadData];
     [self initView];
-    [self viewLayout];    
+    [self viewLayout];
+    
 }
 
 #pragma mark - loadData
@@ -114,7 +112,6 @@ API_AVAILABLE(ios(10.0))
 }
 
 - (void)menuView:(HomePageMenuView *)menuView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"------%ld------",indexPath.item);
     if (indexPath.item == 0) {
         MallViewController *mallVC = [[MallViewController alloc]init];
         [self pushViewController:mallVC animated:YES];
@@ -125,30 +122,28 @@ API_AVAILABLE(ios(10.0))
         AnimationViewController *animationVC = [[AnimationViewController alloc]init];
         [self pushViewController:animationVC animated:YES];
     }else if (indexPath.item == 3) {
-        PopUpViewController *popUpVC = [[PopUpViewController alloc]init];
-        [self presentViewController:popUpVC animated:NO completion:nil];
     }else if (indexPath.item == 4) {
     }else if (indexPath.item == 5) {
-        LSWebViewController *webVC = [[LSWebViewController alloc]init];
-        [self pushViewController:webVC animated:YES];
     }else if (indexPath.item == 6) {
         ThreadViewController *threadVC = [[ThreadViewController alloc]init];
         [self pushViewController:threadVC animated:YES];
     }else if (indexPath.item == 7) {
-        PublicPersonalViewController *publicPersonalVC = [[PublicPersonalViewController alloc]init];
-        [self pushViewController:publicPersonalVC animated:YES];
+        HardwareViewController *hardwareVC = [[HardwareViewController alloc]init];
+        [self pushViewController:hardwareVC animated:YES];
     }
 }
 
 #pragma mark - CardCollectionDelegate
 - (void)cardCollectionView:(CardCollectionView *)menuView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    InterviewViewController *interViewVC = [[InterviewViewController alloc]init];
-    [self pushViewController:interViewVC animated:YES];
+    if (indexPath.item == 0) {
+        Class optionsVC = NSClassFromString(@"OptionsViewController");
+        [self pushViewController:[optionsVC new] animated:YES];
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    LSWebViewController *webVC = [[LSWebViewController alloc]init];
-    [self pushViewController:webVC animated:YES];
+//    LSWebViewController *webVC = [[LSWebViewController alloc]init];
+//    [self pushViewController:webVC animated:YES];
 }
 
 

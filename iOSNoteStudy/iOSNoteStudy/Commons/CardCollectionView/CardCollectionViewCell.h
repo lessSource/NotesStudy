@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CardCollectionViewCell : UICollectionViewCell
+@property (nonatomic, strong) UILabel *contentLabel;
+@property (nonatomic, strong) UILabel *describeLabel;
 
 @end

@@ -22,6 +22,8 @@ static NSString *const cardCollectionViewCell = @"CardCollectionViewCell";
 @property (nonatomic, assign) CGFloat startX;
 @property (nonatomic, assign) CGFloat endX;
 @property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSArray *describeArray;
 
 @end
 
@@ -42,6 +44,9 @@ static NSString *const cardCollectionViewCell = @"CardCollectionViewCell";
 }
 
 - (void)setUpUI {
+    self.dataArray = @[@"临",@"兵",@"斗",@"者",@"皆",@"阵",@"列",@"前",@"行"];
+    self.describeArray = @[@"options按钮选择",@"兵",@"斗",@"者",@"皆",@"阵",@"列",@"前",@"行"];
+    
     CardCollectionViewLayout *flowLayout = [[CardCollectionViewLayout alloc]init];
     flowLayout.scrollDirection  = UICollectionViewScrollDirectionHorizontal;
     flowLayout.minimumLineSpacing = 10;
@@ -63,14 +68,16 @@ static NSString *const cardCollectionViewCell = @"CardCollectionViewCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cardCollectionViewCell forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[CardCollectionViewCell alloc]init];
-    }    
+    }
+    cell.contentLabel.text = self.dataArray[indexPath.item];
+    cell.describeLabel.text = self.describeArray[indexPath.item];
     if ([self respondsToSelector:@selector(traitCollection)]) {
         if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)]) {
             if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {

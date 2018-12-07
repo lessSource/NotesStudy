@@ -35,6 +35,11 @@ static NSString *shoppingCartCell = @"ShoppingCartCell";
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kNavbarAndStatusBar - kBarHeight)];
     [self.view addSubview:self.scrollView];
     
+    [self initView];
+}
+
+#pragma mark - initView
+- (void)initView {
     self.tableView = [[BaseTableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kNavbarAndStatusBar - kBottomBarHeight) style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -47,6 +52,7 @@ static NSString *shoppingCartCell = @"ShoppingCartCell";
     self.rightItem = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editorItemClick:)];
     self.navigationItem.rightBarButtonItem = self.rightItem;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

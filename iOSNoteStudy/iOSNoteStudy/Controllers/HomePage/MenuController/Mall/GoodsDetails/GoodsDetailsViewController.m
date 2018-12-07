@@ -7,14 +7,8 @@
 //
 
 #import "GoodsDetailsViewController.h"
-#import "SelectMediaView.h"
-#import "OptionsView.h"
-#import "HorizontalMenuView.h"
 
-@interface GoodsDetailsViewController () <SelectMediaViewDelegate,OptionsViewDelegate, HorizontalMenuDelegate>
-@property (nonatomic, strong) SelectMediaView *mediaView;
-@property (nonatomic, strong) NSArray *dataArray;
-@property (nonatomic, strong) OptionsView *optionView;
+@interface GoodsDetailsViewController ()
 
 @end
 
@@ -24,63 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"商品详情";
-    self.dataArray = @[@"1",@"2",@"3",@"4",@"5"];
-    
-    self.mediaView = [[SelectMediaView alloc]initWithFrame:CGRectMake(0, 100, kScreenWidth, 120)];
-    self.mediaView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.mediaView.backgroundColor = [UIColor redColor];
-    self.mediaView.delegate = self;
-    [self.view addSubview:self.mediaView];
-//
-    [self.mediaView reloadDataSelectMediaView];
-    
-//    self.optionView = [[OptionsView alloc]initWithFrame:CGRectMake(0, 100, kScreenWidth, 120)];
-//    self.optionView.delegate = self;
-//    self.optionView.horizontalCount = 3;
-//    self.optionView.isWidthFixed = YES;
-//    self.optionView.isMultiSelect = YES;
-//    self.optionView.maxSelect = 3;
-//    [self.view addSubview:self.optionView];
-    
-    HorizontalMenuView *menuView = [[HorizontalMenuView alloc]initWithFrame:CGRectMake(0, 300, kScreenWidth, 44)];
-    menuView.backgroundColor = [UIColor mainColor];
-    menuView.delegate = self;
-    [self.view addSubview:menuView];
-    
-}
-
-- (NSArray *)horizontalMenuArray:(UIView *)menuView {
-    return @[@"综合",@"销量",@"价格",@"新品",@"品牌筛选"];
-}
-
-- (NSArray<NSArray *> *)horizontalMenuImageArray:(UIView *)menuView {
-    return @[@[],@[@"sortNone",@"sortDescending",@"sortAscending"],@[@"sortNone",@"sortDescending",@"sortAscending"],@[@"sortNone",@"sortDescending",@"sortAscending"],@[@"sortNone",@"sortDescending",@"sortAscending"]];
-}
-
-- (void)menuView:(UIView *)menuView didSelectButton:(NSInteger)buttonSerial sort:(MenuSoreType)sortType {
-    NSLog(@"ddd");
-}
-
-
-- (NSArray *)optionsViewData:(OptionsView *)optionsView {
-    return @[@"大海",@"天地",@"中的",@"上下",@"左右",@"前后",@"得你"];
-}
-
-#pragma mark - SelectMediaViewDelegate
-- (NSArray *)dataArrayNumberOfItems:(SelectMediaView *)mediaView {
-    return self.dataArray;
-}
-
-- (CGSize)collectionMediaView:(SelectMediaView *)mediaView sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(80, 100);
-}
-
-- (void)selectImageMediaView:(SelectMediaView *)mediaView imageItem:(NSInteger)item {
-    NSLog(@"image ----%ld",item);
-}
-
-- (void)selectVideoMediaView:(SelectMediaView *)mediaView videoItem:(NSInteger)item {
-    NSLog(@"video ----%ld",item);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,3 +27,4 @@
 
 
 @end
+    

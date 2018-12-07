@@ -9,13 +9,6 @@
 #import "CardCollectionViewCell.h"
 
 @interface CardCollectionViewCell ()
-@property (nonatomic, strong) UIImageView *userImage;
-@property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UILabel *describeLabel;
-@property (nonatomic, strong) UIImageView *contentImage;
-@property (nonatomic, strong) UILabel *contentLabel;
-@property (nonatomic, strong) UILabel *zanNumberLabel;
-@property (nonatomic, strong) UILabel *shareNumberLabel;
 
 @end
 
@@ -33,20 +26,26 @@
 
 #pragma mark - initView
 - (void)initView {
-    self.userImage = [[UIImageView alloc]init];
-    self.userImage.image = [UIImage imageNamed:@""];
-    self.userImage.backgroundColor = [UIColor redColor];
-    self.userImage.layer.cornerRadius = 20;
-    [self.contentView addSubview:self.userImage];
-    [self.userImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.offset(40);
-        make.top.equalTo(self.contentView).offset(15);
-        make.left.equalTo(self.contentView).offset(15);
+    self.contentLabel = [[UILabel alloc]init];
+    self.contentLabel.textColor = [UIColor whiteColor];
+    self.contentLabel.font = [UIFont fontWithName:@"Xingkai SC" size:80];
+    [self.contentView addSubview:self.contentLabel];
+    [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.contentView);
     }];
     
-    self.nameLabel = [[UILabel alloc]init];
-    self.nameLabel.text = @"大型犬";
-    
+    self.describeLabel = [[UILabel alloc]init];
+    self.describeLabel.textColor = [UIColor whiteColor];
+    self.describeLabel.font = [UIFont fontWithName:@"Xingkai SC" size:14];
+    self.describeLabel.textAlignment = NSTextAlignmentCenter;
+    self.describeLabel.numberOfLines = 2;
+    self.describeLabel.adjustsFontSizeToFitWidth = YES;
+    [self.contentView addSubview:self.describeLabel];
+    [self.describeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(10);
+        make.right.equalTo(self.contentView.mas_right).offset(- 10);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(- 5);
+    }];
 }
 
 

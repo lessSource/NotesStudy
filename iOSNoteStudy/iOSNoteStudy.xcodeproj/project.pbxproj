@@ -86,7 +86,6 @@
 		2AAEF16120A3E09100B2B576 /* LSHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAEF16020A3E09100B2B576 /* LSHTTPRequest.m */; };
 		2AAF45BC20B26576000E0949 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF45BB20B26576000E0949 /* PopUpViewController.m */; };
 		2AC2051720F34EE300AEC2AC /* ArticlePublishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC2051620F34EE300AEC2AC /* ArticlePublishedViewController.m */; };
-		2ACABE8320BBAA690060AD18 /* ddddddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACABE8220BBAA690060AD18 /* ddddddViewController.m */; };
 		2AD796BC20C0619400DB4137 /* ShoppingCartOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD796BB20C0619400DB4137 /* ShoppingCartOperationView.m */; };
 		2AE31DE7209170BB00984120 /* BaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE31DE6209170BB00984120 /* BaseTestCase.m */; };
 		2AE31DE9209170D200984120 /* HomeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE31DE8209170D200984120 /* HomeTestCase.m */; };
@@ -111,6 +110,9 @@
 		2AFF301C210875640095284B /* PersonalContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301B210875640095284B /* PersonalContentViewController.m */; };
 		2AFF301F21088F950095284B /* PersonalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301E21088F950095284B /* PersonalTableView.m */; };
 		664DD1A0DF8E2716C2488041 /* libPods-iOSNoteStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB6F7063AEB8A13CD2207B5 /* libPods-iOSNoteStudy.a */; };
+		CAAA082C21B9036500883B50 /* HardwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA082B21B9036500883B50 /* HardwareViewController.m */; };
+		CAAA082E21B909B400883B50 /* Xingkai.ttc in Resources */ = {isa = PBXBuildFile; fileRef = CAAA082D21B909B400883B50 /* Xingkai.ttc */; };
+		CAAA083121B9148E00883B50 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA083021B9148E00883B50 /* OptionsViewController.m */; };
 		CAECD4BF21B66F6600EEDB09 /* HorizontalMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */; };
 /* End PBXBuildFile section */
 
@@ -286,8 +288,6 @@
 		2AAF45BB20B26576000E0949 /* PopUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
 		2AC2051520F34EE300AEC2AC /* ArticlePublishedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticlePublishedViewController.h; sourceTree = "<group>"; };
 		2AC2051620F34EE300AEC2AC /* ArticlePublishedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticlePublishedViewController.m; sourceTree = "<group>"; };
-		2ACABE8120BBAA690060AD18 /* ddddddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ddddddViewController.h; sourceTree = "<group>"; };
-		2ACABE8220BBAA690060AD18 /* ddddddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ddddddViewController.m; sourceTree = "<group>"; };
 		2AD796BA20C0619400DB4137 /* ShoppingCartOperationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingCartOperationView.h; sourceTree = "<group>"; };
 		2AD796BB20C0619400DB4137 /* ShoppingCartOperationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartOperationView.m; sourceTree = "<group>"; };
 		2AE31DE5209170BB00984120 /* BaseTestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTestCase.h; sourceTree = "<group>"; };
@@ -336,6 +336,11 @@
 		2AFF301E21088F950095284B /* PersonalTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalTableView.m; sourceTree = "<group>"; };
 		5DB6F7063AEB8A13CD2207B5 /* libPods-iOSNoteStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSNoteStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		821C6CE96C0753A103045736 /* Pods-iOSNoteStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNoteStudy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy.release.xcconfig"; sourceTree = "<group>"; };
+		CAAA082A21B9036500883B50 /* HardwareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HardwareViewController.h; sourceTree = "<group>"; };
+		CAAA082B21B9036500883B50 /* HardwareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HardwareViewController.m; sourceTree = "<group>"; };
+		CAAA082D21B909B400883B50 /* Xingkai.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xingkai.ttc; sourceTree = "<group>"; };
+		CAAA082F21B9148E00883B50 /* OptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		CAAA083021B9148E00883B50 /* OptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 		CAECD4BD21B66F6600EEDB09 /* HorizontalMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuView.h; sourceTree = "<group>"; };
 		CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuView.m; sourceTree = "<group>"; };
 		EB622AB2DEE5AE4F90DD509C /* Pods-iOSNoteStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNoteStudy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -653,6 +658,8 @@
 			children = (
 				2A2F685420DCDFF7002A7A2D /* OptionsView.h */,
 				2A2F685520DCDFF7002A7A2D /* OptionsView.m */,
+				CAAA082F21B9148E00883B50 /* OptionsViewController.h */,
+				CAAA083021B9148E00883B50 /* OptionsViewController.m */,
 			);
 			path = OptionsView;
 			sourceTree = "<group>";
@@ -662,8 +669,6 @@
 			children = (
 				2A34140A20AD4ED90007C51F /* AccordingLayerViewController.h */,
 				2A34140B20AD4ED90007C51F /* AccordingLayerViewController.m */,
-				2ACABE8120BBAA690060AD18 /* ddddddViewController.h */,
-				2ACABE8220BBAA690060AD18 /* ddddddViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -757,6 +762,7 @@
 		2A597B5C20A038C800E57A51 /* MenuController */ = {
 			isa = PBXGroup;
 			children = (
+				CAAA082921B9033E00883B50 /* Hardware */,
 				2AA0654020BFD87700DE11EB /* Thread */,
 				2A5632DA20AD26FF00F4F829 /* Animation */,
 				2A5632D620AD23F300F4F829 /* CircleFriends */,
@@ -906,16 +912,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		2AA3B98C20B93F0F006FF4B4 /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WebView;
-			sourceTree = "<group>";
-		};
 		2AAEF14020A29F8C00B2B576 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CAAA082D21B909B400883B50 /* Xingkai.ttc */,
 				2A95510E213F76C6006C88AA /* APP启动过程.html */,
 				2A730FAF212E99680001AFB0 /* @property.html */,
 				2A98A2CF2133DF8D00279E93 /* SDWebImage.html */,
@@ -1014,7 +1014,6 @@
 				2A011D5220E2914F00F67B81 /* PhotoBrowser */,
 				2A2F685320DCDFEE002A7A2D /* OptionsView */,
 				2A5EC66F20C5181600C4FD12 /* StarsView */,
-				2AA3B98C20B93F0F006FF4B4 /* WebView */,
 				2AFA0BBE2089B50C009A7B5A /* CardCollectionView */,
 				2AFA0BC52089B50C009A7B5A /* HomePageMenu */,
 				2AFA0BCC2089B50C009A7B5A /* BannerCycleView */,
@@ -1113,6 +1112,15 @@
 				821C6CE96C0753A103045736 /* Pods-iOSNoteStudy.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CAAA082921B9033E00883B50 /* Hardware */ = {
+			isa = PBXGroup;
+			children = (
+				CAAA082A21B9036500883B50 /* HardwareViewController.h */,
+				CAAA082B21B9036500883B50 /* HardwareViewController.m */,
+			);
+			path = Hardware;
 			sourceTree = "<group>";
 		};
 		CAECD4BC21B66F4300EEDB09 /* HorizontalMenuView */ = {
@@ -1243,6 +1251,7 @@
 				2A18890620865B1000524FA1 /* Main.storyboard in Resources */,
 				2A955112213F76D3006C88AA /* App_Start1.jpg in Resources */,
 				2A95510F213F76C6006C88AA /* APP启动过程.html in Resources */,
+				CAAA082E21B909B400883B50 /* Xingkai.ttc in Resources */,
 				2A955113213F76D3006C88AA /* App_Start2.png in Resources */,
 				2A730FB0212E99680001AFB0 /* @property.html in Resources */,
 				2A5720A12089CBA30062F038 /* user.plist in Resources */,
@@ -1326,6 +1335,7 @@
 				2A18890D20870C6700524FA1 /* UIImage+Category.m in Sources */,
 				2A58CB1E20889D050076675E /* ContactDataObject.m in Sources */,
 				2A1888DC2086493900524FA1 /* BaseNavigationController.m in Sources */,
+				CAAA083121B9148E00883B50 /* OptionsViewController.m in Sources */,
 				2AA0654320BFD89200DE11EB /* ThreadViewController.m in Sources */,
 				2A597B6820A039FA00E57A51 /* GoodsDetailsViewController.m in Sources */,
 				2A5EC67A20C520FE00C4FD12 /* StarsView.m in Sources */,
@@ -1381,11 +1391,11 @@
 				2A1888E92086494F00524FA1 /* MineViewController.m in Sources */,
 				2AAEF15820A2D9DD00B2B576 /* MessageViewController.m in Sources */,
 				2A58CB1F20889D050076675E /* LSConstants.m in Sources */,
+				CAAA082C21B9036500883B50 /* HardwareViewController.m in Sources */,
 				2A18891020870E5800524FA1 /* UIColor+Category.m in Sources */,
 				2AAEF15C20A2E88800B2B576 /* GitHubListModel.m in Sources */,
 				2A156E6B20FDE313005B8075 /* CommentsReplyModel.m in Sources */,
 				2AF8D95820F4932200AB03EC /* LMParagraphConfig.m in Sources */,
-				2ACABE8320BBAA690060AD18 /* ddddddViewController.m in Sources */,
 				2AAEF14D20A2D3AB00B2B576 /* UIView+Layout.m in Sources */,
 				2AFA0BE12089B50C009A7B5A /* HomePageMenuView.m in Sources */,
 				2AFA0BDD2089B50C009A7B5A /* CardCollectionViewLayout.m in Sources */,
