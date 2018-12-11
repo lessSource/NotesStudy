@@ -170,7 +170,6 @@
 				2A5720672089C27A0062F038 /* Base */,
 				2A57207E2089C27B0062F038 /* Controllers */,
 				2A57206E2089C27A0062F038 /* Helpers */,
-				2A5720742089C27A0062F038 /* Libs */,
 				2A5720752089C27B0062F038 /* Supporting Flies */,
 				2A18885B2085FBF100524FA1 /* ViewController.swift */,
 			);
@@ -240,6 +239,7 @@
 		2A57206E2089C27A0062F038 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2A5720742089C27A0062F038 /* Libs */,
 				2A57206F2089C27A0062F038 /* UIView+Frame.swift */,
 				2A5720702089C27A0062F038 /* NSObject+String.swift */,
 				2A5720712089C27A0062F038 /* UIViewController+Extension.swift */,
@@ -257,7 +257,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Libs;
+			name = Libs;
+			path = ../Libs;
 			sourceTree = "<group>";
 		};
 		2A5720752089C27B0062F038 /* Supporting Flies */ = {

@@ -27,30 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"我的";
-//    
-//    //NSObject *obj = [NSObject alloc]];
-//    NSObject *obj = objc_msgSend(objc_getClass("NSObject"), sel_registerName("alloc"));
-//    
-//    //obj = [obj init]
-//    obj = objc_msgSend(obj, sel_registerName("init"));
-//    
-//    //[obj eat]
-//    
-//    objc_msgSend(obj, @selector(eat));
-//    objc_msgSend(obj, @selector(run:),20);
-//    
-//    
-//    //id = objc = [NSObject alloc];
-//    id  objc = objc_msgSend([NSObject class], @selector(alloc));
-//    
-//    //objc = [objc init]
-//    objc = objc_msgSend(objc, @selector(init));
-    
-    
-    
-    
-    
-    
+
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, headPortrait_Height)];
     self.mineHeaderView = [[MineHeaderView alloc]initWithFrame:headerView.bounds];
     self.mineHeaderView.layer.contents = (__bridge id _Nullable)([UIImage convertGradientToImage:headerView].CGImage);
@@ -81,7 +58,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifire];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = @"ddd";
+    cell.textLabel.text = @"测试";
     return cell;
 }
 

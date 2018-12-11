@@ -20,6 +20,8 @@ target 'iOSNoteStudy' do
    pod 'MBProgressHUD'
    pod 'UITextView+Placeholder'
    pod 'VTMagic'
+   pod 'ZipArchive', '~> 1.4.0'
+
 
 end
 

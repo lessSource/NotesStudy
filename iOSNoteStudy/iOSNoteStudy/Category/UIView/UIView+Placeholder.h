@@ -16,6 +16,8 @@
 @property (nonatomic, readonly, copy) UIView *(^prompt_title)(NSString *);
 /** 提示文字大小 */
 @property (nonatomic, readonly, copy) UIView *(^prompt_Font)(UIFont *);
+/** 占位view的位置 */
+@property (nonatomic, readonly, copy) UIView *(^prompt_view_frame)(CGRect);
 /** 占位图片位置 */
 @property (nonatomic, readonly, copy) UIView *(^prompt_frame)(CGRect);
 /** 占位图片据上位置 */

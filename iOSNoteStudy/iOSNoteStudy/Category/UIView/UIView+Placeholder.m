@@ -216,6 +216,17 @@ static const char btnKey;
     };
 }
 
+
+- (UIView *(^)(CGRect rect))prompt_view_frame {
+    return ^id(CGRect rect) {
+        UIView *prompt_view = [self getPromptView];
+        if (prompt_view) {
+            prompt_view.frame = rect;
+        }
+        return self;
+    };
+}
+
 - (UIView *(^)(BOOL hidden))isButtonHidden {
     return ^id(BOOL hidden) {
         UIView *prompt_view = [self getPromptView];

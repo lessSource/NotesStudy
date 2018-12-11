@@ -80,9 +80,7 @@
     UIImage *selImage = [sImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UITabBarItem *item = [[UITabBarItem alloc]initWithTitle:title image:norImage selectedImage:selImage];
     if (@available(iOS 10.0, *)) {
-        
     }else {
-        
     }
     item.titlePositionAdjustment = UIOffsetMake(0, - 3);
     if (title == nil) {

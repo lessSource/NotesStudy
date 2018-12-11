@@ -19,6 +19,9 @@
 #import "ThreadViewController.h"
 #import "InterviewViewController.h"
 #import "HardwareViewController.h"
+#import "MoreViewController.h"
+
+#import <ZipArchive/ZipArchive.h>
 
 API_AVAILABLE(ios(10.0))
 @interface HomePageViewController () <BannerCycleViewDataSource,HomePageMenuDelegate,HomePageMenuDataSource,CardCollectionDelegate>
@@ -43,7 +46,6 @@ API_AVAILABLE(ios(10.0))
     [self loadData];
     [self initView];
     [self viewLayout];
-    
 }
 
 #pragma mark - loadData
@@ -135,10 +137,9 @@ API_AVAILABLE(ios(10.0))
 
 #pragma mark - CardCollectionDelegate
 - (void)cardCollectionView:(CardCollectionView *)menuView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.item == 0) {
-        Class optionsVC = NSClassFromString(@"OptionsViewController");
-        [self pushViewController:[optionsVC new] animated:YES];
-    }
+    NSArray *classNameArray = @[@"OptionsViewController",@"",@"",@"",@"",@"",@"",@"",@"MoreViewController"];
+    Class classVC = NSClassFromString(classNameArray[indexPath.item]);
+    [self pushViewController:[classVC new] animated:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

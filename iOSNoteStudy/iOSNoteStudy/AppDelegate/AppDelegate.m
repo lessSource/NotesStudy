@@ -29,7 +29,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [self.window makeKeyAndVisible]; //让当前UIWindow变成keyWindow,并显示出来
+    [self.window makeKeyAndVisible];
     [self pushNotificationAuthorization:application];
     [self gotoMain];
     

@@ -41,6 +41,7 @@ PODS:
   - YYCache (1.0.4)
   - YYModel (1.0.4)
   - YYText (1.0.7)
+  - ZipArchive (1.4.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -61,6 +62,7 @@ DEPENDENCIES:
   - VTMagic
   - YYModel
   - YYText
+  - ZipArchive (~> 1.4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -83,6 +85,7 @@ SPEC REPOS:
     - YYCache
     - YYModel
     - YYText
+    - ZipArchive
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -104,7 +107,8 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 8ec1a4567b34d68d2409ae9e75558808e37c80df
+PODFILE CHECKSUM: 428dd8ee753bdf2767a234f5ccb8cc2cc7858a1b
 
 COCOAPODS: 1.5.3

@@ -30,22 +30,18 @@
 @property (nonatomic, assign) CGFloat horizontalSpacing;
 /** 纵向间距 */
 @property (nonatomic, assign) CGFloat verticalSpacing;
-/** button宽度 */
-@property (nonatomic, assign) CGFloat buttonWidth;
 /** button高度 */
 @property (nonatomic, assign) CGFloat buttonHeight;
 /** 边距 */
 @property (nonatomic, assign) UIEdgeInsets marginInsets;
-/** 是否等宽 */
-@property (nonatomic, assign) BOOL isWidthFixed;
 /** 横向个数 (isWidthFixed = Yes) */
 @property (nonatomic, assign) NSInteger horizontalCount;
-/** 是否多选 */
-@property (nonatomic, assign) BOOL isMultiSelect;
+/** 最多选多少 (默认1) */
+@property (nonatomic, assign) NSInteger maxSelect;
+/** 是否等宽 */
+@property (nonatomic, assign) BOOL isWidthFixed;
 /** 最后一个是否是输入框 */
 @property (nonatomic, assign) BOOL isTextField;
-/** 最多选多少 (默认0) */
-@property (nonatomic, assign) NSInteger maxSelect;
 /** button样式 */
 @property (nonatomic, strong) ButtonStyle *buttonStyle;
 

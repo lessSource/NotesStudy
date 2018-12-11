@@ -11,10 +11,12 @@
 static CGFloat const BUTTONADDWIDTH = 20;
 static NSInteger const BUTTONTAG = 12312;
 
-@interface OptionsView ()
+@interface OptionsView () <UITextFieldDelegate>
 @property (nonatomic, assign) CGFloat allViewWidth;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) NSMutableArray *buttonArray;
+@property (nonatomic, assign) CGFloat buttonWidth;
+@property (nonatomic, strong) UITextField *textField;
 
 @end
 
@@ -45,10 +47,9 @@ static NSInteger const BUTTONTAG = 12312;
     _horizontalSpacing = _verticalSpacing = 10;
     _buttonHeight = 40;
     _isWidthFixed = NO;
-    _isMultiSelect = NO;
     _isTextField = NO;
     _horizontalCount = 1;
-    _maxSelect = 0;
+    _maxSelect = 1;
 }
 
 - (void)optionsViewReloadData {
@@ -73,20 +74,25 @@ static NSInteger const BUTTONTAG = 12312;
     if (self.delegate && [self.delegate respondsToSelector:@selector(optionsView:didSelect:selectRow:)]) {
         [self.delegate optionsView:self didSelect:sender.currentTitle selectRow:sender.tag - BUTTONTAG];
     }
-    if (self.isMultiSelect) {
-        if ([self.buttonArray containsObject:sender.currentTitle]) {
-            [self.buttonArray removeObject:sender.currentTitle];
+    if (self.isTextField) {
+        self.textField.text = @"";
+        [self.textField resignFirstResponder];
+    }
+    if (self.maxSelect > 1) {
+        NSInteger selectRow = sender.tag - BUTTONTAG;
+        if ([self.buttonArray containsObject:@(selectRow)]) {
+            [self.buttonArray removeObject:@(selectRow)];
             sender.title_color(self.buttonStyle.titColorNor).back_color(self.buttonStyle.backColorNor);
         }else {
-            if (self.buttonArray.count < self.maxSelect || self.maxSelect == 0) {
-                [self.buttonArray addObject:sender.currentTitle];
+            if (self.buttonArray.count < self.maxSelect) {
+                [self.buttonArray addObject:@(selectRow)];
                 sender.title_color(self.buttonStyle.titColorSel).back_color(self.buttonStyle.backColorSel);
+                if (self.delegate && [self.delegate respondsToSelector:@selector(optionsView:didSelect:)]) {
+                    [self.delegate optionsView:self didSelect:self.buttonArray];
+                }
             }else {
-//                [[LSAlertUtil alertManager] showPromptInfo:[NSString stringWithFormat:@"最多选择%ld",self.maxSelect]];
+                [[LSAlertUtil alertManager] showPromptInfo:[NSString stringWithFormat:@"最多选择%ld个",self.maxSelect]];
             }
-        }
-        if (self.delegate && [self.delegate respondsToSelector:@selector(optionsView:didSelect:)]) {
-            [self.delegate optionsView:self didSelect:self.buttonArray];
         }
         return;
     }
@@ -116,7 +122,7 @@ static NSInteger const BUTTONTAG = 12312;
         optionsButton.layer.cornerRadius = self.buttonStyle.cornerRadius;
         
         if (self.isWidthFixed) {
-            width = self.buttonWidth;
+            width = _buttonWidth;
         }else {
             width = optionsButton.buttonSize.width + BUTTONADDWIDTH;
         }
@@ -133,7 +139,22 @@ static NSInteger const BUTTONTAG = 12312;
         optionsButton.frame = CGRectMake(buttonX, buttonY, width, self.buttonHeight);
         optionsButton.tag = BUTTONTAG + i;
         [optionsButton addTarget:self action:@selector(optionsButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:optionsButton];
+        if (self.isTextField && i == self.dataArray.count - 1) {
+            self.textField = [[UITextField alloc]initWithFrame:optionsButton.frame];
+            self.textField.placeholder = @"请输入";
+            self.textField.delegate = self;
+            self.textField.font = self.buttonStyle.textFontNor;
+            self.textField.textColor = self.buttonStyle.titColorNor;
+            self.textField.textAlignment = NSTextAlignmentCenter;
+            if (self.buttonStyle.isBorder) {
+                self.textField.layer.borderColor = self.buttonStyle.borderColorNor.CGColor;
+                self.textField.layer.borderWidth = self.buttonStyle.borderWidth;
+            }
+            self.textField.layer.cornerRadius = self.buttonStyle.cornerRadius;
+            [self addSubview:self.textField];
+        }else {
+            [self addSubview:optionsButton];
+        }
     }
     
     CGFloat viewHeight = (self.buttonHeight + self.verticalSpacing) * column - self.verticalSpacing + self.marginInsets.top + self.marginInsets.bottom;
@@ -147,6 +168,27 @@ static NSInteger const BUTTONTAG = 12312;
 - (void)_optionsButtonWidth:(BOOL)isWidthFixed {
     if (isWidthFixed) {
         _buttonWidth = (self.allViewWidth - self.horizontalSpacing * (self.horizontalCount - 1))/self.horizontalCount;
+    }
+}
+
+- (void)_clearButtonSelect {
+    for (id obj in self.subviews) {
+        if ([obj isKindOfClass:[OptionsButton class]]) {
+            OptionsButton *button = (OptionsButton *)obj;
+            button.title_color(self.buttonStyle.titColorNor).back_color(self.buttonStyle.backColorNor);
+        }
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.buttonArray removeAllObjects];
+    [self _clearButtonSelect];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(optionsView:didSelect:selectRow:)]) {
+        [self.delegate optionsView:self didSelect:textField.text selectRow:self.dataArray.count - 1];
     }
 }
 
@@ -166,17 +208,15 @@ static NSInteger const BUTTONTAG = 12312;
     [self _optionsButtonWidth:self.isWidthFixed];
 }
 
-- (void)setButtonWidth:(CGFloat)buttonWidth {
-    _buttonWidth = buttonWidth;
-    [self _optionsButtonWidth:self.isWidthFixed];
-}
-
 - (void)setMarginInsets:(UIEdgeInsets)marginInsets {
     _marginInsets = marginInsets;
     self.allViewWidth = (kScreenWidth - marginInsets.left - marginInsets.right);
     [self _optionsButtonWidth:self.isWidthFixed];
 }
 
+- (void)setMaxSelect:(NSInteger)maxSelect {
+    _maxSelect = MAX(1, maxSelect);
+}
 
 #pragma mark - Lazy
 - (NSMutableArray *)buttonArray {
