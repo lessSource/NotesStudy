@@ -137,7 +137,7 @@ API_AVAILABLE(ios(10.0))
 
 #pragma mark - CardCollectionDelegate
 - (void)cardCollectionView:(CardCollectionView *)menuView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *classNameArray = @[@"OptionsViewController",@"",@"",@"",@"",@"",@"",@"",@"MoreViewController"];
+    NSArray *classNameArray = @[@"OptionsViewController",@"HorizontalMenuViewController",@"",@"",@"",@"",@"",@"",@"MoreViewController"];
     Class classVC = NSClassFromString(classNameArray[indexPath.item]);
     [self pushViewController:[classVC new] animated:YES];
 }

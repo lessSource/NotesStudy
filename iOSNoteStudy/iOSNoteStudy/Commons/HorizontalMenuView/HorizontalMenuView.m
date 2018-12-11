@@ -132,6 +132,12 @@
 
 #pragma mark - Event
 - (void)buttonClick:(UIButton *)sender {
+    MenuButton *menuButton = (MenuButton *)sender;
+    NSInteger row = menuButton.tag - BUTTONTAG;
+    if (!(!menuButton.isMoreClick && sender.tag == self.lastSelect)) {
+        return;
+    }
+    
     for (UIView *subView in self.scrollView.subviews) {
         if ([subView isKindOfClass:[UIButton class]]) {
             MenuButton *menuButton = (MenuButton *)subView;
@@ -146,8 +152,7 @@
             }
         }
     }
-    MenuButton *menuButton = (MenuButton *)sender;
-    NSInteger row = menuButton.tag - BUTTONTAG;
+    
     if (menuButton.isMoreClick) {
         switch (menuButton.soreType) {
             case MenuSoreTypeNone:
@@ -162,11 +167,10 @@
         }
     }
     if (self.delegate && [self.delegate respondsToSelector:@selector(menuView:didSelectButton:sort:)]) {
-        if (!(!menuButton.isMoreClick && sender.tag == self.lastSelect)) {
-            [self.delegate menuView:self didSelectButton:row sort:menuButton.soreType];
-        }
+        [self.delegate menuView:self didSelectButton:row sort:menuButton.soreType];
     }
     self.lastSelect = sender.tag;
+    [self moveButonnLocation:menuButton];
 }
 
 #pragma mark - Public
@@ -179,6 +183,27 @@
 - (CGFloat)widthForText:(NSString *)string strSize:(NSInteger)strSize {
     CGSize size = [string sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:strSize]}];
     return size.width + 20;
+}
+
+// button移动到中间
+- (void)moveButonnLocation:(MenuButton *)menuButton {
+    CGFloat beforeW = CGRectGetMinX(menuButton.frame) + CGRectGetWidth(menuButton.bounds)/2;
+    CGFloat afterW = self.scrollView.contentSize.width - beforeW;
+    CGFloat width = CGRectGetWidth(self.frame)/2;
+    CGFloat buttonW = CGRectGetWidth(menuButton.bounds)/2;
+    if (beforeW > width && (width - afterW) < buttonW) {
+        [UIView animateWithDuration:0.5 animations:^{
+            if (width - afterW > 0) {
+                self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - width * 2, 0);
+            }else {
+                self.scrollView.contentOffset = CGPointMake(beforeW - width, 0);
+            }
+        }];
+    }else {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.scrollView.contentOffset = CGPointMake(0, 0);
+        }];
+    }
 }
 
 #pragma mark - Lazy

@@ -67,6 +67,7 @@
 		2A695BF420BE856300C00583 /* ShoppingCartHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A695BF320BE856300C00583 /* ShoppingCartHeaderView.m */; };
 		2A730FB0212E99680001AFB0 /* @property.html in Resources */ = {isa = PBXBuildFile; fileRef = 2A730FAF212E99680001AFB0 /* @property.html */; };
 		2A7A615A208F156D0039EBCC /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A6159208F156D0039EBCC /* BaseTableView.m */; };
+		2A91EB7021BFF59600A24F23 /* HorizontalMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A91EB6F21BFF59600A24F23 /* HorizontalMenuViewController.m */; };
 		2A95510F213F76C6006C88AA /* APP启动过程.html in Resources */ = {isa = PBXBuildFile; fileRef = 2A95510E213F76C6006C88AA /* APP启动过程.html */; };
 		2A955112213F76D3006C88AA /* App_Start1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A955110213F76D2006C88AA /* App_Start1.jpg */; };
 		2A955113213F76D3006C88AA /* App_Start2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A955111213F76D3006C88AA /* App_Start2.png */; };
@@ -113,7 +114,6 @@
 		CAAA082C21B9036500883B50 /* HardwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA082B21B9036500883B50 /* HardwareViewController.m */; };
 		CAAA082E21B909B400883B50 /* Xingkai.ttc in Resources */ = {isa = PBXBuildFile; fileRef = CAAA082D21B909B400883B50 /* Xingkai.ttc */; };
 		CAAA083121B9148E00883B50 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA083021B9148E00883B50 /* OptionsViewController.m */; };
-		CAAA084021BA14EB00883B50 /* ios.zip in Resources */ = {isa = PBXBuildFile; fileRef = CAAA083F21BA14EB00883B50 /* ios.zip */; };
 		CABB128D21BF8F0800A02D16 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB128C21BF8F0800A02D16 /* MoreViewController.m */; };
 		CABB129121BF8F7300A02D16 /* MoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129021BF8F7300A02D16 /* MoreHomeViewController.m */; };
 		CABB129621BF8F9600A02D16 /* MoreMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129521BF8F9600A02D16 /* MoreMineViewController.m */; };
@@ -259,6 +259,8 @@
 		2A7A6158208F156D0039EBCC /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
 		2A7A6159208F156D0039EBCC /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		2A8D500F20C0EC0F003F681A /* ShoppingCartProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingCartProtocol.h; sourceTree = "<group>"; };
+		2A91EB6E21BFF59600A24F23 /* HorizontalMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuViewController.h; sourceTree = "<group>"; };
+		2A91EB6F21BFF59600A24F23 /* HorizontalMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuViewController.m; sourceTree = "<group>"; };
 		2A95510E213F76C6006C88AA /* APP启动过程.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "APP启动过程.html"; sourceTree = "<group>"; };
 		2A955110213F76D2006C88AA /* App_Start1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = App_Start1.jpg; sourceTree = "<group>"; };
 		2A955111213F76D3006C88AA /* App_Start2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_Start2.png; sourceTree = "<group>"; };
@@ -345,7 +347,6 @@
 		CAAA082D21B909B400883B50 /* Xingkai.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xingkai.ttc; sourceTree = "<group>"; };
 		CAAA082F21B9148E00883B50 /* OptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
 		CAAA083021B9148E00883B50 /* OptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
-		CAAA083F21BA14EB00883B50 /* ios.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = ios.zip; path = "../../../../../../切图/水象商城新需求切图/ios.zip"; sourceTree = "<group>"; };
 		CABB128B21BF8F0800A02D16 /* MoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		CABB128C21BF8F0800A02D16 /* MoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		CABB128F21BF8F7300A02D16 /* MoreHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreHomeViewController.h; sourceTree = "<group>"; };
@@ -927,7 +928,6 @@
 		2AAEF14020A29F8C00B2B576 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CAAA083F21BA14EB00883B50 /* ios.zip */,
 				CAAA082D21B909B400883B50 /* Xingkai.ttc */,
 				2A95510E213F76C6006C88AA /* APP启动过程.html */,
 				2A730FAF212E99680001AFB0 /* @property.html */,
@@ -1178,6 +1178,8 @@
 			children = (
 				CAECD4BD21B66F6600EEDB09 /* HorizontalMenuView.h */,
 				CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */,
+				2A91EB6E21BFF59600A24F23 /* HorizontalMenuViewController.h */,
+				2A91EB6F21BFF59600A24F23 /* HorizontalMenuViewController.m */,
 			);
 			path = HorizontalMenuView;
 			sourceTree = "<group>";
@@ -1297,7 +1299,6 @@
 				2A98A2D02133DF8E00279E93 /* SDWebImage.html in Resources */,
 				2A18890520865B1000524FA1 /* LaunchScreen.storyboard in Resources */,
 				2A1888F72086571900524FA1 /* Assets.xcassets in Resources */,
-				CAAA084021BA14EB00883B50 /* ios.zip in Resources */,
 				2AAEF13F20A29E6000B2B576 /* tr.webp in Resources */,
 				2A18890620865B1000524FA1 /* Main.storyboard in Resources */,
 				2A955112213F76D3006C88AA /* App_Start1.jpg in Resources */,
@@ -1374,6 +1375,7 @@
 				2AFA0BE52089B50C009A7B5A /* VideoControlView.m in Sources */,
 				2A597B8520A1FB0F00E57A51 /* ButtonListViewController.m in Sources */,
 				2A5632DD20AD270800F4F829 /* AnimationViewController.m in Sources */,
+				2A91EB7021BFF59600A24F23 /* HorizontalMenuViewController.m in Sources */,
 				2AAEF15520A2D9D200B2B576 /* GitHubViewController.m in Sources */,
 				2A1888FA2086571900524FA1 /* main.m in Sources */,
 				2AFF301C210875640095284B /* PersonalContentViewController.m in Sources */,
