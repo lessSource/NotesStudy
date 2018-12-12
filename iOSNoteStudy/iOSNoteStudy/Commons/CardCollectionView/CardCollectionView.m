@@ -45,7 +45,7 @@ static NSString *const cardCollectionViewCell = @"CardCollectionViewCell";
 
 - (void)setUpUI {
     self.dataArray = @[@"临",@"兵",@"斗",@"者",@"皆",@"阵",@"列",@"前",@"行"];
-    self.describeArray = @[@"options按钮选择",@"horizontalMenu菜单栏",@"popUpView弹框",@"者",@"皆",@"阵",@"列",@"前",@"更多"];
+    self.describeArray = @[@"options按钮选择",@"horizontalMenu菜单栏",@"popUpView弹框",@"SelectMediaView图片显示",@"皆",@"阵",@"列",@"前",@"更多"];
     
     CardCollectionViewLayout *flowLayout = [[CardCollectionViewLayout alloc]init];
     flowLayout.scrollDirection  = UICollectionViewScrollDirectionHorizontal;

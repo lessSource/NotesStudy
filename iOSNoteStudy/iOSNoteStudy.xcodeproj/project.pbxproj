@@ -68,6 +68,7 @@
 		2A730FB0212E99680001AFB0 /* @property.html in Resources */ = {isa = PBXBuildFile; fileRef = 2A730FAF212E99680001AFB0 /* @property.html */; };
 		2A7A615A208F156D0039EBCC /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A6159208F156D0039EBCC /* BaseTableView.m */; };
 		2A91EB7021BFF59600A24F23 /* HorizontalMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A91EB6F21BFF59600A24F23 /* HorizontalMenuViewController.m */; };
+		2A91EB7621C158BC00A24F23 /* SelectMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A91EB7521C158BC00A24F23 /* SelectMediaViewController.m */; };
 		2A95510F213F76C6006C88AA /* APP启动过程.html in Resources */ = {isa = PBXBuildFile; fileRef = 2A95510E213F76C6006C88AA /* APP启动过程.html */; };
 		2A955112213F76D3006C88AA /* App_Start1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A955110213F76D2006C88AA /* App_Start1.jpg */; };
 		2A955113213F76D3006C88AA /* App_Start2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A955111213F76D3006C88AA /* App_Start2.png */; };
@@ -261,6 +262,8 @@
 		2A8D500F20C0EC0F003F681A /* ShoppingCartProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingCartProtocol.h; sourceTree = "<group>"; };
 		2A91EB6E21BFF59600A24F23 /* HorizontalMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuViewController.h; sourceTree = "<group>"; };
 		2A91EB6F21BFF59600A24F23 /* HorizontalMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuViewController.m; sourceTree = "<group>"; };
+		2A91EB7421C158BC00A24F23 /* SelectMediaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectMediaViewController.h; sourceTree = "<group>"; };
+		2A91EB7521C158BC00A24F23 /* SelectMediaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectMediaViewController.m; sourceTree = "<group>"; };
 		2A95510E213F76C6006C88AA /* APP启动过程.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "APP启动过程.html"; sourceTree = "<group>"; };
 		2A955110213F76D2006C88AA /* App_Start1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = App_Start1.jpg; sourceTree = "<group>"; };
 		2A955111213F76D3006C88AA /* App_Start2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_Start2.png; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 				2A090D4420E37E7100A1E1C3 /* SelectMediaView.m */,
 				2A090D4620E384DF00A1E1C3 /* SelectMediaCell.h */,
 				2A090D4720E384DF00A1E1C3 /* SelectMediaCell.m */,
+				2A91EB7421C158BC00A24F23 /* SelectMediaViewController.h */,
+				2A91EB7521C158BC00A24F23 /* SelectMediaViewController.m */,
 			);
 			path = SelectMediaView;
 			sourceTree = "<group>";
@@ -1425,6 +1430,7 @@
 				2A98A2D32133E11C00279E93 /* InterviewViewController.m in Sources */,
 				2AF8D94F20F4877F00AB03EC /* ArticleContentTextView.m in Sources */,
 				2A1888DB2086493900524FA1 /* BaseViewController.m in Sources */,
+				2A91EB7621C158BC00A24F23 /* SelectMediaViewController.m in Sources */,
 				2A1888CF2086492900524FA1 /* AppDelegate.m in Sources */,
 				2AAEF15020A2D3E700B2B576 /* UIView+Category.m in Sources */,
 				2A695BED20BE6E8400C00583 /* ShoppingCartCell.m in Sources */,
