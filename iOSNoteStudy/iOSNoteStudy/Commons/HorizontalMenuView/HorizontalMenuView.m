@@ -40,6 +40,7 @@
 #pragma mark - defaultParameters
 - (void)defaultParameters {
     self.intervalLineHidden = YES;
+    self.lineHidden = NO;
     self.selectedSize = 14;
     self.selectedColor = [UIColor redColor];
     self.uncheckSize = 14;
@@ -70,7 +71,7 @@
         self.iconArray = [self.delegate horizontalMenuImageArray:self];
     }    
     NSAssert(nameArray.count != 0, @"数组为空");
-//    NSAssert(imageArray.count != 0 && imageArray.count == nameArray.count, @"图标和名字数量不等");
+    NSAssert(!(self.iconArray.count != 0 && self.iconArray.count != nameArray.count), @"图标和名字数量不等");
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.menuWidthArray removeAllObjects];
     NSInteger imageCount = self.iconArray.count;
@@ -128,16 +129,19 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(menuView:didSelectButton:sort:)]) {
         [self.delegate menuView:self didSelectButton:0 sort:MenuSoreTypeNone];
     }
+    
+    if (self.lineHidden) {
+        [self markLineView];
+    }
 }
 
 #pragma mark - Event
 - (void)buttonClick:(UIButton *)sender {
     MenuButton *menuButton = (MenuButton *)sender;
     NSInteger row = menuButton.tag - BUTTONTAG;
-    if (!(!menuButton.isMoreClick && sender.tag == self.lastSelect)) {
+    if (!menuButton.isMoreClick && sender.tag == self.lastSelect) {
         return;
     }
-    
     for (UIView *subView in self.scrollView.subviews) {
         if ([subView isKindOfClass:[UIButton class]]) {
             MenuButton *menuButton = (MenuButton *)subView;
@@ -152,7 +156,6 @@
             }
         }
     }
-    
     if (menuButton.isMoreClick) {
         switch (menuButton.soreType) {
             case MenuSoreTypeNone:
@@ -175,7 +178,6 @@
 
 #pragma mark - Public
 - (void)setSelectButton:(NSInteger)item {
-    
 }
 
 #pragma mark - Private
@@ -185,23 +187,39 @@
     return size.width + 20;
 }
 
+- (void)markLineView {
+    CGFloat menuWidth = [_menuWidthArray[0] floatValue] + self.SPACE;
+    UIView *markLineView = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height - 2, menuWidth, 2)];
+    markLineView.tag = 9999;
+    markLineView.backgroundColor = self.lineColor;
+    [self.scrollView addSubview:markLineView];
+}
+
 // button移动到中间
 - (void)moveButonnLocation:(MenuButton *)menuButton {
     CGFloat beforeW = CGRectGetMinX(menuButton.frame) + CGRectGetWidth(menuButton.bounds)/2;
     CGFloat afterW = self.scrollView.contentSize.width - beforeW;
     CGFloat width = CGRectGetWidth(self.frame)/2;
-    CGFloat buttonW = CGRectGetWidth(menuButton.bounds)/2;
-    if (beforeW > width && (width - afterW) < buttonW) {
-        [UIView animateWithDuration:0.5 animations:^{
-            if (width - afterW > 0) {
-                self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - width * 2, 0);
-            }else {
-                self.scrollView.contentOffset = CGPointMake(beforeW - width, 0);
-            }
-        }];
+    CGFloat displacement = 0.0;
+    if (width > afterW) {
+        displacement = self.scrollView.contentSize.width - width * 2;
     }else {
-        [UIView animateWithDuration:0.5 animations:^{
-            self.scrollView.contentOffset = CGPointMake(0, 0);
+        if (beforeW > width) {
+            displacement = beforeW - width;
+        }else {
+            displacement = 0;
+        }
+    }
+    [UIView animateWithDuration:0.5 animations:^{
+        self.scrollView.contentOffset = CGPointMake(displacement, 0);
+    }];
+    if (self.lineHidden) {
+        UIView *markView = [self viewWithTag:9999];
+        [UIView animateWithDuration:0.3f animations:^{
+            CGRect markFrame = markView.frame;
+            markFrame.size.width = CGRectGetWidth(menuButton.bounds);
+            markFrame.origin.x = CGRectGetMinX(menuButton.frame);
+            markView.frame = markFrame;
         }];
     }
 }

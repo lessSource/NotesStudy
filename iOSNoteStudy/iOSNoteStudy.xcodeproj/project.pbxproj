@@ -106,7 +106,6 @@
 		2AFA0BE42089B50C009A7B5A /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA0BD22089B50C009A7B5A /* VideoView.m */; };
 		2AFA0BE52089B50C009A7B5A /* VideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA0BD52089B50C009A7B5A /* VideoControlView.m */; };
 		2AFA0BE62089B50C009A7B5A /* PopUpViewObjeect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA0BD92089B50C009A7B5A /* PopUpViewObjeect.m */; };
-		2AFA0BE72089B50C009A7B5A /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA0BDA2089B50C009A7B5A /* TestView.m */; };
 		2AFF301921086EF10095284B /* PublicPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301821086EF10095284B /* PublicPersonalViewController.m */; };
 		2AFF301C210875640095284B /* PersonalContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301B210875640095284B /* PersonalContentViewController.m */; };
 		2AFF301F21088F950095284B /* PersonalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301E21088F950095284B /* PersonalTableView.m */; };
@@ -117,6 +116,7 @@
 		CABB128D21BF8F0800A02D16 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB128C21BF8F0800A02D16 /* MoreViewController.m */; };
 		CABB129121BF8F7300A02D16 /* MoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129021BF8F7300A02D16 /* MoreHomeViewController.m */; };
 		CABB129621BF8F9600A02D16 /* MoreMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129521BF8F9600A02D16 /* MoreMineViewController.m */; };
+		CABB129921C0DD0100A02D16 /* PopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129821C0DD0100A02D16 /* PopUpView.m */; };
 		CAECD4BF21B66F6600EEDB09 /* HorizontalMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */; };
 /* End PBXBuildFile section */
 
@@ -330,9 +330,7 @@
 		2AFA0BD42089B50C009A7B5A /* VideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoView.h; sourceTree = "<group>"; };
 		2AFA0BD52089B50C009A7B5A /* VideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoControlView.m; sourceTree = "<group>"; };
 		2AFA0BD72089B50C009A7B5A /* PopUpViewObjeect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewObjeect.h; sourceTree = "<group>"; };
-		2AFA0BD82089B50C009A7B5A /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		2AFA0BD92089B50C009A7B5A /* PopUpViewObjeect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewObjeect.m; sourceTree = "<group>"; };
-		2AFA0BDA2089B50C009A7B5A /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		2AFA0BDB2089B50C009A7B5A /* PopUpProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpProtocol.h; sourceTree = "<group>"; };
 		2AFF301721086EF10095284B /* PublicPersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicPersonalViewController.h; sourceTree = "<group>"; };
 		2AFF301821086EF10095284B /* PublicPersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicPersonalViewController.m; sourceTree = "<group>"; };
@@ -353,6 +351,8 @@
 		CABB129021BF8F7300A02D16 /* MoreHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreHomeViewController.m; sourceTree = "<group>"; };
 		CABB129421BF8F9600A02D16 /* MoreMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreMineViewController.h; sourceTree = "<group>"; };
 		CABB129521BF8F9600A02D16 /* MoreMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreMineViewController.m; sourceTree = "<group>"; };
+		CABB129721C0DD0100A02D16 /* PopUpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopUpView.h; sourceTree = "<group>"; };
+		CABB129821C0DD0100A02D16 /* PopUpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopUpView.m; sourceTree = "<group>"; };
 		CAECD4BD21B66F6600EEDB09 /* HorizontalMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuView.h; sourceTree = "<group>"; };
 		CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuView.m; sourceTree = "<group>"; };
 		EB622AB2DEE5AE4F90DD509C /* Pods-iOSNoteStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNoteStudy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1085,13 +1085,13 @@
 		2AFA0BD62089B50C009A7B5A /* PopUpView */ = {
 			isa = PBXGroup;
 			children = (
-				2AFA0BD82089B50C009A7B5A /* TestView.h */,
-				2AFA0BDA2089B50C009A7B5A /* TestView.m */,
 				2AFA0BD72089B50C009A7B5A /* PopUpViewObjeect.h */,
 				2AFA0BD92089B50C009A7B5A /* PopUpViewObjeect.m */,
 				2AFA0BDB2089B50C009A7B5A /* PopUpProtocol.h */,
 				2AAF45BA20B26576000E0949 /* PopUpViewController.h */,
 				2AAF45BB20B26576000E0949 /* PopUpViewController.m */,
+				CABB129721C0DD0100A02D16 /* PopUpView.h */,
+				CABB129821C0DD0100A02D16 /* PopUpView.m */,
 			);
 			path = PopUpView;
 			sourceTree = "<group>";
@@ -1386,6 +1386,7 @@
 				2AA3B98B20B92604006FF4B4 /* GitHubTableViewCell.m in Sources */,
 				2A39E0F320FC876D00DABC49 /* UIViewController+Category.m in Sources */,
 				2A18890D20870C6700524FA1 /* UIImage+Category.m in Sources */,
+				CABB129921C0DD0100A02D16 /* PopUpView.m in Sources */,
 				2A58CB1E20889D050076675E /* ContactDataObject.m in Sources */,
 				2A1888DC2086493900524FA1 /* BaseNavigationController.m in Sources */,
 				CAAA083121B9148E00883B50 /* OptionsViewController.m in Sources */,
@@ -1455,7 +1456,6 @@
 				2AFA0BE12089B50C009A7B5A /* HomePageMenuView.m in Sources */,
 				CABB129621BF8F9600A02D16 /* MoreMineViewController.m in Sources */,
 				2AFA0BDD2089B50C009A7B5A /* CardCollectionViewLayout.m in Sources */,
-				2AFA0BE72089B50C009A7B5A /* TestView.m in Sources */,
 				2A5EC67620C5184300C4FD12 /* StartsViewController.m in Sources */,
 				2AFA0BBC208983A4009A7B5A /* PermissionsObject.m in Sources */,
 				2A2F685620DCDFF7002A7A2D /* OptionsView.m in Sources */,

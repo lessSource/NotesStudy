@@ -7,39 +7,43 @@
 //
 
 #import "PopUpViewController.h"
-#import "LSWebViewController.h"
+#import "PopUpView.h"
 
 @interface PopUpViewController ()
+@property (nonatomic, strong) PopUpView *popUpView;
+
 
 @end
 
 @implementation PopUpViewController
 
-
-- (instancetype)init {
-    if (self = [super init]) {
-        self.modalPresentationStyle = UIModalPresentationCustom;
-        self.view.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.3];
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIButton *nameButton = [[UIButton alloc]init];
-    [nameButton setTitle:@"测试" forState:UIControlStateNormal];
-    [nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    nameButton.backgroundColor = [UIColor mainColor];
-    nameButton.clipsToBounds = YES;
-    nameButton.layer.cornerRadius = 5;
-    [nameButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:nameButton];
-    [nameButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.height.offset(45);
-        make.width.offset(120);
-    }];
+}
+
+- (NSArray *)buttonListArray {
+    return @[@"上",@"下",@"左",@"右",@"中"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        self.popUpView.frame = CGRectMake(0, 0, kScreenWidth, 100);
+        [[PopUpViewObjeect sharrPopUpView] presentContentView:self.popUpView direction:PopUpViewDirectionTypeUp];
+    }else if (indexPath.row == 1) {
+        self.popUpView.frame = CGRectMake(0, kScreenHeight - 200, kScreenWidth, 200);
+        [[PopUpViewObjeect sharrPopUpView] presentContentView:self.popUpView direction:PopUpViewDirectionTypeDown];
+    }else if (indexPath.row == 2) {
+        self.popUpView.frame = CGRectMake(0, 0, kScreenWidth - 100, kScreenHeight);
+        [[PopUpViewObjeect sharrPopUpView] presentContentView:self.popUpView direction:PopUpViewDirectionTypeLeft];
+    }else if (indexPath.row == 3) {
+        self.popUpView.frame = CGRectMake(100, 0, kScreenWidth - 100, kScreenHeight);
+        [[PopUpViewObjeect sharrPopUpView] presentContentView:self.popUpView direction:PopUpViewDirectionTypeRight];
+    }else if (indexPath.row == 4) {
+        self.popUpView.size = CGSizeMake(kScreenWidth - 100, 250);
+        self.popUpView.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
+        [[PopUpViewObjeect sharrPopUpView] presentContentView:self.popUpView direction:PopUpViewDirectionTypeCenter];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,13 +51,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Event
-- (void)buttonClick:(UIButton *)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
+#pragma mark - Lazy
+- (PopUpView *)popUpView {
+    if (_popUpView == nil) {
+        _popUpView = [[PopUpView alloc]init];
+        _popUpView.backgroundColor = [UIColor whiteColor];
+    }
+    return _popUpView;
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-}
-
 
 @end

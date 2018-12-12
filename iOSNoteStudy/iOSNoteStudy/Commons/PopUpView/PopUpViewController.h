@@ -6,9 +6,9 @@
 //  Copyright © 2018年 lj. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ButtonListViewController.h"
 
-@interface PopUpViewController : BaseViewController
+@interface PopUpViewController : ButtonListViewController
 
 
 @end

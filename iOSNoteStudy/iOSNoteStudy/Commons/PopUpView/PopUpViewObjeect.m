@@ -37,7 +37,6 @@ static PopUpViewObjeect *popUpViewObject;
 
 - (void)setUpUI {
     self.subBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
-    
     self.maskView = [[UIView alloc]initWithFrame:self.subBackView.bounds];
     self.maskView.backgroundColor = [UIColor blackColor];
     self.maskView.alpha = 0;
@@ -86,33 +85,42 @@ static PopUpViewObjeect *popUpViewObject;
 
 #pragma mark - animation
 - (void)_showAnimation:(PopUpViewDirectionType)directionType {
-    if (directionType == PopUpViewDirectionTypeNone) {
-        self.contentView.transform = CGAffineTransformMakeTranslation(CGFLOAT_MIN, CGRectGetHeight(self.contentView.bounds));
+    if (directionType == PopUpViewDirectionTypeUp) {
+        self.contentView.transform = CGAffineTransformMakeTranslation(0, - CGRectGetHeight(self.contentView.bounds));
+    }else if (directionType == PopUpViewDirectionTypeDown || directionType == PopUpViewDirectionTypeNone) {
+        self.contentView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.contentView.bounds));
+    }else if (directionType == PopUpViewDirectionTypeLeft) {
+        self.contentView.transform = CGAffineTransformMakeTranslation(- CGRectGetWidth(self.contentView.bounds), 0);
     }else {
-        self.contentView.transform = CGAffineTransformMakeTranslation(CGRectGetWidth(self.contentView.bounds), CGFLOAT_MIN);
+        self.contentView.transform = CGAffineTransformMakeTranslation(CGRectGetWidth(self.contentView.bounds), 0);
     }
     [UIView animateWithDuration:0.3 animations:^{
-        self.contentView.transform = CGAffineTransformMakeTranslation(CGFLOAT_MIN, CGFLOAT_MIN);
+        self.contentView.transform = CGAffineTransformMakeTranslation(0, 0);
     } completion:^(BOOL finished) {
         [self.contentView didShwoView];
     }];
-
 }
 
 - (void)_cancelAnimation:(PopUpViewDirectionType)directionType {
     [_contentView willCancelView];
     [UIView animateWithDuration:0.5 animations:^{
         if (directionType == PopUpViewDirectionTypeRight) {
-            self.contentView.transform = CGAffineTransformMakeTranslation(kScreenWidth, CGFLOAT_MIN);
+            self.contentView.transform = CGAffineTransformMakeTranslation(kScreenWidth, 0);
+        }else if (directionType == PopUpViewDirectionTypeUp) {
+            self.contentView.transform = CGAffineTransformMakeTranslation(0, - CGRectGetHeight(self.contentView.bounds));
+        }else if (directionType == PopUpViewDirectionTypeLeft) {
+            self.contentView.transform = CGAffineTransformMakeTranslation(- CGRectGetWidth(self.contentView.bounds), 0);
         }else if (directionType == PopUpViewDirectionTypeCenter) {
+            
         }else {
-            self.contentView.transform = CGAffineTransformMakeTranslation(CGFLOAT_MIN, kScreenHeight);
+            self.contentView.transform = CGAffineTransformMakeTranslation(0, kScreenHeight);
         }
         self.maskView.alpha = 0.0;
         self.contentView.alpha = 0.0;
     } completion:^(BOOL finished) {
         if (self.contentView) {
             [self.contentView didCancelView];
+            self.contentView.transform = CGAffineTransformMakeTranslation(0, 0);
             [self.contentView removeFromSuperview];
             self.contentView = nil;
         }
@@ -129,14 +137,9 @@ static PopUpViewObjeect *popUpViewObject;
     return alertViewAnimation;
 }
 
-
 #pragma mark - 按钮
 - (void)backViewClick {
-    if (self.directionType == PopUpViewDirectionTypeLeft) {
-        [self cancalContentView:_contentView direction:PopUpViewDirectionTypeRight];
-    }else {
-        [self cancalContentView:_contentView direction:self.directionType];
-    }
+    [self cancalContentView:_contentView direction:self.directionType];
     [self.contentView endEditing:YES];
 }
 

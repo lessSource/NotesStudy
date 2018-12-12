@@ -50,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL intervalLineHidden;
 /** 间隔线高度 */
 @property (nonatomic, assign) CGFloat intervalLineHeight;
+
 //@property
 @property(nonatomic, assign)id <HorizontalMenuDelegate>delegate;
 
