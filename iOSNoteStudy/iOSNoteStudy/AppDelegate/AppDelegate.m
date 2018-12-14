@@ -36,7 +36,7 @@
     [[ContactDataObject shareInstance]createDataBase];
     
 #if defined(DEBUG) || defined(_DEBUG)
-//    [[FHHFPSIndicator sharedFPSIndicator] show];
+    [[FHHFPSIndicator sharedFPSIndicator] show];
 #endif
     
     //登录成功

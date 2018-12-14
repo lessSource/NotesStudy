@@ -14,11 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AlipaySDK-iOS (15.5.5)
   - EZSwiftExtensions (2.0)
   - FHHFPSIndicator (1.0.0)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - GPUImage (0.1.7)
   - Kingfisher (4.10.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
@@ -45,9 +47,11 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AlipaySDK-iOS
   - EZSwiftExtensions
   - FHHFPSIndicator
   - FMDB
+  - GPUImage (~> 0.1.7)
   - Kingfisher
   - Masonry
   - MBProgressHUD
@@ -67,9 +71,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AlipaySDK-iOS
     - EZSwiftExtensions
     - FHHFPSIndicator
     - FMDB
+    - GPUImage
     - Kingfisher
     - Masonry
     - MBProgressHUD
@@ -89,9 +95,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AlipaySDK-iOS: 7b700342e71cb3b626603ce96f9d2fb158acbcfb
   EZSwiftExtensions: f73648a591e529a1dbd83c22b19fd3e57df6fb7d
   FHHFPSIndicator: b4d34c3a93b702ad18358a4eb49839f83f4f30fb
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -109,6 +117,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 428dd8ee753bdf2767a234f5ccb8cc2cc7858a1b
+PODFILE CHECKSUM: 996f331e23ad74061b44bd3e2b7ebd468d7e2fe1
 
 COCOAPODS: 1.5.3

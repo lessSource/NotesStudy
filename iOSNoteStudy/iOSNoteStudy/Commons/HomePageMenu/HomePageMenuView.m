@@ -75,10 +75,8 @@ static NSString *homePageMenuCell = @"HomePageMenuCell";
     CGRect frame = self.frame;
     CGFloat height = self.collectionViewLayout.collectionViewContentSize.height;
     if (self.nameArray.count == 0) frame.size.height = 0;
-    else {
-        self.height = height;
-//        frame.size.height = (_itemSize.height + _lineSpacing) * (self.nameArray.count/_column + (self.nameArray.count%_column == 0 ? 0 : 1)) + CorrectNumber - _lineSpacing;
-    }
+    else self.height = height;
+    
     if (self.menuDataSource && [self.menuDataSource respondsToSelector:@selector(homePageMenuImage:)]) {
         self.iconArray = [self.menuDataSource homePageMenuImage:self];
     }

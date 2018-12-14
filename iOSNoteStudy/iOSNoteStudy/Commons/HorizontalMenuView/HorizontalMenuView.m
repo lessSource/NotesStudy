@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *menuWidthArray;
 @property (nonatomic, assign) CGFloat frameWidth;
 @property (nonatomic, assign) CGFloat titleWidth;   // 所有按钮的宽度
-@property (nonatomic, assign) CGFloat SPACE;        // 按钮直接间隔
+@property (nonatomic, assign) CGFloat SPACE;        
 @property (nonatomic, assign) NSInteger lastSelect; // 上次点击
 @property (nonatomic, strong) NSArray<NSArray *> *iconArray;  // 图标
 
