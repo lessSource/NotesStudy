@@ -15,7 +15,7 @@
 - (NSArray *)dataArrayNumberOfItems:(SelectMediaView *)mediaView;
 
 @optional
-- (CGSize)collectionMediaView:(SelectMediaView *)mediaView sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (CGSize)collectionMediaView:(SelectMediaView *)mediaView;
 
 - (void)collectionMediaView:(SelectMediaView *)mediaView frameHeight:(CGFloat)height;
 

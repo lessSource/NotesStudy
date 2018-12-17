@@ -94,8 +94,8 @@ static NSString *const selectMediaCell = @"SelectMediaCell";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionMediaView:sizeForItemAtIndexPath:)]) {
-        return [self.delegate collectionMediaView:self sizeForItemAtIndexPath:indexPath];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionMediaView:)]) {
+        return [self.delegate collectionMediaView:self];
     }else {
         return CGSizeMake((kScreenWidth - 23)/4, (kScreenWidth - 23)/4);
     }
@@ -182,16 +182,12 @@ static NSString *const selectMediaCell = @"SelectMediaCell";
     }
     CGFloat height = self.collectionView.collectionViewLayout.collectionViewContentSize.height;
     height = height + self.marginInsets.bottom + self.marginInsets.top;
+    if (self.isAdapter) {
+        self.height = height;
+        self.collectionView.height = height;
+    }
     if (self.delegate && [self.delegate respondsToSelector:@selector(collectionMediaView:frameHeight:)]) {
         [self.delegate collectionMediaView:self frameHeight:height];
-        if (self.isAdapter) {
-            self.collectionView.height = height;
-        }
-    }else {
-        if (self.isAdapter) {
-            self.height = height;
-            self.collectionView.height = height ;
-        }
     }
     [self.collectionView reloadData];
 }
@@ -214,7 +210,7 @@ static NSString *const selectMediaCell = @"SelectMediaCell";
 
 - (void)_collectionView:(SelectMediaCell *)cell cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     cell.isDelete = self.isDisplayDelete;
-    cell.isVideo = YES;
+//    cell.isVideo = YES;
     @WeakObj(self);
     cell.deleteBlock = ^{
         if (selfWeak.delegate && [selfWeak.delegate respondsToSelector:@selector(selectDeleteMediaView:deleteItem:)]) {

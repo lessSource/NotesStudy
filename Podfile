@@ -21,7 +21,8 @@ target 'iOSNoteStudy' do
    pod 'UITextView+Placeholder'
    pod 'VTMagic'
    pod 'ZipArchive', '~> 1.4.0'
-
+   pod 'GPUImage', '~> 0.1.7'
+   pod 'AlipaySDK-iOS'
 
 end
 

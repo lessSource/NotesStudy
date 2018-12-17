@@ -43,11 +43,6 @@
 - (void)setIsDelete:(BOOL)isDelete {
     _isDelete = isDelete;
     self.deleteButton.hidden = !isDelete;
-    if (isDelete) {
-        self.image.frame = CGRectMake(0, 10, CGRectGetWidth(self.bounds) - 10, CGRectGetHeight(self.bounds) - 10);
-    }else {
-        self.image.frame = self.bounds;
-    }
 }
 
 - (void)setIsImplement:(BOOL)isImplement {
@@ -67,6 +62,8 @@
 - (HotSpotsButton *)deleteButton {
     if (_deleteButton == nil) {
         _deleteButton = [[HotSpotsButton alloc]initWithFrame:CGRectMake(CGRectGetWidth(self.bounds) - 20, 0, 20, 20)];
+        _deleteButton.backgroundColor = [UIColor whiteColor];
+        _deleteButton.layer.cornerRadius = 3;
         [_deleteButton setImage:[UIImage imageNamed:@"icon_delete"] forState:UIControlStateNormal];
         [_deleteButton addTarget:self action:@selector(deleteClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:_deleteButton];

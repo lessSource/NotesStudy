@@ -38,7 +38,7 @@
 
 #pragma mark - HorizontalMenuDelegate
 - (NSArray *)horizontalMenuArray:(UIView *)menuView {
-    return @[@"菜单一菜单四",@"菜单二",@"菜单三",@"菜单四",@"菜单四菜单四",@"菜单四菜单四",@"菜单四菜单四菜单四菜单四"];
+    return @[@"菜单一菜单四",@"菜单二",@"菜单三",@"菜单四",@"菜单四菜单四",@"菜单四菜单四",@"菜单四菜单四菜单四菜单四",@"菜单五菜单五菜单五菜单五菜单五"];
 }
 
 - (void)menuView:(UIView *)menuView didSelectButton:(NSInteger)buttonSerial sort:(MenuSoreType)sortType {
@@ -47,8 +47,8 @@
 
 
 
-//- (NSArray <NSArray *>*)horizontalMenuImageArray:(UIView *)menuView {
-//    return @[@[@"1",@"2",@"3"],@[],@[],@[],@[]];
-//}
+- (NSArray <NSArray *>*)horizontalMenuImageArray:(UIView *)menuView {
+    return @[@[@"sortNone",@"sortDescending",@"sortAscending"],@[],@[@"sortNone",@"sortDescending",@"sortAscending"],@[],@[],@[],@[@"sortNone",@"sortDescending",@"sortAscending"],@[@"sortNone",@"sortDescending",@"sortAscending"]];
+}
 
 @end
