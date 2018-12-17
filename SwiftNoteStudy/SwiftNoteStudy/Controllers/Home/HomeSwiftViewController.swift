@@ -65,6 +65,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
         mediaView.lineSpace = 5
         view.addSubview(mediaView)
 
+        
     }
     
     func mediaViewImage(_ mediaView: SelectMediaView) -> [String] {
