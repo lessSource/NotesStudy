@@ -67,6 +67,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
         view.addSubview(mediaView)
  */
 
+        
     }
     
     func mediaViewImage(_ mediaView: SelectMediaView) -> [String] {
