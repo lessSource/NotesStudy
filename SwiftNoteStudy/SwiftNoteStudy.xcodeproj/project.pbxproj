@@ -34,6 +34,7 @@
 		CA11C89C21A2B61C009EDB3A /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11C89B21A2B61C009EDB3A /* ShowImageViewController.swift */; };
 		CA11C89E21A2BB64009EDB3A /* ShowImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11C89D21A2BB64009EDB3A /* ShowImageCollectionViewCell.swift */; };
 		CA11C8A121A3DDE6009EDB3A /* SelectMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11C8A021A3DDE6009EDB3A /* SelectMediaView.swift */; };
+		CA149C5A21C754D40072493B /* Optional+EXtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA149C5921C754D40072493B /* Optional+EXtension.swift */; };
 		CA6B08F8218BE98700CCA43C /* HomePageMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B08F7218BE98700CCA43C /* HomePageMenuView.swift */; };
 		CA6B08FA218BF91C00CCA43C /* HomePageMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B08F9218BF91C00CCA43C /* HomePageMenuCell.swift */; };
 		CA994EE9219AA59700563C25 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA994EE8219AA59700563C25 /* UIDevice+Extension.swift */; };
@@ -96,6 +97,7 @@
 		CA11C89B21A2B61C009EDB3A /* ShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
 		CA11C89D21A2BB64009EDB3A /* ShowImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA11C8A021A3DDE6009EDB3A /* SelectMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMediaView.swift; sourceTree = "<group>"; };
+		CA149C5921C754D40072493B /* Optional+EXtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+EXtension.swift"; sourceTree = "<group>"; };
 		CA6B08F7218BE98700CCA43C /* HomePageMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageMenuView.swift; sourceTree = "<group>"; };
 		CA6B08F9218BF91C00CCA43C /* HomePageMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageMenuCell.swift; sourceTree = "<group>"; };
 		CA994EE8219AA59700563C25 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
@@ -239,7 +241,6 @@
 		2A57206E2089C27A0062F038 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				2A5720742089C27A0062F038 /* Libs */,
 				2A57206F2089C27A0062F038 /* UIView+Frame.swift */,
 				2A5720702089C27A0062F038 /* NSObject+String.swift */,
 				2A5720712089C27A0062F038 /* UIViewController+Extension.swift */,
@@ -249,16 +250,9 @@
 				CA994EEA219AA83900563C25 /* Constant.swift */,
 				CA994EEC219AAAB500563C25 /* UIColor+Extension.swift */,
 				CA994EEE219AAE5B00563C25 /* String+Extension.swift */,
+				CA149C5921C754D40072493B /* Optional+EXtension.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		2A5720742089C27A0062F038 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libs;
-			path = ../Libs;
 			sourceTree = "<group>";
 		};
 		2A5720752089C27B0062F038 /* Supporting Flies */ = {
@@ -532,6 +526,7 @@
 				CA11C8A121A3DDE6009EDB3A /* SelectMediaView.swift in Sources */,
 				2A5720982089C27B0062F038 /* ReleaseSwiftViewController.swift in Sources */,
 				2A5720912089C27B0062F038 /* AboutApp.swift in Sources */,
+				CA149C5A21C754D40072493B /* Optional+EXtension.swift in Sources */,
 				CA994EED219AAAB500563C25 /* UIColor+Extension.swift in Sources */,
 				CA11C89C21A2B61C009EDB3A /* ShowImageViewController.swift in Sources */,
 				2A5720902089C27B0062F038 /* UIViewController+Extension.swift in Sources */,
@@ -740,7 +735,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P2JD4K827;
+				DEVELOPMENT_TEAM = 63JB5EXBJ6;
 				INFOPLIST_FILE = "SwiftNoteStudy/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -766,7 +761,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P2JD4K827;
+				DEVELOPMENT_TEAM = 63JB5EXBJ6;
 				INFOPLIST_FILE = "SwiftNoteStudy/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

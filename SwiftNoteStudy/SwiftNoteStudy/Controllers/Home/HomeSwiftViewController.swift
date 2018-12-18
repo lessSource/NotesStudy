@@ -56,6 +56,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 //        menuView.menuDelegate = self
 //        view.addSubview(menuView)
         
+        /*
         mediaView = SelectMediaView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
 //        mediaView.isEditor = false
         mediaView.isAdaptiveHeight = true
@@ -64,6 +65,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
         mediaView.interitemSpacing = 5
         mediaView.lineSpace = 5
         view.addSubview(mediaView)
+ */
 
     }
     

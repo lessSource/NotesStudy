@@ -34,10 +34,10 @@ class BaseSwiftNavigationController: UINavigationController {
         let gradientLayer = CAGradientLayer()
         let color1 = UIColor(red: 255.0/255.0, green: 70.0/255.0, blue: 93.0/255.0, alpha: 1.0).cgColor
         let color2 = UIColor(red: 251.0/255.0, green: 108.0/255.0, blue: 42.0/255.0, alpha: 1.0).cgColor
-        gradientLayer.colors = [color1,color2]
+        gradientLayer.colors = [color1 ,color2]
         gradientLayer.locations = [0.1, 1.0]
-        gradientLayer.startPoint = CGPoint.init(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint.init(x: 1.0, y: 0)
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0)
         gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40)
         barBackgronudView.layer.insertSublayer(gradientLayer, above: gradientLayer)
         
