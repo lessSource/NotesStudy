@@ -15,6 +15,8 @@
 		2A156E6120FDC51B005B8075 /* CircleFriendsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A156E6020FDC51B005B8075 /* CircleFriendsTableViewCell.m */; };
 		2A156E6B20FDE313005B8075 /* CommentsReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A156E6A20FDE313005B8075 /* CommentsReplyModel.m */; };
 		2A156E6E20FDE3D7005B8075 /* CircleFriendsContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A156E6D20FDE3D7005B8075 /* CircleFriendsContentModel.m */; };
+		2A15EFAD21CA8C38002A28FD /* UIImage+QRCodeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A15EFAB21CA8C38002A28FD /* UIImage+QRCodeImage.m */; };
+		2A15EFB121CA8D83002A28FD /* QrCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A15EFAF21CA8D83002A28FD /* QrCodeScanningViewController.m */; };
 		2A1888982085FC1800524FA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1888972085FC1800524FA1 /* ViewController.m */; };
 		2A1888AD2085FC1900524FA1 /* iOSNoteStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1888AC2085FC1900524FA1 /* iOSNoteStudyTests.m */; };
 		2A1888B82085FC1900524FA1 /* iOSNoteStudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1888B72085FC1900524FA1 /* iOSNoteStudyUITests.m */; };
@@ -154,6 +156,10 @@
 		2A156E6A20FDE313005B8075 /* CommentsReplyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentsReplyModel.m; sourceTree = "<group>"; };
 		2A156E6C20FDE3D7005B8075 /* CircleFriendsContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleFriendsContentModel.h; sourceTree = "<group>"; };
 		2A156E6D20FDE3D7005B8075 /* CircleFriendsContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleFriendsContentModel.m; sourceTree = "<group>"; };
+		2A15EFAB21CA8C38002A28FD /* UIImage+QRCodeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRCodeImage.m"; sourceTree = "<group>"; };
+		2A15EFAC21CA8C38002A28FD /* UIImage+QRCodeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRCodeImage.h"; sourceTree = "<group>"; };
+		2A15EFAF21CA8D83002A28FD /* QrCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QrCodeScanningViewController.m; sourceTree = "<group>"; };
+		2A15EFB021CA8D83002A28FD /* QrCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QrCodeScanningViewController.h; sourceTree = "<group>"; };
 		2A1888902085FC1800524FA1 /* iOSNoteStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSNoteStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1888962085FC1800524FA1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2A1888972085FC1800524FA1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -428,6 +434,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2A15EFAE21CA8D83002A28FD /* QrCodeScanning */ = {
+			isa = PBXGroup;
+			children = (
+				2A15EFAF21CA8D83002A28FD /* QrCodeScanningViewController.m */,
+				2A15EFB021CA8D83002A28FD /* QrCodeScanningViewController.h */,
+			);
+			path = QrCodeScanning;
+			sourceTree = "<group>";
+		};
 		2A1888872085FC1700524FA1 = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +677,8 @@
 			children = (
 				2A18890C20870C6700524FA1 /* UIImage+Category.h */,
 				2A18890B20870C6700524FA1 /* UIImage+Category.m */,
+				2A15EFAC21CA8C38002A28FD /* UIImage+QRCodeImage.h */,
+				2A15EFAB21CA8C38002A28FD /* UIImage+QRCodeImage.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -1016,6 +1033,7 @@
 		2AFA0BBD2089B50C009A7B5A /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				2A15EFAE21CA8D83002A28FD /* QrCodeScanning */,
 				CAECD4BC21B66F4300EEDB09 /* HorizontalMenuView */,
 				2A98A2B2212E9CA400279E93 /* Problem */,
 				2AFF301621086EDA0095284B /* PublicPersonal */,
@@ -1395,6 +1413,7 @@
 				2A39E0F320FC876D00DABC49 /* UIViewController+Category.m in Sources */,
 				2A18890D20870C6700524FA1 /* UIImage+Category.m in Sources */,
 				CABB129921C0DD0100A02D16 /* PopUpView.m in Sources */,
+				2A15EFAD21CA8C38002A28FD /* UIImage+QRCodeImage.m in Sources */,
 				2A58CB1E20889D050076675E /* ContactDataObject.m in Sources */,
 				2A1888DC2086493900524FA1 /* BaseNavigationController.m in Sources */,
 				CAAA083121B9148E00883B50 /* OptionsViewController.m in Sources */,
@@ -1429,6 +1448,7 @@
 				2A430F6120E6153F00076386 /* LStarsView.m in Sources */,
 				2A58CB0C208894A90076675E /* LSSingleTextField.m in Sources */,
 				2A695BF020BE74C300C00583 /* HotSpotsButton.m in Sources */,
+				2A15EFB121CA8D83002A28FD /* QrCodeScanningViewController.m in Sources */,
 				CABB128D21BF8F0800A02D16 /* MoreViewController.m in Sources */,
 				2A98A2D32133E11C00279E93 /* InterviewViewController.m in Sources */,
 				2AF8D94F20F4877F00AB03EC /* ArticleContentTextView.m in Sources */,

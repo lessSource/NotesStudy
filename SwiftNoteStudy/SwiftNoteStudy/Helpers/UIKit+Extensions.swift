@@ -14,6 +14,7 @@ extension UIImagePickerController {
     // 相机权限
     func cameraHandle(_ handle: @escaping Handle) {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("不支持相机")
             return
         }
         sourceType = .camera
@@ -33,6 +34,7 @@ extension UIImagePickerController {
     // 相册权限
     func photoAlbumHandle(_ handle: @escaping Handle) {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            print("不支持相册")
             return
         }
         sourceType = .photoLibrary
