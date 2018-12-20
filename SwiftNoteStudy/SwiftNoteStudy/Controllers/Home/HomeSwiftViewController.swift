@@ -103,6 +103,13 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 //        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: 0, delegate: delegate!)
 //        print(cell)
 //    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let imagePicker: UIImagePickerController = UIImagePickerController()
+        imagePicker.cameraHandle { (success, msg) in
+            
+        }
+    }
 
     
     override func didReceiveMemoryWarning() {
