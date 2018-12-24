@@ -35,12 +35,19 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 
     var menuView: HomePageMenuView!
     var mediaView: SelectMediaView!
+    
+    fileprivate lazy var lineView: UIView = {
+        let lineview = UIView(frame: CGRect(x: Constant.screenWidth/2, y: 200, width: 5, height: 5))
+        lineview.backgroundColor = UIColor.black
+        view.addSubview(lineview)
+        return lineview
+    }()
 
     private var delegate: ModelAnimationDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        dddda()
 //
 //        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
 //        menuView.isAdaptiveHeight = true
@@ -116,4 +123,109 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func dddda() {
+        let backgroundView = UIView(frame: view.bounds)
+        backgroundView.backgroundColor = UIColor.red
+        view.layer.addSublayer(backgroundView.layer)
+        
+        let scanZomeBack = UIImageView(frame: CGRect(x: 100, y: 200, width: Constant.screenWidth - 200, height: Constant.screenWidth - 200))
+        scanZomeBack.backgroundColor = UIColor.clear
+        view.addSubview(scanZomeBack)
+        
+        let maskLayer = CAShapeLayer()
+        maskLayer.fillRule = kCAFillRuleEvenOdd // 奇偶显示规则
+        let basicPath = UIBezierPath(rect: view.frame) // 底层
+        let maskPath = UIBezierPath(roundedRect: scanZomeBack.frame, cornerRadius: (Constant.screenWidth - 200)/2)
+        basicPath.append(maskPath) // 重叠
+        maskLayer.path = basicPath.cgPath
+        backgroundView.layer.mask = maskLayer
+        
+//        lineViewAnimation()
+
+        let greenView = UIView(frame: CGRect(x: Constant.screenWidth/2, y: 200, width: 1, height: Constant.screenWidth - 200))
+        greenView.backgroundColor = UIColor.green
+        view.addSubview(greenView)
+        let height: Int = Int((Constant.screenWidth - 200)/2)
+        
+        let top: CGFloat = 0
+        let width: CGFloat = top * (Constant.screenWidth - 200) - top * top
+        let x: CGFloat = Constant.screenWidth/2 - sqrt(width)
+        let blueView = UIView(frame: CGRect(x: x, y: 200 + top, width: sqrt(width) * 2, height: 1))
+        blueView.backgroundColor = UIColor.blue
+        view.addSubview(blueView)
+        
+        UIView.animate(withDuration: 2) {
+            let ddd: CGFloat = (Constant.screenWidth - 200)/2
+            let width1: CGFloat = ddd * (Constant.screenWidth - 200) - ddd * ddd
+            let x1: CGFloat = Constant.screenWidth/2 - sqrt(width1)
+            blueView.frame = CGRect(x: x1, y: 200 + ddd, width: sqrt(width1) * 2, height: 1)
+        }
+        
+        
+//        for i in 0 ... height {
+//            let top: CGFloat = CGFloat(i)
+//            let width: CGFloat = top * (Constant.screenWidth - 200) - top * top
+//            let x: CGFloat = Constant.screenWidth/2 - sqrt(width)
+//            let blueView = UIView(frame: CGRect(x: x, y: 200 + top, width: sqrt(width) * 2, height: 1))
+//            blueView.backgroundColor = UIColor.blue
+//            view.addSubview(blueView)
+//        }
+//
+
+        
+        
+        lineView.layer.add(showAnimation(scanZomeBack), forKey:"Move")
+        
+    }
+    
+    
+    fileprivate func showAnimation(_ view: UIView) -> CAAnimation {
+        
+        let orbit = CAKeyframeAnimation(keyPath:"position")
+        orbit.duration = 3
+        orbit.path = CGPath(ellipseIn: view.frame, transform: nil)
+        orbit.calculationMode = kCAAnimationPaced
+        orbit.rotationMode = kCAAnimationRotateAuto
+        
+        let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale.y")
+        scaleAnimation.duration = 1.5
+        scaleAnimation.values = [1,(Constant.screenWidth - 200)/4]
+        
+        let scaleAnimation1 = CAKeyframeAnimation(keyPath: "transform.scale.y")
+        scaleAnimation1.duration = 1.5
+        scaleAnimation1.beginTime = 1.5
+        scaleAnimation1.values = [(Constant.screenWidth - 200)/4,1]
+
+        let animation = CAAnimationGroup()
+        animation.animations = [orbit,scaleAnimation,scaleAnimation1]
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.repeatCount = HUGE
+        animation.duration = 3
+        return animation
+    }
+    
+    
+    
+//    func lineViewAnimation() {
+//        UIView.animate(withDuration: TimeInterval.pi/2, animations: {
+//            self.lineView.width = Constant.screenWidth - 200
+//            self.lineView.center = CGPoint(x: Constant.screenWidth/2, y: Constant.screenWidth - 100)
+//        }) { (finish) in
+//            self.lineViewButtonAnimation()
+//        }
+//    }
+//
+//    func lineViewButtonAnimation()  {
+//        UIView.animate(withDuration: TimeInterval.pi/2, animations: {
+//            self.lineView.width = 1
+//            self.lineView.center = CGPoint(x: Constant.screenWidth/2, y: Constant.screenWidth)
+//        }) { (finish) in
+//            self.lineView.center = CGPoint(x: Constant.screenWidth/2, y: 200)
+//            self.lineViewAnimation()
+//        }
+//    }
+    
 }
+
+
