@@ -91,11 +91,6 @@ class SelectMediaView: UICollectionView {
     fileprivate func initView() {
         self.delegate = self
         self.dataSource = self
-//        if #available(iOS 11.0, *) {
-//            self.dragDelegate = self
-//        } else {
-//            // Fallback on earlier versions
-//        }
         self.alwaysBounceVertical = false
         self.alwaysBounceHorizontal = false
         flowLayout.minimumLineSpacing = lineSpace
@@ -170,18 +165,3 @@ extension SelectMediaView: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
 }
-
-
-//extension SelectMediaView: UICollectionViewDragDelegate {
-//    @available(iOS 11.0, *)
-//    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-////        let item = ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"]
-//        let item = "hp_pc_bacao"
-//        let itemProvider = NSItemProvider(object: item as NSItemProviderWriting)
-//        let dragItem = UIDragItem(itemProvider: itemProvider)
-//        dragItem.localObject = item
-//    }
-//
-////    itemsForBeginning
-//
-//}

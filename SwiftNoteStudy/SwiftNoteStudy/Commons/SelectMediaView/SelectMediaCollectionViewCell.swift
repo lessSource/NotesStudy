@@ -21,8 +21,6 @@ class SelectMediaCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
-        
-        let webView: WKWebView
     }
     
     //MARK:- initView
