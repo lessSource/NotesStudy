@@ -18,7 +18,7 @@
 /** 扫描内容外部View的alpha值 */
 static CGFloat const scanBorderOutsideViewAlpha = 0.4;
 /** 扫描动画线(冲击波) 的高度 */
-static CGFloat const scanninglineHeight = 12;
+static CGFloat const scanninglineHeight = 6;
 /** 二维码冲击波动画时间 */
 static CGFloat const SGQRCodeScanningLineAnimation = 0.05;
 
@@ -44,7 +44,7 @@ static CGFloat const SGQRCodeScanningLineAnimation = 0.05;
     if (_scanningLineImage == nil) {
         _scanningLineImage = [[UIImageView alloc]init];
         _scanningLineImage.image = [UIImage imageNamed:@"scan_Line"];
-        _scanningLineImage.frame = CGRectMake(scanContent_X + 40, scanContent_Y,  scanContent_h_w - 80, scanninglineHeight);
+        _scanningLineImage.frame = CGRectMake(scanContent_X + 7, scanContent_Y,  scanContent_h_w - 14, scanninglineHeight);
     }
     return _scanningLineImage;
 }

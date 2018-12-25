@@ -437,8 +437,8 @@
 		2A15EFAE21CA8D83002A28FD /* QrCodeScanning */ = {
 			isa = PBXGroup;
 			children = (
-				2A15EFAF21CA8D83002A28FD /* QrCodeScanningViewController.m */,
 				2A15EFB021CA8D83002A28FD /* QrCodeScanningViewController.h */,
+				2A15EFAF21CA8D83002A28FD /* QrCodeScanningViewController.m */,
 			);
 			path = QrCodeScanning;
 			sourceTree = "<group>";
