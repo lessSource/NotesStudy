@@ -87,6 +87,7 @@
 		2AAEF15C20A2E88800B2B576 /* GitHubListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAEF15B20A2E88800B2B576 /* GitHubListModel.m */; };
 		2AAEF16120A3E09100B2B576 /* LSHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAEF16020A3E09100B2B576 /* LSHTTPRequest.m */; };
 		2AAF45BC20B26576000E0949 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF45BB20B26576000E0949 /* PopUpViewController.m */; };
+		2AB0A82921D11DCC00647C6D /* noticeMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AB0A82821D11DCC00647C6D /* noticeMusic.wav */; };
 		2AC2051720F34EE300AEC2AC /* ArticlePublishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC2051620F34EE300AEC2AC /* ArticlePublishedViewController.m */; };
 		2AD796BC20C0619400DB4137 /* ShoppingCartOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD796BB20C0619400DB4137 /* ShoppingCartOperationView.m */; };
 		2AE31DE7209170BB00984120 /* BaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE31DE6209170BB00984120 /* BaseTestCase.m */; };
@@ -296,6 +297,7 @@
 		2AAEF16020A3E09100B2B576 /* LSHTTPRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSHTTPRequest.m; sourceTree = "<group>"; };
 		2AAF45BA20B26576000E0949 /* PopUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
 		2AAF45BB20B26576000E0949 /* PopUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
+		2AB0A82821D11DCC00647C6D /* noticeMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noticeMusic.wav; sourceTree = "<group>"; };
 		2AC2051520F34EE300AEC2AC /* ArticlePublishedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticlePublishedViewController.h; sourceTree = "<group>"; };
 		2AC2051620F34EE300AEC2AC /* ArticlePublishedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticlePublishedViewController.m; sourceTree = "<group>"; };
 		2AD796BA20C0619400DB4137 /* ShoppingCartOperationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingCartOperationView.h; sourceTree = "<group>"; };
@@ -942,6 +944,7 @@
 		2AAEF14020A29F8C00B2B576 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2AB0A82821D11DCC00647C6D /* noticeMusic.wav */,
 				CAAA082D21B909B400883B50 /* Xingkai.ttc */,
 				2A95510E213F76C6006C88AA /* APP启动过程.html */,
 				2A730FAF212E99680001AFB0 /* @property.html */,
@@ -1312,6 +1315,7 @@
 				2AA0653F20BEE20700DE11EB /* index.html in Resources */,
 				2A98A2D02133DF8E00279E93 /* SDWebImage.html in Resources */,
 				2A18890520865B1000524FA1 /* LaunchScreen.storyboard in Resources */,
+				2AB0A82921D11DCC00647C6D /* noticeMusic.wav in Resources */,
 				2A1888F72086571900524FA1 /* Assets.xcassets in Resources */,
 				2AAEF13F20A29E6000B2B576 /* tr.webp in Resources */,
 				2A18890620865B1000524FA1 /* Main.storyboard in Resources */,
