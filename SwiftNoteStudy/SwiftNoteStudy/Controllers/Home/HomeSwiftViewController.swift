@@ -114,7 +114,8 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let imagePicker: UIImagePickerController = UIImagePickerController()
         imagePicker.cameraHandle { (success, msg) in
-            
+            let cameraQR = CameraQRViewController()
+            self.pushAndHideTabbar(cameraQR)
         }
     }
 
@@ -175,7 +176,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 
         
         
-        lineView.layer.add(showAnimation(scanZomeBack), forKey:"Move")
+//        lineView.layer.add(showAnimation(scanZomeBack), forKey:"Move")
         
     }
     
