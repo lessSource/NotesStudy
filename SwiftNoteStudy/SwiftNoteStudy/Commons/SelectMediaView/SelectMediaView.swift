@@ -6,6 +6,36 @@
 //  Copyright © 2018 lj. All rights reserved.
 //
 
+enum MediaImageType {
+    case string
+    case image
+}
+
+protocol SelectMediaImage {
+    var contentImage: UIImage { get }
+    var imageType: MediaImageType { get }
+}
+
+extension String: SelectMediaImage {
+    var imageType: MediaImageType {
+        return .string
+    }
+    
+    var contentImage: UIImage {
+        return UIImage(named: self) ?? UIImage()
+    }
+}
+
+extension UIImage: SelectMediaImage {
+    var imageType: MediaImageType {
+        return .image
+    }
+    
+    var contentImage: UIImage {
+        return self
+    }
+}
+
 protocol SelectMediaViewDelegate: NSObjectProtocol {
     /** 添加图片 */
     func mediaView(_ mediaView: SelectMediaView, addForItemAt item: Int)
@@ -14,7 +44,9 @@ protocol SelectMediaViewDelegate: NSObjectProtocol {
     /** 选中图片 */
     func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int)
     /** 数据 */
-    func mediaViewImage(_ mediaView: SelectMediaView) -> [String]
+    func mediaViewImage(_ mediaView: SelectMediaView) -> [SelectMediaImage]
+    
+    func ddddd<T: Equatable>(_ mediaView: SelectMediaView) -> [T]
 }
 
 extension SelectMediaViewDelegate {
@@ -27,9 +59,10 @@ extension SelectMediaViewDelegate {
 import UIKit
 
 class SelectMediaView: UICollectionView {
+    
     weak var mediaDelegate: SelectMediaViewDelegate?
     /** 最大数量 */
-    public var maxImageCount: Int = 6
+    public var maxImageCount: Int = 9
     /** 横向数量 默认itemSize 有效 */
     public var column: Int = 4
     /** itemHeight */
@@ -65,10 +98,9 @@ class SelectMediaView: UICollectionView {
         }
     }
     
-    
     fileprivate let CorrectNumber: CGFloat = 0.2
     fileprivate var flowLayout: UICollectionViewFlowLayout!
-    fileprivate var imageArray: [String] = []
+    fileprivate var imageArray: [SelectMediaImage] = []
     fileprivate var itemSize: CGSize = CGSize.zero
     
     deinit {
@@ -112,6 +144,8 @@ class SelectMediaView: UICollectionView {
         self.itemSize = CGSize(width: allWidth/CGFloat(column), height: itemSizeHeight)
         if let mediaDe = mediaDelegate {
             imageArray = mediaDe.mediaViewImage(self)
+            let image = mediaDe.ddddd(self)
+            print(image)
         }
         if imageArray.count == 0 { self.height = 0 }
         if isAdaptiveHeight {
@@ -129,7 +163,7 @@ class SelectMediaView: UICollectionView {
             cell.imageView.backgroundColor = UIColor.blue
             cell.deleteButton.isHidden = true
         }else {
-            cell.imageView.image = UIImage(named: imageArray[indexPath.item])
+            cell.imageView.image = imageArray[indexPath.item].contentImage
             cell.deleteButton.isHidden = !isEditor
         }
     }

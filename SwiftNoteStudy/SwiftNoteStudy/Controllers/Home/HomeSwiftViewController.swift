@@ -32,6 +32,14 @@ extension String {
 
 class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate, ShowImageProtocol, UIViewControllerTransitioningDelegate {
     
+    func ddddd<T>(_ mediaView: SelectMediaView) -> [T] where T : Equatable {
+        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!] as! [T]
+    }
+    
+//    func ddddd<T>(_ mediaView: SelectMediaView) -> [T] where T : Equatable {
+//        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!] as! [T]
+//    }
+    
 
     var menuView: HomePageMenuView!
     var mediaView: SelectMediaView!
@@ -47,7 +55,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dddda()
+//        dddda()
 //
 //        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
 //        menuView.isAdaptiveHeight = true
@@ -63,22 +71,19 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 //        menuView.menuDelegate = self
 //        view.addSubview(menuView)
         
-        /*
         mediaView = SelectMediaView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-//        mediaView.isEditor = false
+        mediaView.isEditor = false
         mediaView.isAdaptiveHeight = true
         mediaView.mediaDelegate = self
         mediaView.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15)
         mediaView.interitemSpacing = 5
         mediaView.lineSpace = 5
         view.addSubview(mediaView)
- */
-
         
     }
     
-    func mediaViewImage(_ mediaView: SelectMediaView) -> [String] {
-        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"]
+    func mediaViewImage(_ mediaView: SelectMediaView) -> [SelectMediaImage] {
+        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!]
     }
     
     func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int) {
