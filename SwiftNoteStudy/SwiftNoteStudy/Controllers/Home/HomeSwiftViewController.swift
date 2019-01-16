@@ -38,6 +38,14 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 
     
     
+    func ddddd<T>(_ mediaView: SelectMediaView) -> [T] where T : Equatable {
+        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!] as! [T]
+    }
+    
+//    func ddddd<T>(_ mediaView: SelectMediaView) -> [T] where T : Equatable {
+//        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!] as! [T]
+//    }
+    
 
     var menuView: HomePageMenuView!
     var mediaView: SelectMediaView!
@@ -68,23 +76,34 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
         menuView.menuDataSource = self
         menuView.menuDelegate = self
         view.addSubview(menuView)
+//
+//        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
+//        menuView.isAdaptiveHeight = true
+//        menuView.column = 5
+//
+////        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
+//        //        menuView.itemSizeHeight = 100
+//        //        menuView.interitemSpacing = 10
+//        //        menuView.lineSpacing = 10
+//        //        menuView.
+//
+//        menuView.menuDataSource = self
+//        menuView.menuDelegate = self
+//        view.addSubview(menuView)
         
-        /*
         mediaView = SelectMediaView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-//        mediaView.isEditor = false
+        mediaView.isEditor = false
         mediaView.isAdaptiveHeight = true
         mediaView.mediaDelegate = self
         mediaView.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15)
         mediaView.interitemSpacing = 5
         mediaView.lineSpace = 5
         view.addSubview(mediaView)
- */
-
         
     }
     
-    func mediaViewImage(_ mediaView: SelectMediaView) -> [String] {
-        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"]
+    func mediaViewImage(_ mediaView: SelectMediaView) -> [SelectMediaImage] {
+        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!]
     }
 //
 //    func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int) {
@@ -120,7 +139,8 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let imagePicker: UIImagePickerController = UIImagePickerController()
         imagePicker.cameraHandle { (success, msg) in
-            
+            let cameraQR = CameraQRViewController()
+            self.pushAndHideTabbar(cameraQR)
         }
     }
 
@@ -181,7 +201,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 
         
         
-        lineView.layer.add(showAnimation(scanZomeBack), forKey:"Move")
+//        lineView.layer.add(showAnimation(scanZomeBack), forKey:"Move")
         
     }
     
