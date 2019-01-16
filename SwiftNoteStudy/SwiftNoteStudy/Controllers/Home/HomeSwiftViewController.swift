@@ -30,7 +30,13 @@ extension String {
 }
 
 
-class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate, ShowImageProtocol, UIViewControllerTransitioningDelegate {
+class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate, ShowImageProtocol, UIViewControllerTransitioningDelegate,HomePageMenuDelegate,HomePageMenuDataSource {
+    func menuViewTest(_ menuView: HomePageMenuView) -> [MenuViewImageProtocol] {
+        return ["hp_pc_bacao",UIImage(named: "hp_pc_bacao")!]
+    }
+    
+
+    
     
 
     var menuView: HomePageMenuView!
@@ -47,21 +53,21 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dddda()
-//
-//        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-//        menuView.isAdaptiveHeight = true
-//        menuView.column = 5
-//
-////        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
-//        //        menuView.itemSizeHeight = 100
-//        //        menuView.interitemSpacing = 10
-//        //        menuView.lineSpacing = 10
-//        //        menuView.
-//
-//        menuView.menuDataSource = self
-//        menuView.menuDelegate = self
-//        view.addSubview(menuView)
+//        dddda()
+
+        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
+        menuView.isAdaptiveHeight = true
+        menuView.column = 5
+
+//        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
+        //        menuView.itemSizeHeight = 100
+        //        menuView.interitemSpacing = 10
+        //        menuView.lineSpacing = 10
+        //        menuView.
+
+        menuView.menuDataSource = self
+        menuView.menuDelegate = self
+        view.addSubview(menuView)
         
         /*
         mediaView = SelectMediaView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
@@ -80,36 +86,36 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
     func mediaViewImage(_ mediaView: SelectMediaView) -> [String] {
         return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"]
     }
+//
+//    func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int) {
+////        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: item)
+//        let cell = mediaView.cellForItem(at: IndexPath(item: item, section: 0)) as! SelectMediaCollectionViewCell
+//        delegate = ModelAnimationDelegate(originalView: cell.imageView)
+//        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: item, delegate: delegate!)
+//    }
     
-    func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int) {
-//        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: item)
-        let cell = mediaView.cellForItem(at: IndexPath(item: item, section: 0)) as! SelectMediaCollectionViewCell
-        delegate = ModelAnimationDelegate(originalView: cell.imageView)
-        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: item, delegate: delegate!)
+    func menuViewName(_ menuView: HomePageMenuView) -> [String] {
+        return ["菜单1","菜单2","菜单3","菜单4","菜单5","菜单2","菜单3","菜单4","菜单5"]
+    }
+
+    func menuViewImage(_ menuView: HomePageMenuView) -> [String] {
+        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","","hp_pc_bacao","hp_pc_bacao"]
+    }
+
+    func menuView(_ menuView: HomePageMenuView, didSelectItemAt indexPath: IndexPath) {
+        print("\(indexPath.item)")
+//        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: 0)
+//        showImages(["hp_pc_bacao","hp_pc_bacao"], currentIndex: 0, delegate: ModelAnimationDelegate(originalView: <#T##UIImageView#>))
+
     }
     
-//    func menuViewName(_ menuView: HomePageMenuView) -> [String] {
-//        return ["菜单1","菜单2","菜单3","菜单4","菜单5","菜单2","菜单3","菜单4","菜单5"]
-//    }
-//
-//    func menuViewImage(_ menuView: HomePageMenuView) -> [String] {
-//        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","","hp_pc_bacao","hp_pc_bacao"]
-//    }
-//
-//    func menuView(_ menuView: HomePageMenuView, didSelectItemAt indexPath: IndexPath) {
-//        print("\(indexPath.item)")
-////        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: 0)
-////        showImages(["hp_pc_bacao","hp_pc_bacao"], currentIndex: 0, delegate: ModelAnimationDelegate(originalView: <#T##UIImageView#>))
-//
-//    }
-    
-//    func menuView(_ menuView: HomePageMenuView, collectionCell: UICollectionViewCell, ItemAt indexPath: IndexPath) {
-//        let cell = collectionCell as! HomePageMenuCell
+    func menuView(_ menuView: HomePageMenuView, collectionCell: UICollectionViewCell, ItemAt indexPath: IndexPath) {
+        let cell = collectionCell as! HomePageMenuCell
 //        delegate = ModelAnimationDelegate.reset(delegate, imageView: cell.iconImage)
-//
+
 //        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: 0, delegate: delegate!)
-//        print(cell)
-//    }
+        print(cell)
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let imagePicker: UIImagePickerController = UIImagePickerController()

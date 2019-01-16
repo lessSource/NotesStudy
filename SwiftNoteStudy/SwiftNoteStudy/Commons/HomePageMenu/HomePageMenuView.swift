@@ -9,7 +9,27 @@
 import UIKit
 import Kingfisher
 
+//protocol MenuViewImageProtocol {
+//    var image: UIImage { get }
+//}
+//
+//extension String: MenuViewImageProtocol {
+//    var image: UIImage {
+//        return UIImage(named: self) ?? UIImage()
+//    }
+//}
+//
+//extension UIImage: MenuViewImageProtocol {
+//    var image: UIImage {
+//        return self
+//    }
+//}
+
+
+
 protocol HomePageMenuDelegate: NSObjectProtocol {
+    /** 测试 */
+//    func menuViewTest(_ menuView: HomePageMenuView) -> [MenuViewImageProtocol]
     /** item点击 */
     func menuView(_ menuView: HomePageMenuView, didSelectItemAt indexPath: IndexPath)
     /** item点击 */
@@ -140,6 +160,14 @@ class HomePageMenuView: UICollectionView {
         }
         menuDelegate?.menuViewHeight(self, viewHeight: flowLayout.collectionViewContentSize.height)
         if nameArray.count == 0 { frame.size.height = 0 }
+//        let imageArray = menuDelegate?.menuViewTest(self)
+
+//        for item in imageArray ?? [] {
+//            print(item.image)
+//        }
+//        
+
+        
         assert(nameArray.count == iconArray.count, "The name is not equal to the number of images")
         if isAdaptiveHeight {
             self.height = min(memuHeight, flowLayout.collectionViewContentSize.height)

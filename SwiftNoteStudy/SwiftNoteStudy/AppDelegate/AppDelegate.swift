@@ -48,11 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func gotoMain() {
-//        let tableBarController = BaseSwiftTabBarController()
-//        window?.rootViewController = tableBarController;
+        let tableBarController = BaseSwiftTabBarController()
+        window?.rootViewController = tableBarController;
         
-        let navVC = BaseSwiftNavigationController(rootViewController: LoginSwiftViewController())
-        window?.rootViewController = navVC
+//        let navVC = BaseSwiftNavigationController(rootViewController: LoginSwiftViewController())
+//        window?.rootViewController = navVC
     }
 
 }

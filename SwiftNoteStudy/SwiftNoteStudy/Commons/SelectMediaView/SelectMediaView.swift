@@ -23,6 +23,31 @@ extension SelectMediaViewDelegate {
     func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int) { }
 }
 
+protocol SelectMediaImageProtocol {
+    var image: UIImage { get }
+}
+
+public struct SelectMediaStruct: SelectMediaImageProtocol {
+    var image: UIImage
+    
+    
+}
+
+//extension String: SelectMediaImageProtocol {
+//    var image: UIImage {
+//        return
+//    }
+//
+//    
+//}
+//
+//extension UIImage: SelectMediaImageProtocol {
+//    var image: UIImage {
+//        <#code#>
+//    }
+//
+//
+//}
 
 import UIKit
 
