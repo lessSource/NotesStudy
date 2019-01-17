@@ -6,6 +6,9 @@
 //  Copyright © 2018 lj. All rights reserved.
 //
 
+import UIKit
+import Kingfisher
+
 enum MediaImageType {
     case string
     case image
@@ -22,7 +25,12 @@ extension String: SelectMediaImage {
     }
     
     var contentImage: UIImage {
-        return UIImage(named: self) ?? UIImage()
+        if self.hasPrefix("http") {
+            let image = UIImage()
+            return image
+        }else {
+            return UIImage(named: self) ?? UIImage()
+        }
     }
 }
 
@@ -37,6 +45,7 @@ extension UIImage: SelectMediaImage {
 }
 
 protocol SelectMediaViewDelegate: NSObjectProtocol {
+    
     /** 添加图片 */
     func mediaView(_ mediaView: SelectMediaView, addForItemAt item: Int)
     /** 删除图片 */
@@ -47,6 +56,8 @@ protocol SelectMediaViewDelegate: NSObjectProtocol {
     func mediaViewImage(_ mediaView: SelectMediaView) -> [SelectMediaImage]
     
     func ddddd<T: Equatable>(_ mediaView: SelectMediaView) -> [T]
+    
+//    func aaaaaaa(_ mediaView: SelectMediaView) -> [Image]
 }
 
 extension SelectMediaViewDelegate {
@@ -55,33 +66,6 @@ extension SelectMediaViewDelegate {
     func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int) { }
 }
 
-protocol SelectMediaImageProtocol {
-    var image: UIImage { get }
-}
-
-public struct SelectMediaStruct: SelectMediaImageProtocol {
-    var image: UIImage
-    
-    
-}
-
-//extension String: SelectMediaImageProtocol {
-//    var image: UIImage {
-//        return
-//    }
-//
-//    
-//}
-//
-//extension UIImage: SelectMediaImageProtocol {
-//    var image: UIImage {
-//        <#code#>
-//    }
-//
-//
-//}
-
-import UIKit
 
 class SelectMediaView: UICollectionView {
     
@@ -169,8 +153,9 @@ class SelectMediaView: UICollectionView {
         self.itemSize = CGSize(width: allWidth/CGFloat(column), height: itemSizeHeight)
         if let mediaDe = mediaDelegate {
             imageArray = mediaDe.mediaViewImage(self)
-            let image = mediaDe.ddddd(self)
-            print(image)
+//            let image = mediaDe.ddddd(self)
+//            print(image)
+//            imageArray.compactMap { $0.contentImage }
         }
         if imageArray.count == 0 { self.height = 0 }
         if isAdaptiveHeight {

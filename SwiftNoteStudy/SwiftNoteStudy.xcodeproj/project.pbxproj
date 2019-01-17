@@ -371,6 +371,7 @@
 		CA6B08F5218BE96500CCA43C /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CAFB4CF521F02E7B00C7A0E3 /* PageView */,
 				2AB0A82A21D1226F00647C6D /* CameraQR */,
 				CA11C89F21A3DDCA009EDB3A /* SelectMediaView */,
 				CA11C89621A2B34F009EDB3A /* ShowImage */,
@@ -386,6 +387,13 @@
 				CA6B08F9218BF91C00CCA43C /* HomePageMenuCell.swift */,
 			);
 			path = HomePageMenu;
+			sourceTree = "<group>";
+		};
+		CAFB4CF521F02E7B00C7A0E3 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

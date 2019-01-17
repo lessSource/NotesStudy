@@ -9,6 +9,7 @@
 #import "MessageViewController.h"
 #import "BaseTableView.h"
 #import <Photos/Photos.h>
+#import "TestNurseViewController.h"
 
 @interface MessageViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) BaseTableView *tableView;
@@ -94,6 +95,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    TestNurseViewController *testNurseVC = [[TestNurseViewController alloc]init];
+    [self pushViewController:testNurseVC animated:true];
 }
 
 

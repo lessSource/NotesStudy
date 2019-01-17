@@ -120,6 +120,21 @@
 		CABB129621BF8F9600A02D16 /* MoreMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129521BF8F9600A02D16 /* MoreMineViewController.m */; };
 		CABB129921C0DD0100A02D16 /* PopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129821C0DD0100A02D16 /* PopUpView.m */; };
 		CAECD4BF21B66F6600EEDB09 /* HorizontalMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */; };
+		CAFB4D0A21F04F1700C7A0E3 /* XDTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4CFD21F04F1700C7A0E3 /* XDTitleItem.m */; };
+		CAFB4D0B21F04F1700C7A0E3 /* UIView+XDhandle.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0121F04F1700C7A0E3 /* UIView+XDhandle.m */; };
+		CAFB4D0C21F04F1700C7A0E3 /* XDTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0221F04F1700C7A0E3 /* XDTitleBar.m */; };
+		CAFB4D0D21F04F1700C7A0E3 /* XDPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0321F04F1700C7A0E3 /* XDPagesView.m */; };
+		CAFB4D0E21F04F1700C7A0E3 /* XDTitleItemLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0421F04F1700C7A0E3 /* XDTitleItemLayout.m */; };
+		CAFB4D0F21F04F1700C7A0E3 /* XDTitleBarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0521F04F1700C7A0E3 /* XDTitleBarLayout.m */; };
+		CAFB4D1021F04F1700C7A0E3 /* XDPagesCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0621F04F1700C7A0E3 /* XDPagesCache.m */; };
+		CAFB4D1121F04F1700C7A0E3 /* NSArray+XDhandle.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0721F04F1700C7A0E3 /* NSArray+XDhandle.m */; };
+		CAFB4D1221F04F1700C7A0E3 /* XDHeaderContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0821F04F1700C7A0E3 /* XDHeaderContentView.m */; };
+		CAFB4D1621F04FD400C7A0E3 /* TestNurseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D1521F04FD400C7A0E3 /* TestNurseViewController.m */; };
+		CAFB4D1921F0515400C7A0E3 /* NurseServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D1821F0515400C7A0E3 /* NurseServiceViewController.m */; };
+		CAFB4D1C21F0517A00C7A0E3 /* NurseCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D1B21F0517A00C7A0E3 /* NurseCommentsViewController.m */; };
+		CAFB4D1F21F0519A00C7A0E3 /* NurseCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D1E21F0519A00C7A0E3 /* NurseCertificationViewController.m */; };
+		CAFB4D2321F055EE00C7A0E3 /* NurseHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D2221F055EE00C7A0E3 /* NurseHeaderView.m */; };
+		CAFB4D2621F05B5800C7A0E3 /* NurseNavbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D2521F05B5800C7A0E3 /* NurseNavbarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -361,6 +376,36 @@
 		CABB129821C0DD0100A02D16 /* PopUpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopUpView.m; sourceTree = "<group>"; };
 		CAECD4BD21B66F6600EEDB09 /* HorizontalMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuView.h; sourceTree = "<group>"; };
 		CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuView.m; sourceTree = "<group>"; };
+		CAFB4CF821F04F1700C7A0E3 /* XDTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDTitleBar.h; sourceTree = "<group>"; };
+		CAFB4CF921F04F1700C7A0E3 /* UIView+XDhandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XDhandle.h"; sourceTree = "<group>"; };
+		CAFB4CFA21F04F1700C7A0E3 /* XDPagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDPagesView.h; sourceTree = "<group>"; };
+		CAFB4CFB21F04F1700C7A0E3 /* XDTitleBarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDTitleBarLayout.h; sourceTree = "<group>"; };
+		CAFB4CFC21F04F1700C7A0E3 /* XDTitleItemLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDTitleItemLayout.h; sourceTree = "<group>"; };
+		CAFB4CFD21F04F1700C7A0E3 /* XDTitleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDTitleItem.m; sourceTree = "<group>"; };
+		CAFB4CFE21F04F1700C7A0E3 /* XDHeaderContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDHeaderContentView.h; sourceTree = "<group>"; };
+		CAFB4CFF21F04F1700C7A0E3 /* NSArray+XDhandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+XDhandle.h"; sourceTree = "<group>"; };
+		CAFB4D0021F04F1700C7A0E3 /* XDPagesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDPagesCache.h; sourceTree = "<group>"; };
+		CAFB4D0121F04F1700C7A0E3 /* UIView+XDhandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XDhandle.m"; sourceTree = "<group>"; };
+		CAFB4D0221F04F1700C7A0E3 /* XDTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDTitleBar.m; sourceTree = "<group>"; };
+		CAFB4D0321F04F1700C7A0E3 /* XDPagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDPagesView.m; sourceTree = "<group>"; };
+		CAFB4D0421F04F1700C7A0E3 /* XDTitleItemLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDTitleItemLayout.m; sourceTree = "<group>"; };
+		CAFB4D0521F04F1700C7A0E3 /* XDTitleBarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDTitleBarLayout.m; sourceTree = "<group>"; };
+		CAFB4D0621F04F1700C7A0E3 /* XDPagesCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDPagesCache.m; sourceTree = "<group>"; };
+		CAFB4D0721F04F1700C7A0E3 /* NSArray+XDhandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XDhandle.m"; sourceTree = "<group>"; };
+		CAFB4D0821F04F1700C7A0E3 /* XDHeaderContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDHeaderContentView.m; sourceTree = "<group>"; };
+		CAFB4D0921F04F1700C7A0E3 /* XDTitleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDTitleItem.h; sourceTree = "<group>"; };
+		CAFB4D1421F04FD400C7A0E3 /* TestNurseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNurseViewController.h; sourceTree = "<group>"; };
+		CAFB4D1521F04FD400C7A0E3 /* TestNurseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNurseViewController.m; sourceTree = "<group>"; };
+		CAFB4D1721F0515400C7A0E3 /* NurseServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseServiceViewController.h; sourceTree = "<group>"; };
+		CAFB4D1821F0515400C7A0E3 /* NurseServiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseServiceViewController.m; sourceTree = "<group>"; };
+		CAFB4D1A21F0517A00C7A0E3 /* NurseCommentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseCommentsViewController.h; sourceTree = "<group>"; };
+		CAFB4D1B21F0517A00C7A0E3 /* NurseCommentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseCommentsViewController.m; sourceTree = "<group>"; };
+		CAFB4D1D21F0519A00C7A0E3 /* NurseCertificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseCertificationViewController.h; sourceTree = "<group>"; };
+		CAFB4D1E21F0519A00C7A0E3 /* NurseCertificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseCertificationViewController.m; sourceTree = "<group>"; };
+		CAFB4D2121F055EE00C7A0E3 /* NurseHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseHeaderView.h; sourceTree = "<group>"; };
+		CAFB4D2221F055EE00C7A0E3 /* NurseHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseHeaderView.m; sourceTree = "<group>"; };
+		CAFB4D2421F05B5800C7A0E3 /* NurseNavbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseNavbarView.h; sourceTree = "<group>"; };
+		CAFB4D2521F05B5800C7A0E3 /* NurseNavbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseNavbarView.m; sourceTree = "<group>"; };
 		EB622AB2DEE5AE4F90DD509C /* Pods-iOSNoteStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNoteStudy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -472,6 +517,7 @@
 			children = (
 				2AAEF15D20A3DFF000B2B576 /* Cores */,
 				2A1888EA2086495C00524FA1 /* Login&Register */,
+				CAFB4CF621F04EF900C7A0E3 /* Libs */,
 				2A1888EB2086495C00524FA1 /* Utils */,
 				2A1888E12086494F00524FA1 /* Controllers */,
 				2A1888DD2086494300524FA1 /* Category */,
@@ -971,6 +1017,7 @@
 		2AAEF15120A2D9BC00B2B576 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				CAFB4D1321F04F9D00C7A0E3 /* TestNurse */,
 				2AAEF15620A2D9DD00B2B576 /* MessageViewController.h */,
 				2AAEF15720A2D9DD00B2B576 /* MessageViewController.m */,
 			);
@@ -1202,6 +1249,66 @@
 			path = HorizontalMenuView;
 			sourceTree = "<group>";
 		};
+		CAFB4CF621F04EF900C7A0E3 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				CAFB4CF721F04F1700C7A0E3 /* XDPagesView */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		CAFB4CF721F04F1700C7A0E3 /* XDPagesView */ = {
+			isa = PBXGroup;
+			children = (
+				CAFB4CF821F04F1700C7A0E3 /* XDTitleBar.h */,
+				CAFB4CF921F04F1700C7A0E3 /* UIView+XDhandle.h */,
+				CAFB4CFA21F04F1700C7A0E3 /* XDPagesView.h */,
+				CAFB4CFB21F04F1700C7A0E3 /* XDTitleBarLayout.h */,
+				CAFB4CFC21F04F1700C7A0E3 /* XDTitleItemLayout.h */,
+				CAFB4CFD21F04F1700C7A0E3 /* XDTitleItem.m */,
+				CAFB4CFE21F04F1700C7A0E3 /* XDHeaderContentView.h */,
+				CAFB4CFF21F04F1700C7A0E3 /* NSArray+XDhandle.h */,
+				CAFB4D0021F04F1700C7A0E3 /* XDPagesCache.h */,
+				CAFB4D0121F04F1700C7A0E3 /* UIView+XDhandle.m */,
+				CAFB4D0221F04F1700C7A0E3 /* XDTitleBar.m */,
+				CAFB4D0321F04F1700C7A0E3 /* XDPagesView.m */,
+				CAFB4D0421F04F1700C7A0E3 /* XDTitleItemLayout.m */,
+				CAFB4D0521F04F1700C7A0E3 /* XDTitleBarLayout.m */,
+				CAFB4D0621F04F1700C7A0E3 /* XDPagesCache.m */,
+				CAFB4D0721F04F1700C7A0E3 /* NSArray+XDhandle.m */,
+				CAFB4D0821F04F1700C7A0E3 /* XDHeaderContentView.m */,
+				CAFB4D0921F04F1700C7A0E3 /* XDTitleItem.h */,
+			);
+			path = XDPagesView;
+			sourceTree = "<group>";
+		};
+		CAFB4D1321F04F9D00C7A0E3 /* TestNurse */ = {
+			isa = PBXGroup;
+			children = (
+				CAFB4D2021F055D200C7A0E3 /* View */,
+				CAFB4D1421F04FD400C7A0E3 /* TestNurseViewController.h */,
+				CAFB4D1521F04FD400C7A0E3 /* TestNurseViewController.m */,
+				CAFB4D1721F0515400C7A0E3 /* NurseServiceViewController.h */,
+				CAFB4D1821F0515400C7A0E3 /* NurseServiceViewController.m */,
+				CAFB4D1A21F0517A00C7A0E3 /* NurseCommentsViewController.h */,
+				CAFB4D1B21F0517A00C7A0E3 /* NurseCommentsViewController.m */,
+				CAFB4D1D21F0519A00C7A0E3 /* NurseCertificationViewController.h */,
+				CAFB4D1E21F0519A00C7A0E3 /* NurseCertificationViewController.m */,
+			);
+			path = TestNurse;
+			sourceTree = "<group>";
+		};
+		CAFB4D2021F055D200C7A0E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAFB4D2121F055EE00C7A0E3 /* NurseHeaderView.h */,
+				CAFB4D2221F055EE00C7A0E3 /* NurseHeaderView.m */,
+				CAFB4D2421F05B5800C7A0E3 /* NurseNavbarView.h */,
+				CAFB4D2521F05B5800C7A0E3 /* NurseNavbarView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1404,10 +1511,12 @@
 				2AFA0BE62089B50C009A7B5A /* PopUpViewObjeect.m in Sources */,
 				2AFA0BE52089B50C009A7B5A /* VideoControlView.m in Sources */,
 				2A597B8520A1FB0F00E57A51 /* ButtonListViewController.m in Sources */,
+				CAFB4D0D21F04F1700C7A0E3 /* XDPagesView.m in Sources */,
 				2A5632DD20AD270800F4F829 /* AnimationViewController.m in Sources */,
 				2A91EB7021BFF59600A24F23 /* HorizontalMenuViewController.m in Sources */,
 				2AAEF15520A2D9D200B2B576 /* GitHubViewController.m in Sources */,
 				2A1888FA2086571900524FA1 /* main.m in Sources */,
+				CAFB4D0E21F04F1700C7A0E3 /* XDTitleItemLayout.m in Sources */,
 				2AFF301C210875640095284B /* PersonalContentViewController.m in Sources */,
 				2A090D4820E384DF00A1E1C3 /* SelectMediaCell.m in Sources */,
 				2A1888DA2086493900524FA1 /* BaseTabBarController.m in Sources */,
@@ -1425,7 +1534,9 @@
 				2A597B6820A039FA00E57A51 /* GoodsDetailsViewController.m in Sources */,
 				2A5EC67A20C520FE00C4FD12 /* StarsView.m in Sources */,
 				2A4B8C2420BD388700E9D314 /* LSAlertUtil.m in Sources */,
+				CAFB4D1221F04F1700C7A0E3 /* XDHeaderContentView.m in Sources */,
 				2AD796BC20C0619400DB4137 /* ShoppingCartOperationView.m in Sources */,
+				CAFB4D0F21F04F1700C7A0E3 /* XDTitleBarLayout.m in Sources */,
 				2A695BE520BE422C00C00583 /* UIView+Placeholder.m in Sources */,
 				2AF8D95B20F4A6F000AB03EC /* LMTextHTMLParser.m in Sources */,
 				2A58CB1620889C120076675E /* NSBundle+Category.m in Sources */,
@@ -1440,13 +1551,18 @@
 				CAECD4BF21B66F6600EEDB09 /* HorizontalMenuView.m in Sources */,
 				2AFA0BE02089B50C009A7B5A /* HomePageMenuCell.m in Sources */,
 				2A1888E82086494F00524FA1 /* HomePageViewController.m in Sources */,
+				CAFB4D0C21F04F1700C7A0E3 /* XDTitleBar.m in Sources */,
 				2A011D5520E2921500F67B81 /* LBrowserImageView.m in Sources */,
 				2A98A2DC2136870900279E93 /* NSObject+TestModel.m in Sources */,
 				2A7A615A208F156D0039EBCC /* BaseTableView.m in Sources */,
 				2AFA0BE42089B50C009A7B5A /* VideoView.m in Sources */,
 				2A695BE920BE4F6D00C00583 /* ShoppingCartModel.m in Sources */,
 				2AFA0BE32089B50C009A7B5A /* BannerCycleView.m in Sources */,
+				CAFB4D1121F04F1700C7A0E3 /* NSArray+XDhandle.m in Sources */,
+				CAFB4D2321F055EE00C7A0E3 /* NurseHeaderView.m in Sources */,
+				CAFB4D1C21F0517A00C7A0E3 /* NurseCommentsViewController.m in Sources */,
 				2A597B6520A039E800E57A51 /* ShoppingCartViewController.m in Sources */,
+				CAFB4D0B21F04F1700C7A0E3 /* UIView+XDhandle.m in Sources */,
 				2AFF301F21088F950095284B /* PersonalTableView.m in Sources */,
 				2AF8D95520F4909B00AB03EC /* UIFont+LMText.m in Sources */,
 				2A430F6120E6153F00076386 /* LStarsView.m in Sources */,
@@ -1460,6 +1576,7 @@
 				2A91EB7621C158BC00A24F23 /* SelectMediaViewController.m in Sources */,
 				2A1888CF2086492900524FA1 /* AppDelegate.m in Sources */,
 				2AAEF15020A2D3E700B2B576 /* UIView+Category.m in Sources */,
+				CAFB4D1021F04F1700C7A0E3 /* XDPagesCache.m in Sources */,
 				2A695BED20BE6E8400C00583 /* ShoppingCartCell.m in Sources */,
 				2A597B7E20A1F35A00E57A51 /* BaseTableViewCell.m in Sources */,
 				2A98A2B5212E9CB000279E93 /* ProblemWebViewController.m in Sources */,
@@ -1478,6 +1595,7 @@
 				2AFA0BDC2089B50C009A7B5A /* CardCollectionView.m in Sources */,
 				2A1888CE2086492900524FA1 /* AppDelegate+PushNotification.m in Sources */,
 				2A1888E92086494F00524FA1 /* MineViewController.m in Sources */,
+				CAFB4D1921F0515400C7A0E3 /* NurseServiceViewController.m in Sources */,
 				2AAEF15820A2D9DD00B2B576 /* MessageViewController.m in Sources */,
 				2A58CB1F20889D050076675E /* LSConstants.m in Sources */,
 				CAAA082C21B9036500883B50 /* HardwareViewController.m in Sources */,
@@ -1485,15 +1603,19 @@
 				2AAEF15C20A2E88800B2B576 /* GitHubListModel.m in Sources */,
 				2A156E6B20FDE313005B8075 /* CommentsReplyModel.m in Sources */,
 				2AF8D95820F4932200AB03EC /* LMParagraphConfig.m in Sources */,
+				CAFB4D0A21F04F1700C7A0E3 /* XDTitleItem.m in Sources */,
 				2AAEF14D20A2D3AB00B2B576 /* UIView+Layout.m in Sources */,
 				2AFA0BE12089B50C009A7B5A /* HomePageMenuView.m in Sources */,
 				CABB129621BF8F9600A02D16 /* MoreMineViewController.m in Sources */,
 				2AFA0BDD2089B50C009A7B5A /* CardCollectionViewLayout.m in Sources */,
 				2AFA0BBC208983A4009A7B5A /* PermissionsObject.m in Sources */,
+				CAFB4D1F21F0519A00C7A0E3 /* NurseCertificationViewController.m in Sources */,
 				2A2F685620DCDFF7002A7A2D /* OptionsView.m in Sources */,
 				2AC2051720F34EE300AEC2AC /* ArticlePublishedViewController.m in Sources */,
+				CAFB4D1621F04FD400C7A0E3 /* TestNurseViewController.m in Sources */,
 				2A58CB0E208894A90076675E /* LSSingleButton.m in Sources */,
 				2A090D3E20E338C300A1E1C3 /* LPhotoBrowser.m in Sources */,
+				CAFB4D2621F05B5800C7A0E3 /* NurseNavbarView.m in Sources */,
 				2A597B8120A1F45100E57A51 /* ButtonTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

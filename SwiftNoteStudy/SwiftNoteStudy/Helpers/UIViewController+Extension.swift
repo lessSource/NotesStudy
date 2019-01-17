@@ -14,7 +14,6 @@ extension UIViewController {
      *    -returns: UIViewController
      */
     
-    
     class func initFromNib() -> UIViewController {
         let hasNib: Bool = Bundle.main.path(forResource: self.nameOfClass , ofType: "nib") != nil
         guard hasNib else {

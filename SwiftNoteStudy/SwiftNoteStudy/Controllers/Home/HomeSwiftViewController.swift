@@ -31,9 +31,13 @@ extension String {
 
 
 class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate, ShowImageProtocol, UIViewControllerTransitioningDelegate,HomePageMenuDelegate,HomePageMenuDataSource {
-    func menuViewTest(_ menuView: HomePageMenuView) -> [MenuViewImageProtocol] {
-        return ["hp_pc_bacao",UIImage(named: "hp_pc_bacao")!]
-    }
+    
+    typealias Image = UIImage
+    
+    
+//    func menuViewTest(_ menuView: HomePageMenuView) -> [MenuViewImageProtocol] {
+//        return ["hp_pc_bacao",UIImage(named: "hp_pc_bacao")!]
+//    }
     
 
     
@@ -62,10 +66,12 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 //        dddda()
+        
+        view.backgroundColor = UIColor.textColor
 
-        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-        menuView.isAdaptiveHeight = true
-        menuView.column = 5
+//        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
+//        menuView.isAdaptiveHeight = true
+//        menuView.column = 5
 
 //        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         //        menuView.itemSizeHeight = 100
@@ -73,9 +79,9 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
         //        menuView.lineSpacing = 10
         //        menuView.
 
-        menuView.menuDataSource = self
-        menuView.menuDelegate = self
-        view.addSubview(menuView)
+//        menuView.menuDataSource = self
+//        menuView.menuDelegate = self
+//        view.addSubview(menuView)
 //
 //        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
 //        menuView.isAdaptiveHeight = true
@@ -92,7 +98,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 //        view.addSubview(menuView)
         
         mediaView = SelectMediaView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-        mediaView.isEditor = false
+//        mediaView.isEditor = false
         mediaView.isAdaptiveHeight = true
         mediaView.mediaDelegate = self
         mediaView.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15)

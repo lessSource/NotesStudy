@@ -20,9 +20,10 @@ extension UIColor {
     static func withHex(hexString hex: String, alpha: CGFloat = 1) -> UIColor {
         // 去除空格
         var cString: String = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased()
+        
         // 去除#
         if cString.hasPrefix("#") {
-            cString = (cString as NSString).substring(from: 1)
+            cString = cString[1..<cString.count]
         }
         if cString.count != 6 {
             return UIColor.gray
@@ -37,6 +38,8 @@ extension UIColor {
 }
 
 extension String {
+    
+    
     subscript (r: Range<Int>) -> String {
         get {
             let startIndex = self.index(self.startIndex, offsetBy: r.lowerBound)
