@@ -24,6 +24,7 @@
         _caches_sview = @{}.mutableCopy;
         _caches_headery = @{}.mutableCopy;
         _caches_titles = @[].copy;
+        _caches_icons = @[].copy;
         _caches_table = @[].mutableCopy;
         _caches_kvo = @[].mutableCopy;
         _cachenumber = 50;

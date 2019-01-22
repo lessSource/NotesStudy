@@ -194,12 +194,16 @@ typedef NS_ENUM(NSInteger, RightScrollOffsetLockStatus) {
     }
     
     NSArray *titles = [self.dataSource xd_pagesViewPageTitles];
+    NSArray *icons = [self.dataSource xd_pagesViewPageicons];
     if ([[titles hasRepeatItemInArray] length] > 0) {
         NSLog(@"XDChannel_出现重复标题：%@", [titles hasRepeatItemInArray]);
         __assert(0, "XDPagesView_标题重复", __LINE__);
     }
     if (page < 0 || page > titles.count - 1) {
         __assert(0, "索引越界了", __LINE__);
+    }
+    if (titles.count != icons.count) {
+        __assert(0, "标题和图片数量不等", __LINE__);
     }
     
     //清除监听
@@ -212,6 +216,8 @@ typedef NS_ENUM(NSInteger, RightScrollOffsetLockStatus) {
     
     _pagesContener.contentSize = CGSizeMake(self.bounds.size.width * titles.count, self.bounds.size.height);
     [self cacheTitles:titles];
+    [self cacheIcons:icons];
+    self.headerContener.titleBarIcons(icons);
     self.headerContener.titleBarTitles(titles);
     [self resectAllScrollFrame];
     [self jumpToPage:page];
@@ -899,6 +905,10 @@ typedef NS_ENUM(NSInteger, RightScrollOffsetLockStatus) {
 //缓存标题
 - (void)cacheTitles:(NSArray<NSString *> *)titles {
     _xdCache.caches_titles = titles;
+}
+
+- (void)cacheIcons:(NSArray<NSString *> *)icons {
+    _xdCache.caches_icons = icons;
 }
 
 //缓存控制器
