@@ -23,6 +23,8 @@
 //标题数组
 - (void (^)(NSArray *titles))titleBarTitles;
 
+- (void (^)(NSArray *icons))titleBarIcons;
+
 //设置header并返回头高度
 - (CGFloat (^)(UIView *header))pagesHeader;
 

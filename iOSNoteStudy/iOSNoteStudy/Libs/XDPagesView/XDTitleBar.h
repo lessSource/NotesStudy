@@ -13,6 +13,8 @@
 
 //标题数组
 @property (nonatomic, strong) NSArray *titles;
+//图标数组
+@property (nonatomic, strong) NSArray *icons;
 
 @property (nonatomic, copy) void (^barItemTapBlock)(NSIndexPath *index);
 @property (nonatomic, copy) void (^barIndexChangedBlock)(NSInteger index);

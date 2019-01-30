@@ -34,6 +34,11 @@
 		2A18890620865B1000524FA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A18890320865B1000524FA1 /* Main.storyboard */; };
 		2A18890D20870C6700524FA1 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18890B20870C6700524FA1 /* UIImage+Category.m */; };
 		2A18891020870E5800524FA1 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18890F20870E5800524FA1 /* UIColor+Category.m */; };
+		2A1E5D9821F3142400281D60 /* NurseServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E5D9721F3142400281D60 /* NurseServiceTableViewCell.m */; };
+		2A1E5D9B21F3207100281D60 /* NurseCertificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E5D9A21F3207100281D60 /* NurseCertificationTableViewCell.m */; };
+		2A1E5D9E21F322A500281D60 /* NurseCertificateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E5D9D21F322A500281D60 /* NurseCertificateTableViewCell.m */; };
+		2A1E5DA121F3257900281D60 /* NurseCommentsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E5DA021F3257900281D60 /* NurseCommentsHeaderView.m */; };
+		2A1E5DA421F3265300281D60 /* NurseCommentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E5DA321F3265300281D60 /* NurseCommentsTableViewCell.m */; };
 		2A24F5F920941F9F006C0223 /* LSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F5F820941F9F006C0223 /* LSWebViewController.m */; };
 		2A2F685620DCDFF7002A7A2D /* OptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2F685520DCDFF7002A7A2D /* OptionsView.m */; };
 		2A34140C20AD4ED90007C51F /* AccordingLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A34140B20AD4ED90007C51F /* AccordingLayerViewController.m */; };
@@ -212,6 +217,16 @@
 		2A18890C20870C6700524FA1 /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
 		2A18890E20870E5800524FA1 /* UIColor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
 		2A18890F20870E5800524FA1 /* UIColor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
+		2A1E5D9621F3142400281D60 /* NurseServiceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseServiceTableViewCell.h; sourceTree = "<group>"; };
+		2A1E5D9721F3142400281D60 /* NurseServiceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseServiceTableViewCell.m; sourceTree = "<group>"; };
+		2A1E5D9921F3207100281D60 /* NurseCertificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseCertificationTableViewCell.h; sourceTree = "<group>"; };
+		2A1E5D9A21F3207100281D60 /* NurseCertificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseCertificationTableViewCell.m; sourceTree = "<group>"; };
+		2A1E5D9C21F322A500281D60 /* NurseCertificateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseCertificateTableViewCell.h; sourceTree = "<group>"; };
+		2A1E5D9D21F322A500281D60 /* NurseCertificateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseCertificateTableViewCell.m; sourceTree = "<group>"; };
+		2A1E5D9F21F3257900281D60 /* NurseCommentsHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseCommentsHeaderView.h; sourceTree = "<group>"; };
+		2A1E5DA021F3257900281D60 /* NurseCommentsHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseCommentsHeaderView.m; sourceTree = "<group>"; };
+		2A1E5DA221F3265300281D60 /* NurseCommentsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NurseCommentsTableViewCell.h; sourceTree = "<group>"; };
+		2A1E5DA321F3265300281D60 /* NurseCommentsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NurseCommentsTableViewCell.m; sourceTree = "<group>"; };
 		2A24F5F720941F9F006C0223 /* LSWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSWebViewController.h; sourceTree = "<group>"; };
 		2A24F5F820941F9F006C0223 /* LSWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSWebViewController.m; sourceTree = "<group>"; };
 		2A2F685420DCDFF7002A7A2D /* OptionsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionsView.h; sourceTree = "<group>"; };
@@ -729,6 +744,21 @@
 				2A15EFAB21CA8C38002A28FD /* UIImage+QRCodeImage.m */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		2A1E5D9521F3140500281D60 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2A1E5D9621F3142400281D60 /* NurseServiceTableViewCell.h */,
+				2A1E5D9721F3142400281D60 /* NurseServiceTableViewCell.m */,
+				2A1E5D9921F3207100281D60 /* NurseCertificationTableViewCell.h */,
+				2A1E5D9A21F3207100281D60 /* NurseCertificationTableViewCell.m */,
+				2A1E5D9C21F322A500281D60 /* NurseCertificateTableViewCell.h */,
+				2A1E5D9D21F322A500281D60 /* NurseCertificateTableViewCell.m */,
+				2A1E5DA221F3265300281D60 /* NurseCommentsTableViewCell.h */,
+				2A1E5DA321F3265300281D60 /* NurseCommentsTableViewCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		2A2F685320DCDFEE002A7A2D /* OptionsView */ = {
@@ -1285,6 +1315,7 @@
 		CAFB4D1321F04F9D00C7A0E3 /* TestNurse */ = {
 			isa = PBXGroup;
 			children = (
+				2A1E5D9521F3140500281D60 /* Cell */,
 				CAFB4D2021F055D200C7A0E3 /* View */,
 				CAFB4D1421F04FD400C7A0E3 /* TestNurseViewController.h */,
 				CAFB4D1521F04FD400C7A0E3 /* TestNurseViewController.m */,
@@ -1305,6 +1336,8 @@
 				CAFB4D2221F055EE00C7A0E3 /* NurseHeaderView.m */,
 				CAFB4D2421F05B5800C7A0E3 /* NurseNavbarView.h */,
 				CAFB4D2521F05B5800C7A0E3 /* NurseNavbarView.m */,
+				2A1E5D9F21F3257900281D60 /* NurseCommentsHeaderView.h */,
+				2A1E5DA021F3257900281D60 /* NurseCommentsHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1523,6 +1556,7 @@
 				2A156E6E20FDE3D7005B8075 /* CircleFriendsContentModel.m in Sources */,
 				2A24F5F920941F9F006C0223 /* LSWebViewController.m in Sources */,
 				2AA3B98B20B92604006FF4B4 /* GitHubTableViewCell.m in Sources */,
+				2A1E5D9B21F3207100281D60 /* NurseCertificationTableViewCell.m in Sources */,
 				2A39E0F320FC876D00DABC49 /* UIViewController+Category.m in Sources */,
 				2A18890D20870C6700524FA1 /* UIImage+Category.m in Sources */,
 				CABB129921C0DD0100A02D16 /* PopUpView.m in Sources */,
@@ -1534,6 +1568,7 @@
 				2A597B6820A039FA00E57A51 /* GoodsDetailsViewController.m in Sources */,
 				2A5EC67A20C520FE00C4FD12 /* StarsView.m in Sources */,
 				2A4B8C2420BD388700E9D314 /* LSAlertUtil.m in Sources */,
+				2A1E5D9E21F322A500281D60 /* NurseCertificateTableViewCell.m in Sources */,
 				CAFB4D1221F04F1700C7A0E3 /* XDHeaderContentView.m in Sources */,
 				2AD796BC20C0619400DB4137 /* ShoppingCartOperationView.m in Sources */,
 				CAFB4D0F21F04F1700C7A0E3 /* XDTitleBarLayout.m in Sources */,
@@ -1567,6 +1602,7 @@
 				2AF8D95520F4909B00AB03EC /* UIFont+LMText.m in Sources */,
 				2A430F6120E6153F00076386 /* LStarsView.m in Sources */,
 				2A58CB0C208894A90076675E /* LSSingleTextField.m in Sources */,
+				2A1E5DA421F3265300281D60 /* NurseCommentsTableViewCell.m in Sources */,
 				2A695BF020BE74C300C00583 /* HotSpotsButton.m in Sources */,
 				2A15EFB121CA8D83002A28FD /* QrCodeScanningViewController.m in Sources */,
 				CABB128D21BF8F0800A02D16 /* MoreViewController.m in Sources */,
@@ -1587,12 +1623,14 @@
 				2AFA0BE22089B50C009A7B5A /* BannerViewCell.m in Sources */,
 				2A090D4520E37E7100A1E1C3 /* SelectMediaView.m in Sources */,
 				2A1888FE208657CB00524FA1 /* NotificationCategory.m in Sources */,
+				2A1E5D9821F3142400281D60 /* NurseServiceTableViewCell.m in Sources */,
 				2AFF301921086EF10095284B /* PublicPersonalViewController.m in Sources */,
 				2A58CB0F208894A90076675E /* LSSingleLabel.m in Sources */,
 				CABB129121BF8F7300A02D16 /* MoreHomeViewController.m in Sources */,
 				2A090D4120E35AA600A1E1C3 /* LPhotoBrowserCell.m in Sources */,
 				2A597B6020A0393700E57A51 /* MallViewController.m in Sources */,
 				2AFA0BDC2089B50C009A7B5A /* CardCollectionView.m in Sources */,
+				2A1E5DA121F3257900281D60 /* NurseCommentsHeaderView.m in Sources */,
 				2A1888CE2086492900524FA1 /* AppDelegate+PushNotification.m in Sources */,
 				2A1888E92086494F00524FA1 /* MineViewController.m in Sources */,
 				CAFB4D1921F0515400C7A0E3 /* NurseServiceViewController.m in Sources */,

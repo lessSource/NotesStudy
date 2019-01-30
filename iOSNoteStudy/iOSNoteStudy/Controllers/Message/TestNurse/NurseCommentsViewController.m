@@ -7,13 +7,24 @@
 //  用户评论
 
 #import "NurseCommentsViewController.h"
+#import "NurseCommentsHeaderView.h"
+#import "NurseCommentsTableViewCell.h"
 
 @interface NurseCommentsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NurseCommentsHeaderView *headerView;
 
 @end
 
 @implementation NurseCommentsViewController
+
+- (NurseCommentsHeaderView *)headerView {
+    if (_headerView == nil) {
+        _headerView = [[NurseCommentsHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 70)];
+        _headerView.backgroundColor = [UIColor colorWithHexString:@"#bbbbbb" alpha:0.1];
+    }
+    return _headerView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,21 +35,25 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc]init];
+    self.tableView.tableHeaderView = self.headerView;
     [self.view addSubview:self.tableView];
+    
+    [self.tableView registerClass:[NurseCommentsTableViewCell class] forCellReuseIdentifier:@"NurseCommentsTableViewCell"];
 }
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dddddd"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"dddddd"];
-    }
-    cell.textLabel.text = @"dddd";
+    NurseCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NurseCommentsTableViewCell"];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 150;
+}
+
 
 @end

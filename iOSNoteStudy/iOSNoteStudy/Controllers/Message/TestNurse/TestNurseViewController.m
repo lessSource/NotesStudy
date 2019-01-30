@@ -53,11 +53,16 @@ static CGFloat const HeaderHeight = 300;
     self.title = @"测试";
     self.titles = @[@"服务项目",@"用户评价",@"资格认证"];
     
+    UIView *view = [[UIView alloc]init];
+    view.backgroundColor = [UIColor randomColor];
+    
     XDTitleBarLayout *layout = [[XDTitleBarLayout alloc]init];
     layout.barMarginTop = kNavbarAndStatusBar;
     layout.barItemSize = CGSizeMake(kScreenWidth/3, 60);
+    layout.barTextFont = [UIFont systemFontOfSize:12];
+    layout.barTextColor = [UIColor colorWithHexString:@"#999999" alpha:1.0];
     
-    self.pagesView = [[XDPagesView alloc]initWithFrame:self.view.bounds dataSourceDelegate:self beginPage:1 titleBarLayout:layout style:XDPagesViewStyleTablesFirst];
+    self.pagesView = [[XDPagesView alloc]initWithFrame:self.view.bounds dataSourceDelegate:self beginPage:0 titleBarLayout:layout style:XDPagesViewStyleTablesFirst];
     
     NurseHeaderView *headerView = [[NurseHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, HeaderHeight)];
     _pagesView.headerView = headerView;
@@ -74,6 +79,9 @@ static CGFloat const HeaderHeight = 300;
     return self.titles;
 }
 
+- (NSArray<NSString *> *)xd_pagesViewPageicons {
+    return @[@"硬件",@"硬件",@"硬件"];
+}
 
 - (UIViewController *)xd_pagesViewChildControllerToPagesView:(XDPagesView *)pagesView forIndex:(NSInteger)index {
     UIViewController *pageVC = [pagesView dequeueReusablePageForIndex:index];

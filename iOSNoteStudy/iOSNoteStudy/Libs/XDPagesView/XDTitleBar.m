@@ -62,6 +62,10 @@
     }
 }
 
+- (void)setIcons:(NSArray *)icons {
+    _icons = icons;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame titleBarLayout:(XDTitleBarLayout *)titleBarLayout titleBarRightBtn:(void(^)(void))titleBarRightBtnBlock {
     self = [super initWithFrame:frame];
     if (self) {
@@ -160,7 +164,7 @@
                   textColor:_barLayout.barTextColor
           textSelectedColor:_barLayout.barTextSelectedColor
                    needIcon:_barLayout.needBarFirstItemIcon
-                  iconImage:_barLayout.firstItemIconNormal
+                  iconImage:[UIImage imageNamed:_icons[indexPath.row]]
           selectedIconImage:_barLayout.firstItemIconSelected
              needFollowLine:_barLayout.needBarFollowLine
             followLineColor:_barLayout.barFollowLineColor
@@ -168,6 +172,7 @@
                      barTag:_barLayout.barTag
                       index:indexPath
               selectedIndex:_selectedIndex];
+    
     return item;
 }
 

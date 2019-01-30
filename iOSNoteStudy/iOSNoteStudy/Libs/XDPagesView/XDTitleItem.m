@@ -56,32 +56,36 @@
     _followLine.backgroundColor = followLineColor;
     self.title.font = titleFont;
     self.title.text = title;
-    
-    CGFloat xd_width = self.bounds.size.width;
-    CGFloat xd_height = self.bounds.size.height;
-    
-    if (needIcon && index.row == 0) {
-        self.icon.hidden = NO;
-        self.icon.frame = CGRectMake(Icon_Edge, 0, ItemIconSize, xd_height);
-        self.title.frame = CGRectMake(CGRectGetMaxX(self.icon.frame), 0, xd_width-Icon_Edge-ItemIconSize, self.frame.size.height);
-        
-    } else {
-        self.icon.hidden = YES;
-        self.title.frame = self.bounds;
-    }
+    self.icon.image = iconImage;
+//    CGFloat xd_width = self.bounds.size.width;
+//    CGFloat xd_height = self.bounds.size.height;
+    self.icon.frame = CGRectMake(CGRectGetWidth(self.bounds)/2 - 10 , 10, 20, 20);
+    self.title.frame = CGRectMake(0, 30, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - 30);
+
+//    if (needIcon && index.row == 0) {
+////        self.icon.hidden = NO;
+////        self.icon.frame = CGRectMake(Icon_Edge, 0, ItemIconSize, xd_height);
+////        self.title.frame = CGRectMake(CGRectGetMaxX(self.icon.frame), 0, xd_width-Icon_Edge-ItemIconSize, self.frame.size.height);
+//        self.title.frame = CGRectMake(0, 30, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - 30);
+//
+//    } else {
+////        self.icon.hidden = YES;
+////        self.title.frame = self.bounds;
+//        self.title.frame = CGRectMake(0, 30, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - 30);
+//    }
     
     //选中时的状态
     if (index.row == selectedIndex) {
         self.title.textColor = textSelectedColor;
         if (!self.icon.isHidden) {
-            self.icon.image = [selectedIconImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+//            self.icon.image = [selectedIconImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
         }
         [self bottomLineHandleByNeedLine:needFollowLine isSelected:YES percent:followPercent];
         
     } else {
         self.title.textColor = textColor;
         if (!self.icon.isHidden) {
-            self.icon.image = [iconImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//            self.icon.image = [iconImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         }
         [self bottomLineHandleByNeedLine:needFollowLine isSelected:NO percent:followPercent];
     }

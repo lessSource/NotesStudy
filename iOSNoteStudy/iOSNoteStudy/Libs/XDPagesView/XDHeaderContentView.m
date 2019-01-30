@@ -25,7 +25,17 @@
     __weak typeof(self) weakSelf = self;
     return ^(NSArray *titles) {
         if (weakSelf.bar) {
+//            weakSelf.bar.icons =
             weakSelf.bar.titles = titles;
+        }
+    };
+}
+
+- (void (^)(NSArray *))titleBarIcons {
+    __weak typeof(self) weakSelf = self;
+    return ^(NSArray *icons) {
+        if (weakSelf.bar) {
+            weakSelf.bar.icons = icons;
         }
     };
 }

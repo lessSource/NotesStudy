@@ -25,6 +25,14 @@ typedef NS_ENUM(NSInteger, XDPagesViewStyle) {
 - (NSArray <NSString *> *)xd_pagesViewPageTitles;
 
 /**
+ 数据代理，用于接受图标数组
+ 
+ @return 图标数组
+ */
+- (NSArray <NSString *>*)xd_pagesViewPageicons;
+
+
+/**
  数据代理，用于接受当前控制器
 
  @param pagesView XDPagesView
