@@ -1,4 +1,4 @@
-
+# Uncomment the next line to define a global platform for your project
 workspace 'NotesStudy.xcworkspace'
 project 'iOSNoteStudy/iOSNoteStudy.xcodeproj'
 

@@ -128,6 +128,7 @@
     }
     if (self.delegate && [self.delegate respondsToSelector:@selector(menuView:didSelectButton:sort:)]) {
         [self.delegate menuView:self didSelectButton:0 sort:MenuSoreTypeNone];
+        _currentIndex = 0;
     }
     
     if (self.lineHidden) {
@@ -171,6 +172,7 @@
     }
     if (self.delegate && [self.delegate respondsToSelector:@selector(menuView:didSelectButton:sort:)]) {
         [self.delegate menuView:self didSelectButton:row sort:menuButton.soreType];
+        _currentIndex = row;
     }
     self.lastSelect = sender.tag;
     [self moveButonnLocation:menuButton];

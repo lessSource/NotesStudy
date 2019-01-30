@@ -8,22 +8,76 @@
 
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-struct TestStruct {
-    var name: String
-    var number: Int
+//歌曲结构体
+struct Music {
+    let name: String //歌名
+    let singer: String //演唱者
+    
+    init(name: String, singer: String) {
+        self.name = name
+        self.singer = singer
+    }
 }
 
+//实现 CustomStringConvertible 协议，方便输出调试
+extension Music: CustomStringConvertible {
+    var description: String {
+        return "name：\(name) singer：\(singer)"
+    }
+}
+
+struct MusicListViewModel {
+    let data = Observable.just([
+        Music(name: "无条件", singer: "陈奕迅"),
+        Music(name: "你曾是少年", singer: "S.H.E"),
+        Music(name: "从前的我", singer: "陈洁仪"),
+        Music(name: "在木星", singer: "朴树"),
+        ])
+}
+
+
+
 class ReleaseSwiftViewController: BaseSwiftViewController {
+    
+    fileprivate lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: Constant.screenHeight), style: .plain)
+//        tableView.delegate = self
+//        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        tableView.register(ReleaseTableViewCell.self, forCellReuseIdentifier: ReleaseTableViewCell.identifire)
+        return tableView
+    }()
+    
+    // 列表数据源
+    let musicListViewModel = MusicListViewModel()
+    
+    // 负责对象销毁
+    let disposeBag = DisposeBag()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let array = [1,2,3,4,5,6,7,8,9]
-        let sliceArray = array[1..<6]
-        print(sliceArray)
+        view.addSubview(tableView)
+        
+        musicListViewModel.data.bind(to: tableView.rx.items(cellIdentifier: ReleaseTableViewCell.identifire, cellType: ReleaseTableViewCell.self)) { _, music, cell in
+            cell.nameLabel.text = music.name
+            cell.detailLabel.text = music.singer
+        }.disposed(by: disposeBag)
+        
+        
+        tableView.rx.modelSelected(Music.self).subscribe { (music) in
+            print("你选择的歌曲【\(music)】")
+        }.disposed(by: disposeBag)
+        
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(ReleaseSwiftViewController.userDidTakeScreenshot), name: .UIApplicationUserDidTakeScreenshot, object: nil)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,4 +146,19 @@ class ReleaseSwiftViewController: BaseSwiftViewController {
     }
  */
     
+}
+
+
+extension ReleaseSwiftViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 4
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifire)
+//        return cell!
+//    }
+
+
+
 }

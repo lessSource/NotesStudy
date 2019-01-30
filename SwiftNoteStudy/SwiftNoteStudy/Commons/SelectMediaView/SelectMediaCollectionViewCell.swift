@@ -11,12 +11,10 @@ import WebKit
 
 class SelectMediaCollectionViewCell: UICollectionViewCell {
     typealias buttonBlock = () -> (Void)
-
     
     public var imageView: UIImageView!
     public var deleteButton: UIButton!
     public var buttonClick: buttonBlock?
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

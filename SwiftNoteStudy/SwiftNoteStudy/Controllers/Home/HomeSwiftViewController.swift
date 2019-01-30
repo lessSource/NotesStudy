@@ -13,10 +13,8 @@ import Then
 extension String {
     func stringHash() -> Int {
         var hash: Int64 = 0
-//        var x: Int64 = 0
         for i in 0 ..< self.count {
             hash = (hash << 4) + Int64((self as NSString).character(at: i))
-            
             let x = hash & Int64.init(0xF0000000)
             if x != 0 {
                 hash ^= (x >> 24)
@@ -31,28 +29,10 @@ extension String {
 
 
 class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate, ShowImageProtocol, UIViewControllerTransitioningDelegate,HomePageMenuDelegate,HomePageMenuDataSource {
-    
-    typealias Image = UIImage
-    
-    
-//    func menuViewTest(_ menuView: HomePageMenuView) -> [MenuViewImageProtocol] {
-//        return ["hp_pc_bacao",UIImage(named: "hp_pc_bacao")!]
-//    }
-    
-
-    
-    
-    func ddddd<T>(_ mediaView: SelectMediaView) -> [T] where T : Equatable {
-        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!] as! [T]
-    }
-    
-//    func ddddd<T>(_ mediaView: SelectMediaView) -> [T] where T : Equatable {
-//        return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!] as! [T]
-//    }
-    
 
     var menuView: HomePageMenuView!
     var mediaView: SelectMediaView!
+    fileprivate var number: Int = 0
     
     fileprivate lazy var lineView: UIView = {
         let lineview = UIView(frame: CGRect(x: Constant.screenWidth/2, y: 200, width: 5, height: 5))
@@ -62,50 +42,34 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
     }()
 
     private var delegate: ModelAnimationDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        dddda()
-        
         view.backgroundColor = UIColor.textColor
 
-//        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-//        menuView.isAdaptiveHeight = true
-//        menuView.column = 5
+        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
+        menuView.isAdaptiveHeight = true
+        menuView.column = 5
 
-//        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
-        //        menuView.itemSizeHeight = 100
-        //        menuView.interitemSpacing = 10
-        //        menuView.lineSpacing = 10
-        //        menuView.
+        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
+        menuView.itemSizeHeight = 80
+        menuView.interitemSpacing = 10
+        menuView.lineSpacing = 10
 
-//        menuView.menuDataSource = self
-//        menuView.menuDelegate = self
-//        view.addSubview(menuView)
-//
-//        menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-//        menuView.isAdaptiveHeight = true
-//        menuView.column = 5
-//
-////        menuView.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
-//        //        menuView.itemSizeHeight = 100
-//        //        menuView.interitemSpacing = 10
-//        //        menuView.lineSpacing = 10
-//        //        menuView.
-//
-//        menuView.menuDataSource = self
-//        menuView.menuDelegate = self
-//        view.addSubview(menuView)
+        menuView.menuDataSource = self
+        menuView.menuDelegate = self
+        view.addSubview(menuView)
+
         
-        mediaView = SelectMediaView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
-//        mediaView.isEditor = false
-        mediaView.isAdaptiveHeight = true
-        mediaView.mediaDelegate = self
-        mediaView.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15)
-        mediaView.interitemSpacing = 5
-        mediaView.lineSpace = 5
-        view.addSubview(mediaView)
-        
+//        mediaView = SelectMediaView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
+////        mediaView.isEditor = false
+//        mediaView.isAdaptiveHeight = true
+//        mediaView.mediaDelegate = self
+//        mediaView.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15)
+//        mediaView.interitemSpacing = 5
+//        mediaView.lineSpace = 5
+//        view.addSubview(mediaView)
     }
     
     func mediaViewImage(_ mediaView: SelectMediaView) -> [SelectMediaImage] {
@@ -127,6 +91,10 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
         return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","","hp_pc_bacao","hp_pc_bacao"]
     }
 
+    func menuViewNumber(_ menuView: HomePageMenuView) -> [Int] {
+        return [2,2,3,0,99,123,2,0,222]
+    }
+    
     func menuView(_ menuView: HomePageMenuView, didSelectItemAt indexPath: IndexPath) {
         print("\(indexPath.item)")
 //        showImages(["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao"], currentIndex: 0)
@@ -257,6 +225,12 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 //            self.lineViewAnimation()
 //        }
 //    }
+    
+    
+    fileprivate func banzhuan() {
+        banzhuan()
+    }
+    
     
 }
 

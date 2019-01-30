@@ -14,33 +14,33 @@ enum MediaImageType {
     case image
 }
 
-protocol SelectMediaImage {
-    var contentImage: UIImage { get }
-    var imageType: MediaImageType { get }
-}
+protocol SelectMediaImage { }
 
-extension String: SelectMediaImage {
-    var imageType: MediaImageType {
-        return .string
-    }
-    
-    var contentImage: UIImage {
-        if self.hasPrefix("http") {
-            let image = UIImage()
-            return image
+extension String: SelectMediaImage { }
+
+extension UIImage: SelectMediaImage { }
+
+extension SelectMediaImage {
+    internal var contentImage: UIImage? {
+        let image: UIImage?
+        if let contentImage = self as? UIImage {
+            image = contentImage
+        }else if let contentStr = self as? String {
+            image = UIImage(named: contentStr)
         }else {
-            return UIImage(named: self) ?? UIImage()
+            image = UIImage(named: "placeholder")
         }
-    }
-}
-
-extension UIImage: SelectMediaImage {
-    var imageType: MediaImageType {
-        return .image
+        return image
     }
     
-    var contentImage: UIImage {
-        return self
+    internal var imageType: MediaImageType {
+        let imageType: MediaImageType
+        if let _ = self as? UIImage {
+            imageType = .image
+        }else {
+            imageType = .string
+        }
+        return imageType
     }
 }
 
@@ -55,9 +55,6 @@ protocol SelectMediaViewDelegate: NSObjectProtocol {
     /** 数据 */
     func mediaViewImage(_ mediaView: SelectMediaView) -> [SelectMediaImage]
     
-    func ddddd<T: Equatable>(_ mediaView: SelectMediaView) -> [T]
-    
-//    func aaaaaaa(_ mediaView: SelectMediaView) -> [Image]
 }
 
 extension SelectMediaViewDelegate {
@@ -153,9 +150,6 @@ class SelectMediaView: UICollectionView {
         self.itemSize = CGSize(width: allWidth/CGFloat(column), height: itemSizeHeight)
         if let mediaDe = mediaDelegate {
             imageArray = mediaDe.mediaViewImage(self)
-//            let image = mediaDe.ddddd(self)
-//            print(image)
-//            imageArray.compactMap { $0.contentImage }
         }
         if imageArray.count == 0 { self.height = 0 }
         if isAdaptiveHeight {
@@ -168,7 +162,6 @@ class SelectMediaView: UICollectionView {
         cell.buttonClick = { [weak self] in
             self?.mediaDelegate?.mediaView(self!, deleteForItemAt: indexPath.item)
         }
-        
         if isEditor && imageArray.count != maxImageCount && indexPath.item == imageArray.count {
             cell.imageView.backgroundColor = UIColor.blue
             cell.deleteButton.isHidden = true
