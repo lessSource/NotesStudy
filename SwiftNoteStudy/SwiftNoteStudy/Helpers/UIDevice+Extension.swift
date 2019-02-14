@@ -11,15 +11,15 @@ import UIKit
 extension UIDevice {
     /** iPhoneX */
     public static var isIphoneX: Bool {
-        return Constant.statusHeight * UIScreen.main.scale == 2436 ? true : false
+        return Constant.screenHeight * UIScreen.main.scale == 2436 ? true : false
     }
     /** iPhoneXS MAX */
     public static var isIphoneXM: Bool {
-        return Constant.statusHeight * UIScreen.main.scale == 2688 ? true : false
+        return Constant.screenHeight * UIScreen.main.scale == 2688 ? true : false
     }
     /** iPhoneXR */
     public static var isIphoneXR: Bool {
-        return Constant.statusHeight * UIScreen.main.scale == 1792 ? true : false
+        return Constant.screenHeight * UIScreen.main.scale == 1792 ? true : false
     }
     /** 是否带刘海 */
     public static var isIphone_X: Bool {

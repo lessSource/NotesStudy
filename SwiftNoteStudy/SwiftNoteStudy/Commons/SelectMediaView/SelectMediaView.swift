@@ -12,6 +12,7 @@ import Kingfisher
 enum MediaImageType {
     case string
     case image
+    case data
 }
 
 protocol SelectMediaImage { }
@@ -54,6 +55,9 @@ protocol SelectMediaViewDelegate: NSObjectProtocol {
     func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int)
     /** 数据 */
     func mediaViewImage(_ mediaView: SelectMediaView) -> [SelectMediaImage]
+    /** 图片大小 */
+    func mediaView(_ mediaView: SelectMediaView, sizeForItemAt indexPath: IndexPath) -> CGSize
+    
     
 }
 
@@ -61,6 +65,10 @@ extension SelectMediaViewDelegate {
     func mediaView(_ mediaView: SelectMediaView, addForItemAt item: Int) { }
     func mediaView(_ mediaView: SelectMediaView, deleteForItemAt item: Int) { }
     func mediaView(_ mediaView: SelectMediaView, didSelectForItemAt item: Int) { }
+    func mediaView(_ mediaView: SelectMediaView, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.zero
+    }
+
 }
 
 

@@ -35,9 +35,9 @@ static const char btnKey;
 #pragma mark - show
 - (void)showPromptView {
     UIView *prompt_view = [self promptView];
-    if ([self isKindOfClass:[UIScrollView class]]) {
-        [(UIScrollView *)self setScrollEnabled:NO];
-    }
+//    if ([self isKindOfClass:[UIScrollView class]]) {
+//        [(UIScrollView *)self setScrollEnabled:NO];
+//    }
     if (self.subviews.count > 0) {
         UIView *t_v = self;
         for (UIView *v in self.subviews) {

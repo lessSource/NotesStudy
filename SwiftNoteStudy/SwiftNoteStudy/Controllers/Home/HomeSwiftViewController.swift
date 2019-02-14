@@ -28,8 +28,14 @@ extension String {
 }
 
 
-class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate, ShowImageProtocol, UIViewControllerTransitioningDelegate,HomePageMenuDelegate,HomePageMenuDataSource {
-
+class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate, ShowImageProtocol, UIViewControllerTransitioningDelegate,HomePageMenuDelegate,HomePageMenuDataSource, PromptViewDelegate {
+    
+    lazy var contentView: ContentView = {
+        let contentView = ContentView(frame: CGRect(x: 0, y: 0, width: 200, height: 150))
+        contentView.center = CGPoint(x: Constant.screenWidth/2, y: Constant.screenHeight/2)
+        return contentView
+    }()
+    
     var menuView: HomePageMenuView!
     var mediaView: SelectMediaView!
     fileprivate var number: Int = 0
@@ -46,6 +52,13 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 //        dddda()
+        CacheObject.sharedInstance.cacheModel.token = "ddddd"
+        CacheObject.sharedInstance.save()
+//        CacheObject.sharedInstance.c
+        
+        print(CacheObject.sharedInstance.cacheModel.token)
+        
+        
         view.backgroundColor = UIColor.textColor
 
         menuView = HomePageMenuView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 70))
@@ -70,8 +83,23 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
 //        mediaView.interitemSpacing = 5
 //        mediaView.lineSpace = 5
 //        view.addSubview(mediaView)
+//        let _ = self.view.placeholderShow(true).placeholderImageColor(UIColor.brown)
+        
+//        view.placeholderShow(true)
+        view.placeholderShow(true) { (promptView) in
+            promptView.delegate = self
+            promptView.title("说了没有数据")
+        }
     }
     
+    func promptViewImageClick(_ promptView: PromptView) {
+//        PopUpViewManager.sharedInstance.presentContentView(contentView, backView: view)
+//        PopUpViewManager.sharedInstance.presentContentView(contentView)
+//        PopUpViewManager.sharedInstance.presentContentView(contentView, dircetionType: .up)
+          PopUpViewManager.sharedInstance.presentContentView(contentView, dircetionType: .center, backView: view)
+
+    }
+
     func mediaViewImage(_ mediaView: SelectMediaView) -> [SelectMediaImage] {
         return ["hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao","hp_pc_bacao",UIImage(named: "hp_pc_bacao")!]
     }
@@ -111,11 +139,13 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let imagePicker: UIImagePickerController = UIImagePickerController()
-        imagePicker.cameraHandle { (success, msg) in
-            let cameraQR = CameraQRViewController()
-            self.pushAndHideTabbar(cameraQR)
-        }
+//        let imagePicker: UIImagePickerController = UIImagePickerController()
+//        imagePicker.cameraHandle { (success, msg) in
+//            let cameraQR = CameraQRViewController()
+//            self.pushAndHideTabbar(cameraQR)
+//        }
+//        PopUpViewManager.sharedInstance.presentContentView(contentView)
+//        PopUpViewManager.sharedInstance.presentContentView(contentView, backView: view)
     }
 
     
@@ -228,7 +258,7 @@ class HomeSwiftViewController: BaseSwiftViewController, SelectMediaViewDelegate,
     
     
     fileprivate func banzhuan() {
-        banzhuan()
+//        banzhuan()
     }
     
     

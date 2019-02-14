@@ -47,6 +47,10 @@ public struct App {
     public static var IDFV: String {
         return UIDevice.current.identifierForVendor!.uuidString
     }
+    
+    public static var keyWindow: UIView {
+        return UIApplication.shared.keyWindow ?? UIView()
+    }
 }
 
 

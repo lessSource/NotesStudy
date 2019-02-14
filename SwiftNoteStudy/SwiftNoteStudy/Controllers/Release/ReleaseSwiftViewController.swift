@@ -70,14 +70,20 @@ class ReleaseSwiftViewController: BaseSwiftViewController {
         }.disposed(by: disposeBag)
         
         
+//        musicListViewModel.data.bind(to: tableView.rx.items(cellIdentifier: ReleaseTableViewCell.identifire, cellType: ReleaseTableViewCell.self)) { _ ,_ ,_ in
+//
+//        }.disposed(by: disposeBag)
+        
         tableView.rx.modelSelected(Music.self).subscribe { (music) in
             print("你选择的歌曲【\(music)】")
         }.disposed(by: disposeBag)
         
         
+//        tableView.rx.
+        
 //        NotificationCenter.default.addObserver(self, selector: #selector(ReleaseSwiftViewController.userDidTakeScreenshot), name: .UIApplicationUserDidTakeScreenshot, object: nil)
-        
-        
+
+        tableView.placeholderShow(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -159,6 +165,7 @@ extension ReleaseSwiftViewController: UITableViewDelegate {
 //        return cell!
 //    }
 
-
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }
