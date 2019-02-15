@@ -59,7 +59,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setSelectButton:(NSInteger)item;
 
-
 @end
 
 @interface MenuButton : UIButton

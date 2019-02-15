@@ -216,7 +216,6 @@ static const char btnKey;
     };
 }
 
-
 - (UIView *(^)(CGRect rect))prompt_view_frame {
     return ^id(CGRect rect) {
         UIView *prompt_view = [self getPromptView];
