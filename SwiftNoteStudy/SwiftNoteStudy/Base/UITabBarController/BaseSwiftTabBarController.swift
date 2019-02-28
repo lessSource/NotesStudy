@@ -21,7 +21,11 @@ class BaseSwiftTabBarController: UITabBarController {
         //社区
         addChildViewController(ReleaseSwiftViewController(), title: "发布", imageName: "icon-shequ-43", selectedImage: "icon-shequ-44")
         //市场
-        addChildViewController(MineSwiftViewController(), title: "我", imageName: "icon-faxiang-43", selectedImage: "icon-faxiang-44")
+        addChildViewController(MineSwiftViewController(), title: "个人中心", imageName: "icon-faxiang-43", selectedImage: "icon-faxiang-44")
+        
+        tabBar.isTranslucent = false
+        tabBar.shadowImage = UIImage.colorCreateImage(.lineColor, size: CGSize(width: Constant.screenWidth, height: Constant.lineHeight))
+        tabBar.backgroundImage = UIImage()
     }
 
     override func didReceiveMemoryWarning() {

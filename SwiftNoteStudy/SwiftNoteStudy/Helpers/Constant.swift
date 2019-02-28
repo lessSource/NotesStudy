@@ -53,4 +53,9 @@ struct Constant {
     public static var sizeScale: CGFloat {
         return screenWidth > 320 ? screenWidth/375.0 : 1
     }
+    
+    /** 线高 */
+    public static var lineHeight: CGFloat {
+        return 0.5
+    }
 }

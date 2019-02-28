@@ -14,6 +14,12 @@ class BaseSwiftNavigationController: UINavigationController {
     
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
+        delegate = self
+        if self.responds(to: #selector(getter: interactivePopGestureRecognizer)) {
+            self.interactivePopGestureRecognizer?.delegate = self
+        }
+        
+        
         setUpUI()
     }
     
@@ -28,7 +34,7 @@ class BaseSwiftNavigationController: UINavigationController {
     
     private func setUpUI() {
         barBackgronudView.frame = CGRect(x: 0, y: -20, width: view.frame.size.width, height: 40)
-        navigationBar.isTranslucent = true
+        navigationBar.isTranslucent = false
         navigationBar.barStyle = .default
 
         let gradientLayer = CAGradientLayer()
@@ -53,7 +59,7 @@ class BaseSwiftNavigationController: UINavigationController {
     private func convertViewToImage(view: UIView) -> UIImage {
         let size = view.bounds.size
         //第一个参数表示区域大小。第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。第三个参数屏幕密度
-        UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         //把控制器的view的内容画到上下文中
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         //从上下文中生成一张图片
@@ -62,4 +68,37 @@ class BaseSwiftNavigationController: UINavigationController {
         UIGraphicsEndImageContext()
         return image!
     }
+    
+    override var childViewControllerForStatusBarStyle: UIViewController? {
+        return self.visibleViewController
+    }
+    
 }
+
+extension BaseSwiftNavigationController: UIGestureRecognizerDelegate, UINavigationControllerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if navigationController?.viewControllers.count == 1 {
+            return false
+        }else {
+            return true
+        }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        if navigationController.responds(to: #selector(getter: interactivePopGestureRecognizer)) {
+            navigationController.interactivePopGestureRecognizer?.isEnabled = true
+        }
+        if navigationController.viewControllers.count == 1 {
+            navigationController.interactivePopGestureRecognizer?.isEnabled = false
+            navigationController.interactivePopGestureRecognizer?.delegate = nil
+        }
+    }
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if self.responds(to: #selector(getter: interactivePopGestureRecognizer)) {
+            self.interactivePopGestureRecognizer?.isEnabled = false
+        }
+        super.pushViewController(viewController, animated: true)
+    }
+}
+

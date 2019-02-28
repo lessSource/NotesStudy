@@ -17,6 +17,11 @@ extension UIColor {
         return withHex(hexString: "#999999")
     }
     
+    /** 线的颜色 */
+    public class var lineColor: UIColor {
+        return withHex(hexString: "#000000", alpha: 0.1)
+    }
+    
     static func withHex(hexString hex: String, alpha: CGFloat = 1) -> UIColor {
         // 去除空格
         var cString: String = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased()

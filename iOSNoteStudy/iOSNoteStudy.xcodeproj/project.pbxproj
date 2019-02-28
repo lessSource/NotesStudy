@@ -124,6 +124,7 @@
 		CABB129121BF8F7300A02D16 /* MoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129021BF8F7300A02D16 /* MoreHomeViewController.m */; };
 		CABB129621BF8F9600A02D16 /* MoreMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129521BF8F9600A02D16 /* MoreMineViewController.m */; };
 		CABB129921C0DD0100A02D16 /* PopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = CABB129821C0DD0100A02D16 /* PopUpView.m */; };
+		CADC52A3222641DB00A98C98 /* salesman-1.3.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADC52A2222641DB00A98C98 /* salesman-1.3.plist */; };
 		CAECD4BF21B66F6600EEDB09 /* HorizontalMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */; };
 		CAFB4D0A21F04F1700C7A0E3 /* XDTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4CFD21F04F1700C7A0E3 /* XDTitleItem.m */; };
 		CAFB4D0B21F04F1700C7A0E3 /* UIView+XDhandle.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFB4D0121F04F1700C7A0E3 /* UIView+XDhandle.m */; };
@@ -389,6 +390,7 @@
 		CABB129521BF8F9600A02D16 /* MoreMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreMineViewController.m; sourceTree = "<group>"; };
 		CABB129721C0DD0100A02D16 /* PopUpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopUpView.h; sourceTree = "<group>"; };
 		CABB129821C0DD0100A02D16 /* PopUpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopUpView.m; sourceTree = "<group>"; };
+		CADC52A2222641DB00A98C98 /* salesman-1.3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "salesman-1.3.plist"; sourceTree = "<group>"; };
 		CAECD4BD21B66F6600EEDB09 /* HorizontalMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalMenuView.h; sourceTree = "<group>"; };
 		CAECD4BE21B66F6600EEDB09 /* HorizontalMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalMenuView.m; sourceTree = "<group>"; };
 		CAFB4CF821F04F1700C7A0E3 /* XDTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDTitleBar.h; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 				2A1888972085FC1800524FA1 /* ViewController.m */,
 				2A98A2DA2136870900279E93 /* NSObject+TestModel.h */,
 				2A98A2DB2136870900279E93 /* NSObject+TestModel.m */,
+				CADC52A2222641DB00A98C98 /* salesman-1.3.plist */,
 			);
 			path = iOSNoteStudy;
 			sourceTree = "<group>";
@@ -1459,6 +1462,7 @@
 				2A1888F72086571900524FA1 /* Assets.xcassets in Resources */,
 				2AAEF13F20A29E6000B2B576 /* tr.webp in Resources */,
 				2A18890620865B1000524FA1 /* Main.storyboard in Resources */,
+				CADC52A3222641DB00A98C98 /* salesman-1.3.plist in Resources */,
 				2A955112213F76D3006C88AA /* App_Start1.jpg in Resources */,
 				2A95510F213F76C6006C88AA /* APP启动过程.html in Resources */,
 				CAAA082E21B909B400883B50 /* Xingkai.ttc in Resources */,

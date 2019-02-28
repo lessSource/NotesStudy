@@ -13,8 +13,8 @@ extension Date {
         get { return Date().timeIntervalSince1970 * 1000 }
     }
     
-    func week() -> String {
-        let weekDay: Int = (Calendar.current as NSCalendar).components([NSCalendar.Unit.weekday], from: self).weekday!
+    static func week() -> String {
+        let weekDay: Int = Calendar.current.component(Calendar.Component.weekday, from: Date()) - 1
         switch weekDay {
         case 0:
             return "周日"

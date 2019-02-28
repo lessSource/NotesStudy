@@ -62,6 +62,8 @@ class ReleaseSwiftViewController: BaseSwiftViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initNavBarBackBtn()
+        
         view.addSubview(tableView)
         
         musicListViewModel.data.bind(to: tableView.rx.items(cellIdentifier: ReleaseTableViewCell.identifire, cellType: ReleaseTableViewCell.self)) { _, music, cell in
@@ -84,6 +86,9 @@ class ReleaseSwiftViewController: BaseSwiftViewController {
 //        NotificationCenter.default.addObserver(self, selector: #selector(ReleaseSwiftViewController.userDidTakeScreenshot), name: .UIApplicationUserDidTakeScreenshot, object: nil)
 
         tableView.placeholderShow(true)
+        tableView.placeholderShow(true) { (promptView) in
+            promptView.title("ddddd")
+        }
     }
 
     override func didReceiveMemoryWarning() {

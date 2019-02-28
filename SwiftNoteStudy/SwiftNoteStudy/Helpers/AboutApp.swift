@@ -51,6 +51,18 @@ public struct App {
     public static var keyWindow: UIView {
         return UIApplication.shared.keyWindow ?? UIView()
     }
+    
+    public static var topViewController: UIViewController? {
+        var presentedVC = UIApplication.shared.keyWindow?.rootViewController
+        while let pVC = presentedVC?.presentedViewController {
+            presentedVC = pVC
+        }
+        
+        if presentedVC == nil {
+            print("Error: You don't have any views set. You may be calling them in viewDidLoad. Try viewDidAooear instead.")
+        }
+        return presentedVC
+    }
 }
 
 
