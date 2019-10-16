@@ -39,7 +39,7 @@
     [self.navigationBar setBarTintColor:[UIColor clearColor]];
     self.navigationBar.topItem.title = @"";
     //去除下面的黑线
-    [self.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationBar setShadowImage:[UIImage convertColorToImage:[UIColor redColor]]];
     //对navigationbar透明
     [self.navigationBar setBackgroundImage:[UIImage convertViewToImage:self.barBackgroundView] forBarMetrics:UIBarMetricsDefault];
     

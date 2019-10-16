@@ -5,4 +5,7 @@
 #if defined(DEBUG) || defined(_DEBUG)
 #import <FHHFPSIndicator/FHHFPSIndicator.h>
 #import <MJRefresh/MJRefresh.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+
+
 #endif

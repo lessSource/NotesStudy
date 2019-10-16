@@ -61,6 +61,5 @@ typedef NS_ENUM(NSInteger, kRequestStatusCode) {
     [self requestGETWithURL:@"https://api.github.com/search/repositories" parameters:params success:result failure:nil];
 }
 
-
 @end
 

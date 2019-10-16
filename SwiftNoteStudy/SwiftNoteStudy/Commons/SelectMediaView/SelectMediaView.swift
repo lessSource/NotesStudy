@@ -58,7 +58,6 @@ protocol SelectMediaViewDelegate: NSObjectProtocol {
     /** 图片大小 */
     func mediaView(_ mediaView: SelectMediaView, sizeForItemAt indexPath: IndexPath) -> CGSize
     
-    
 }
 
 extension SelectMediaViewDelegate {

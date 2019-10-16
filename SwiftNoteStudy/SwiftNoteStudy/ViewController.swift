@@ -24,3 +24,30 @@ class ViewController: UIViewController {
 
 }
 
+enum CardColorEnum {
+    /** ♠️ */
+    case black
+    /** ♥️ */
+    case red
+    /** ♣️ */
+    case mei
+    /** ♦️ */
+    case party
+    /** 🃏 */
+    case wang
+    /** 大王 */
+    case king
+}
+
+struct CardStruct {
+    /** 牌大小 */
+    var number: Int = 0
+    /** 牌花色 */
+    var color: CardColorEnum = .black
+    /** size */
+    var size: CGSize = CGSize.zero
+    /** point */
+    var point: CGPoint = CGPoint.zero
+    
+}
+

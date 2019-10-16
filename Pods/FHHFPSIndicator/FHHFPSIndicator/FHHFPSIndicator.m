@@ -33,7 +33,7 @@
     NSUInteger _count;
 }
 
-@property (nonatomic,strong)UILabel *fpsLabel;
+@property (nonatomic, strong) UILabel *fpsLabel;
 
 @end
 
@@ -50,7 +50,7 @@
 
 - (id)init {
     if (self = [super init]) {
-        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkTick:)];
+        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(p_displayLinkTick:)];
         [_displayLink setPaused:YES];
         [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
         
@@ -60,7 +60,7 @@
         _fpsLabel.tag = TAG_fpsLabel;
         
         // set style for fpsLabel
-        [self configFPSLabel];
+        [self p_configFPSLabel];
         
         [[NSNotificationCenter defaultCenter] addObserver: self
                                                  selector: @selector(applicationDidBecomeActiveNotification)
@@ -78,16 +78,16 @@
 }
 
 /**
- you can change the fpsLabel style for your app in this function
+ You can change the fpsLabel style for your app in this function
  */
-- (void)configFPSLabel {
+- (void)p_configFPSLabel {
     _fpsLabel.font = [UIFont boldSystemFontOfSize:FONT_SIZE_fpsLabel];
     _fpsLabel.backgroundColor = [UIColor clearColor];
     _fpsLabel.textColor = TEXTCOLOR_fpsLabel;
     _fpsLabel.textAlignment = NSTextAlignmentCenter;
 }
 
-- (void)displayLinkTick:(CADisplayLink *)link {
+- (void)p_displayLinkTick:(CADisplayLink *)link {
     if (_lastTime == 0) {
         _lastTime = link.timestamp;
         return;
@@ -107,9 +107,10 @@
 
 - (void)show {
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    for (UIView *label in keyWindow.subviews) {
-        if ([label isKindOfClass:[UILabel class]]&& label.tag == TAG_fpsLabel) {
-            return;
+    for (NSUInteger i = 0; i < keyWindow.subviews.count; ++i) {
+        UIView *view = keyWindow.subviews[keyWindow.subviews.count - 1 - i];
+        if ([view isKindOfClass:[UILabel class]] && view.tag == TAG_fpsLabel) {        
+                return;
         }
     }
     [_displayLink setPaused:NO];
@@ -125,6 +126,13 @@
             return;
         }
     }
+}
+
+- (BOOL)isShowingFps {
+    if (_fpsLabel.superview != nil) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - notification
@@ -154,7 +162,7 @@
     }
 }
 
-- (void)fpsLabelColor:(UIColor *)color {
+- (void)setFpsLabelColor:(UIColor *)color {
     if (color == nil) {
         _fpsLabel.textColor = TEXTCOLOR_fpsLabel;
     } else {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -117,6 +117,7 @@
 		2AFF301C210875640095284B /* PersonalContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301B210875640095284B /* PersonalContentViewController.m */; };
 		2AFF301F21088F950095284B /* PersonalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF301E21088F950095284B /* PersonalTableView.m */; };
 		664DD1A0DF8E2716C2488041 /* libPods-iOSNoteStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB6F7063AEB8A13CD2207B5 /* libPods-iOSNoteStudy.a */; };
+		CA88355122310B0500B776DB /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CA88355022310B0500B776DB /* MobileNet.mlmodel */; };
 		CAAA082C21B9036500883B50 /* HardwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA082B21B9036500883B50 /* HardwareViewController.m */; };
 		CAAA082E21B909B400883B50 /* Xingkai.ttc in Resources */ = {isa = PBXBuildFile; fileRef = CAAA082D21B909B400883B50 /* Xingkai.ttc */; };
 		CAAA083121B9148E00883B50 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA083021B9148E00883B50 /* OptionsViewController.m */; };
@@ -377,6 +378,7 @@
 		2AFF301E21088F950095284B /* PersonalTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalTableView.m; sourceTree = "<group>"; };
 		5DB6F7063AEB8A13CD2207B5 /* libPods-iOSNoteStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSNoteStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		821C6CE96C0753A103045736 /* Pods-iOSNoteStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNoteStudy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy.release.xcconfig"; sourceTree = "<group>"; };
+		CA88355022310B0500B776DB /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		CAAA082A21B9036500883B50 /* HardwareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HardwareViewController.h; sourceTree = "<group>"; };
 		CAAA082B21B9036500883B50 /* HardwareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HardwareViewController.m; sourceTree = "<group>"; };
 		CAAA082D21B909B400883B50 /* Xingkai.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xingkai.ttc; sourceTree = "<group>"; };
@@ -1023,6 +1025,7 @@
 		2AAEF14020A29F8C00B2B576 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CA88355022310B0500B776DB /* MobileNet.mlmodel */,
 				2AB0A82821D11DCC00647C6D /* noticeMusic.wav */,
 				CAAA082D21B909B400883B50 /* Xingkai.ttc */,
 				2A95510E213F76C6006C88AA /* APP启动过程.html */,
@@ -1494,29 +1497,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy-resources.sh",
-				"${PODS_ROOT}/AlipaySDK-iOS/AlipaySDK.bundle",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_1.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_2.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSNoteStudy/Pods-iOSNoteStudy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7597BBD353CC81377331F823 /* [CP] Check Pods Manifest.lock */ = {
@@ -1648,6 +1638,7 @@
 				CAFB4D0A21F04F1700C7A0E3 /* XDTitleItem.m in Sources */,
 				2AAEF14D20A2D3AB00B2B576 /* UIView+Layout.m in Sources */,
 				2AFA0BE12089B50C009A7B5A /* HomePageMenuView.m in Sources */,
+				CA88355122310B0500B776DB /* MobileNet.mlmodel in Sources */,
 				CABB129621BF8F9600A02D16 /* MoreMineViewController.m in Sources */,
 				2AFA0BDD2089B50C009A7B5A /* CardCollectionViewLayout.m in Sources */,
 				2AFA0BBC208983A4009A7B5A /* PermissionsObject.m in Sources */,
@@ -1836,7 +1827,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P2JD4K827;
+				DEVELOPMENT_TEAM = 6663TDUQ9V;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
@@ -1862,7 +1853,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P2JD4K827;
+				DEVELOPMENT_TEAM = 6663TDUQ9V;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;

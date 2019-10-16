@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PopUpView : ContentView
 
+@property (nonatomic, copy) dispatch_block_t block;
+
 @end
+
 
 NS_ASSUME_NONNULL_END
