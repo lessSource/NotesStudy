@@ -63,14 +63,17 @@ static PopUpViewObjeect *popUpViewObject;
     [self.subBackView addSubview:contentView];
     [contentView willShowView];
     _contentView = contentView;
-    [UIView animateWithDuration:0.5 animations:^{
-        self.contentView.alpha = 1;
-        self.maskView.alpha = 0.5;
-    }];
     [[UIApplication sharedApplication].keyWindow addSubview:self.subBackView];
     if (dircetionType == PopUpViewDirectionTypeCenter) {
+        self.contentView.alpha = 1;
+        self.maskView.alpha = 0.5;
         [_contentView.layer addAnimation:[self _alertViewShowAnimation] forKey:nil];
+        [contentView didShwoView];
     }else {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.contentView.alpha = 1;
+            self.maskView.alpha = 0.5;
+        }];
         [self _showAnimation:dircetionType];
     }
 }
@@ -80,6 +83,7 @@ static PopUpViewObjeect *popUpViewObject;
 }
 
 - (void)cancalContentView:(ContentView *)contentView direction:(PopUpViewDirectionType)dircetionType {
+    if (!contentView) { return; }
     [self _cancelAnimation:dircetionType];
 }
 

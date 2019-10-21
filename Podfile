@@ -36,6 +36,14 @@ target 'SwiftNoteStudy' do
    pod 'RxSwift'
    pod 'Then'
    pod 'Kingfisher'
+   pod 'MBProgressHUD'
    pod 'EZSwiftExtensions'
+   pod 'Moya/RxSwift'
+   pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
+#   pod 'SQLite.swift', '~> 0.11.5'
 
 end
+
+
+
+

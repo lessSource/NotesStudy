@@ -11,6 +11,7 @@
 
 @interface PopUpViewController ()
 @property (nonatomic, strong) PopUpView *popUpView;
+@property (nonatomic, strong) PopUpView *popUpView1;
 
 
 @end
@@ -20,6 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.popUpView.block = ^{
+        NSLog(@"ddddddd");
+        self.popUpView1.size = CGSizeMake(kScreenWidth - 100, 250);
+        self.popUpView1.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
+        [[PopUpViewObjeect sharrPopUpView] presentContentView:self.popUpView1 direction:PopUpViewDirectionTypeCenter];
+    };
+    
 }
 
 - (NSArray *)buttonListArray {
@@ -59,5 +68,14 @@
     }
     return _popUpView;
 }
+
+- (PopUpView *)popUpView1 {
+    if (_popUpView1 == nil) {
+        _popUpView1 = [[PopUpView alloc]init];
+        _popUpView1.backgroundColor = [UIColor whiteColor];
+    }
+    return _popUpView1;
+}
+
 
 @end

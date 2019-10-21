@@ -53,7 +53,7 @@ typedef enum {
  
  @param color The color to be setted for fpsLabel.textColor. If nil,the default Color will be setted.
  */
-- (void)fpsLabelColor:(UIColor *)color;
+- (void)setFpsLabelColor:(UIColor *)color;
 
 /**
  Show fpsLabel at the top of keyWindow
@@ -66,5 +66,10 @@ typedef enum {
  Note:If you call this function in the code,the fpsLabel will always be hided in the keyWindow until you call 'show' function again.
  */
 - (void)hide;
+
+/**
+ return ture if fpsLabel shown on the screen.otherwhise return false
+ */
+- (BOOL)isShowingFps;
 
 @end

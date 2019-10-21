@@ -18,9 +18,10 @@ class PublicMineViewController: BaseSwiftViewController {
     
     fileprivate lazy var headImage: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: -Constant.statusHeight, width: Constant.screenWidth, height: Constant.screenHeight/3))
+//        imageView.image = UIImage(named: "headImage")?.imageByRemoveWhiteBg()
         imageView.image = UIImage(named: "headImage")?.gaussianBlur(0.3)
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = UIColor(white: 0.0, alpha: 0.8)
+//        imageView.backgroundColor = UIColor(white: 0.0, alpha: 1.0)
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -51,19 +52,20 @@ class PublicMineViewController: BaseSwiftViewController {
         
         let roundView: UIView = UIView(frame: CGRect(x: 100, y: 100, width: 40, height: 40))
         roundView.layer.cornerRadius = 20
-        roundView.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
+//        roundView.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
+        roundView.backgroundColor = UIColor.black
         roundView.layer.borderColor = UIColor.green.cgColor
+//        roundView.backgroundColor = UIColor.clear
         roundView.layer.borderWidth = Constant.lineHeight
         
-        roundView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        roundView.layer.shadowColor = UIColor.white.cgColor
-        roundView.layer.shadowRadius = 5
-        roundView.layer.shadowOpacity = 5
+        roundView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        roundView.layer.shadowColor = UIColor.red.cgColor
+        roundView.layer.shadowRadius = 20
+        roundView.layer.shadowOpacity = 2
         
-        headImage.addSubview(roundView)
+        scrollView.addSubview(roundView)
         
 
-        
     }
     
     

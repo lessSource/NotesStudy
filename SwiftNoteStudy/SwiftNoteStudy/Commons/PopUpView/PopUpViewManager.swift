@@ -3,7 +3,7 @@
 //  SwiftNoteStudy
 //
 //  Created by less on 2018/12/17.
-//  Copyright © 2018 lj. All rights reserved.
+//  Copyright © 2018 less. All rights reserved.
 //
 
 import UIKit
@@ -33,6 +33,8 @@ class PopUpViewManager  {
     }()
     
     fileprivate var contentView: PopUpContentView!
+    //    fileprivate var contentViewArray = [PopUpContentView]()
+    //    fileprivate var contentCancleView: PopUpContentView!
     fileprivate var directionType: PopUpViewDirectionType = .down
     
     private init() {
@@ -53,24 +55,31 @@ extension PopUpViewManager {
     
     // MARK:- public
     public func presentContentView(_ contentView: PopUpContentView, dircetionType: PopUpViewDirectionType = .down, backView: UIView = App.keyWindow) {
+        if self.contentView != nil { return }
         directionType = dircetionType
         subBackView.addSubview(contentView)
         contentView.willShowView()
         self.contentView = contentView
-        UIView.animate(withDuration: 0.5) {
-            self.contentView.alpha = 1
-            self.maskView.alpha = 0.5
-        }
+        //        contentViewArray.append(self.contentView)
         backView.addSubview(subBackView)
         if dircetionType == .center {
+            self.contentView.alpha = 1
+            self.maskView.alpha = 0.5
             self.contentView.layer.add(alertViewShowAnimation(), forKey: nil)
+            self.contentView.didShwoView()
         }else {
+            UIView.animate(withDuration: 0.5) {
+                self.contentView.alpha = 1
+                self.maskView.alpha = 0.5
+            }
             showAnimation(dircetionType)
         }
     }
     
     public func cancalContentView(_ contentView: PopUpContentView, dircetionType: PopUpViewDirectionType = .down) {
         if self.contentView == nil { return }
+        //        self.contentCancleView = contentView
+        contentView.endEditing(true)
         cancelAnimation(directionType)
     }
     
@@ -112,11 +121,17 @@ extension PopUpViewManager {
             self.maskView.alpha = 0.0;
             self.contentView.alpha = 0.0;
         }) { (finished) in
-            self.contentView.didCancelView()
-            self.contentView.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.contentView.removeFromSuperview()
-            self.contentView = nil
-            self.subBackView.removeFromSuperview()
+            //            if self.contentViewArray.contains(self.contentCancleView) {
+            //
+            //            }
+            
+            if self.contentView != nil {
+                self.contentView.didCancelView()
+                self.contentView.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.contentView.removeFromSuperview()
+                self.contentView = nil
+                self.subBackView.removeFromSuperview()
+            }
         }
     }
     
@@ -124,26 +139,27 @@ extension PopUpViewManager {
         let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         scaleAnimation.keyTimes = [0, 0.5, 1.0]
         scaleAnimation.values = [0.01, 0.5, 1.0]
-        scaleAnimation.duration = 0.5
+        scaleAnimation.duration = 0.3
         
         let opacityAnimaton = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimaton.keyTimes = [0, 0.5, 1]
         opacityAnimaton.values = [0.01, 0.5, 1.0]
-        opacityAnimaton.duration = 0.5
+        opacityAnimaton.duration = 0.3
         
         let animation = CAAnimationGroup()
         animation.animations = [scaleAnimation, opacityAnimaton]
         scaleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        animation.duration = 0.5
+        animation.duration = 0.3
         return animation
     }
     
     // MARK:- Event
     @objc func backViewClick() {
-        cancalContentView(contentView, dircetionType: directionType)
-        contentView.endEditing(true)
+        if self.contentView != nil {
+            self.contentView.didSelectBackground()
+            cancalContentView(contentView, dircetionType: directionType)
+        }
     }
-    
 }
 
 
@@ -158,6 +174,7 @@ class PopUpContentView: UIView {
     public func willCancelView() { }
     
     public func didCancelView() { }
+    
+    public func didSelectBackground() { }
 }
-
 

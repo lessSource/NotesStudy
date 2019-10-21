@@ -140,7 +140,8 @@ extension UIView {
         }
     }
     
-    fileprivate func showPromptView() {
+    // MARK:- private
+    private func showPromptView() {
         if self.subviews.count > 0 {
             var t_v = self
             for v in self.subviews {
@@ -155,7 +156,6 @@ extension UIView {
         }
     }
     
-    // MARK:- private
     private struct AssociatedKeys {
         static var PromptViewKey: String = "PromptViewKey"
     }
