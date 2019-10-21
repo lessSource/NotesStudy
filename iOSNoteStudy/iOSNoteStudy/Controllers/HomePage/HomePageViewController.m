@@ -46,6 +46,7 @@ API_AVAILABLE(ios(10.0))
     [self loadData];
     [self initView];
     [self viewLayout];
+    [self testIdCard];
 }
 
 #pragma mark - loadData
@@ -161,6 +162,27 @@ API_AVAILABLE(ios(10.0))
         [self.scrollView addSubview:_contentView];
     }
     return _contentView;
+}
+
+
+#pragma mark - test
+- (void)testIdCard {
+    for (int i = 0; i < 100; i ++) {
+        NSInteger idCard = 420881199511232500 + i;
+        if ([LSSettingUtil verificationIdentityCard:[NSString stringWithFormat:@"%ld",idCard]]) {
+            NSLog(@"-----%ld",idCard);
+        }
+    }
+    if ([LSSettingUtil verificationIdentityCard:@"42088119951123250X"]) {
+        NSLog(@"42088119951123250X");
+    }
+    
+//    42088119951123250X
+//    420881199511232526
+//    420881199511232542
+//    420881199511232569
+//    420881199511232585
+    
 }
 
 

@@ -43,6 +43,9 @@ static NSString *const selectMediaCell = @"SelectMediaCell";
     self.marginInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     self.minimumLineSpacing = 1;
     self.minimumInteritemSpacing = 1;
+    
+    NSString *dds = @"asda";
+    dd
 }
 
 - (void)setUpUI {

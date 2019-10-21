@@ -112,6 +112,11 @@ static NSInteger const BUTTONTAG = 12312;
 - (void)_optionsViewButton {
     NSInteger column = 1, row = 0;
     CGFloat allButtonWidth = 0, width = 0;
+    NSString *selectStr = @"";
+    if (self.delegate && [self.delegate respondsToSelector:@selector(optionViewSelect:)]) {
+        selectStr = [self.delegate optionViewSelect:self];
+    }
+    
     for (int i = 0; i < self.dataArray.count; i ++) {
         OptionsButton *optionsButton = [[OptionsButton alloc]initWithFrame:CGRectZero];
         optionsButton.button_nameFont(self.dataArray[i], self.buttonStyle.textFontNor).back_color(self.buttonStyle.backColorNor).title_color(self.buttonStyle.titColorNor);

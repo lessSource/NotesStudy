@@ -13,6 +13,9 @@
 		2A18885C2085FBF100524FA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18885B2085FBF100524FA1 /* ViewController.swift */; };
 		2A18886F2085FBF200524FA1 /* SwiftNoteStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18886E2085FBF200524FA1 /* SwiftNoteStudyTests.swift */; };
 		2A18887A2085FBF200524FA1 /* SwiftNoteStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1888792085FBF200524FA1 /* SwiftNoteStudyUITests.swift */; };
+		2A24872F2243D3B200520780 /* DropDownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A24872E2243D3B200520780 /* DropDownMenuView.swift */; };
+		2A4A5B5A2250F6B700D8305F /* TestTestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A5B582250F6B700D8305F /* TestTestTableViewCell.swift */; };
+		2A4A5B5B2250F6B700D8305F /* TestTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A4A5B592250F6B700D8305F /* TestTestTableViewCell.xib */; };
 		2A57208A2089C27B0062F038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720662089C27A0062F038 /* AppDelegate.swift */; };
 		2A57208B2089C27B0062F038 /* BaseSwiftNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720692089C27A0062F038 /* BaseSwiftNavigationController.swift */; };
 		2A57208C2089C27B0062F038 /* BaseSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A57206B2089C27A0062F038 /* BaseSwiftTabBarController.swift */; };
@@ -84,6 +87,9 @@
 		2A1888752085FBF200524FA1 /* SwiftNoteStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftNoteStudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1888792085FBF200524FA1 /* SwiftNoteStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNoteStudyUITests.swift; sourceTree = "<group>"; };
 		2A18887B2085FBF200524FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A24872E2243D3B200520780 /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
+		2A4A5B582250F6B700D8305F /* TestTestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTestTableViewCell.swift; sourceTree = "<group>"; };
+		2A4A5B592250F6B700D8305F /* TestTestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTestTableViewCell.xib; sourceTree = "<group>"; };
 		2A5720662089C27A0062F038 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A5720692089C27A0062F038 /* BaseSwiftNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwiftNavigationController.swift; sourceTree = "<group>"; };
 		2A57206B2089C27A0062F038 /* BaseSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwiftTabBarController.swift; sourceTree = "<group>"; };
@@ -220,6 +226,14 @@
 			path = SwiftNoteStudyUITests;
 			sourceTree = "<group>";
 		};
+		2A24872D2243D33400520780 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				2A24872E2243D3B200520780 /* DropDownMenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		2A5720652089C27A0062F038 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +349,8 @@
 			children = (
 				CADC52ED2227BB5100A98C98 /* ViewController */,
 				2A5720842089C27B0062F038 /* MineSwiftViewController.swift */,
+				2A4A5B582250F6B700D8305F /* TestTestTableViewCell.swift */,
+				2A4A5B592250F6B700D8305F /* TestTestTableViewCell.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -404,6 +420,7 @@
 		CA6B08F5218BE96500CCA43C /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				2A24872D2243D33400520780 /* Menu */,
 				CA3389D02215595B00A09037 /* PopUpView */,
 				CAFB4CF521F02E7B00C7A0E3 /* PageView */,
 				2AB0A82A21D1226F00647C6D /* CameraQR */,
@@ -588,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A5720952089C27B0062F038 /* Main.storyboard in Resources */,
+				2A4A5B5B2250F6B700D8305F /* TestTestTableViewCell.xib in Resources */,
 				2A5720932089C27B0062F038 /* Assets.xcassets in Resources */,
 				2A5720942089C27B0062F038 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -647,6 +665,7 @@
 				CA11C89C21A2B61C009EDB3A /* ShowImageViewController.swift in Sources */,
 				2A5720902089C27B0062F038 /* UIViewController+Extension.swift in Sources */,
 				2A57208F2089C27B0062F038 /* NSObject+String.swift in Sources */,
+				2A24872F2243D3B200520780 /* DropDownMenuView.swift in Sources */,
 				CA11C89E21A2BB64009EDB3A /* ShowImageCollectionViewCell.swift in Sources */,
 				CA3389CD2213B34F00A09037 /* UIView+Placeholder.swift in Sources */,
 				2A57208A2089C27B0062F038 /* AppDelegate.swift in Sources */,
@@ -665,6 +684,7 @@
 				CA3389CF221545EC00A09037 /* CacheModel.swift in Sources */,
 				CA994EEB219AA83900563C25 /* Constant.swift in Sources */,
 				2AB0A82C21D122D400647C6D /* CameraQRViewController.swift in Sources */,
+				2A4A5B5A2250F6B700D8305F /* TestTestTableViewCell.swift in Sources */,
 				2A5720992089C27B0062F038 /* MineSwiftViewController.swift in Sources */,
 				2A57208D2089C27B0062F038 /* BaseSwiftViewController.swift in Sources */,
 				2A57208C2089C27B0062F038 /* BaseSwiftTabBarController.swift in Sources */,

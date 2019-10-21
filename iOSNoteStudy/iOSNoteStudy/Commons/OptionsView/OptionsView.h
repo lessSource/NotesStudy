@@ -21,6 +21,8 @@
 
 - (void)optionsViewHeight:(CGFloat)height;
 
+- (NSString *)optionViewSelect:(OptionsView *)optionsView;
+
 @end
 
 @interface OptionsView : UIView
