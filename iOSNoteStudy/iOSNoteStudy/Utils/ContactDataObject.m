@@ -35,8 +35,9 @@ static ContactDataObject *contactDataObject;
 
 - (instancetype)init {
     if (self = [super init]) {
-//        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-        NSString *dataPath = [PoetryPath stringByAppendingPathComponent:DB_CONTACH_POETRY_TABLE];
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+//        PoetryPath
+        NSString *dataPath = [docPath stringByAppendingPathComponent:DB_CONTACH_POETRY_TABLE];
         NSLog(@"%@",dataPath);
         self.dataDB = [[FMDatabase alloc]initWithPath:dataPath];
     }
@@ -130,6 +131,7 @@ static ContactDataObject *contactDataObject;
 //创建表
 - (void)_createTable {
     NSString *sql = [NSString stringWithFormat:@"CREATE TABLE %@ (primaryId integer primary key autoincrement not null,userId text, userName text, password text, time text)",DB_CONTACT_USER_LIST];
+    
     BOOL isSuccess = [self.dataDB executeUpdate:sql];
     if (isSuccess) {
         NSLog(@"创建表成功");

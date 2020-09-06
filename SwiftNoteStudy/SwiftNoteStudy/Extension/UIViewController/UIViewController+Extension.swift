@@ -38,5 +38,15 @@ extension UIViewController {
         let navigationController = UINavigationController(rootViewController: viewController)
         self .present(navigationController, animated: true, completion: completion)
     }
+    
+    // 提示框
+    public func alertVC(_ message: String, confirmAction: @escaping () -> ()) {
+        let alertVC = UIAlertController(title: "提示", message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "确认", style: .default) { (action) in
+            confirmAction()
+        }
+        alertVC.addAction(confirmAction)
+        navigationController?.present(alertVC, animated: true, completion: nil)
+    }
 }
 

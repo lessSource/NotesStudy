@@ -72,6 +72,10 @@
     
 }
 
+- (void)dealloc {
+    NSLog(@"--------%@", [self class]);
+}
+
 - (void)LSViewOverloadingData {
     NSLog(@"12389120381290312");
 }

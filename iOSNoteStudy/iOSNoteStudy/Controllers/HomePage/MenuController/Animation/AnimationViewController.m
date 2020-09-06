@@ -8,6 +8,7 @@
 
 #import "AnimationViewController.h"
 #import "AccordingLayerViewController.h"
+#import "CustomNotificationCenter.h"
 
 @interface AnimationViewController ()
 
@@ -19,6 +20,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"动画";
+    
+    
+    [[CustomNotificationCenter defaultCenter] addObserver:self selector:@selector(testNotification) name:@"CustomNotificationCenter"];
+}
+
+- (void)dealloc {
+    [[CustomNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)testNotification {
+    NSLog(@"CustomNotificationCenter");
 }
 
 - (NSArray *)buttonListArray {
@@ -34,6 +46,8 @@
     if (indexPath.row == 0) {
         AccordingLayerViewController *accordingLayerVC = [[AccordingLayerViewController alloc]init];
         [self pushViewController:accordingLayerVC animated:YES];
+    }else if (indexPath.row == 1) {
+        [[CustomNotificationCenter defaultCenter] removeObserver:self];
     }
 }
 

@@ -16,12 +16,12 @@ class BaseSwiftTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         
         //MARK:-添加子控制器
-        //首页
-        addChildViewController(HomeSwiftViewController(), title: "首页", imageName: "icon-shouye-44", selectedImage: "icon-shouye-43")
-        //社区
-        addChildViewController(ReleaseSwiftViewController(), title: "发布", imageName: "icon-shequ-43", selectedImage: "icon-shequ-44")
-        //市场
-        addChildViewController(MineSwiftViewController(), title: "个人中心", imageName: "icon-faxiang-43", selectedImage: "icon-faxiang-44")
+        //系统控件
+        addChildViewController(HomeSwiftViewController(), title: "系统控件", imageName: "icon_norHomePage", selectedImage: "icon_selHomePage")
+        //三方用法
+        addChildViewController(ReleaseSwiftViewController(), title: "三方用法", imageName: "icon_norHomePage", selectedImage: "icon_selHomePage")
+        //通用界面
+        addChildViewController(MineSwiftViewController(), title: "通用界面", imageName: "icon_norHomePage", selectedImage: "icon_selHomePage")
         
         tabBar.isTranslucent = false
         tabBar.shadowImage = UIImage.colorCreateImage(.lineColor, size: CGSize(width: Constant.screenWidth, height: Constant.lineHeight))

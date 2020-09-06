@@ -32,6 +32,8 @@ static NSString *const buttonCell = @"ButtonCell";
     self.tabelView.tableFooterView = [[UIView alloc]init];
     self.tabelView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tabelView];
+    
+//    self.tabelView
 }
 
 - (NSArray *)buttonListArray {

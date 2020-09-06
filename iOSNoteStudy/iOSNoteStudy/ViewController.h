@@ -13,3 +13,7 @@
 
 @end
 
+@interface ClassName : NSObject
+
+@end
+

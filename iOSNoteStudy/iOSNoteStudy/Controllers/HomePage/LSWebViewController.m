@@ -9,8 +9,10 @@
 #import "LSWebViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 #import <WebKit/WebKit.h>
+//#import ""
+#import "iOSNoteStudy-Swift.h"
 
-@interface LSWebViewController () <WKUIDelegate,WKNavigationDelegate>
+@interface LSWebViewController () <WKUIDelegate,WKNavigationDelegate, WKScriptMessageHandler>
 @property (nonatomic, strong) WKWebView *webView;
 
 @end
@@ -21,25 +23,69 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"网页";
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
-    NSURL *url = [NSURL URLWithString:self.urlStr];
+    
+    SwiftViewController *swiftVC = [[SwiftViewController alloc]init];
+//    [swiftVC ddd];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
+    NSURL *url = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
+    WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+    [userContentController addScriptMessageHandler:self name:@"jsCallOC"];
+
+    
     WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
+    configuration.userContentController = userContentController;
+
     self.webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kNavbarAndStatusBar) configuration:configuration];
     self.webView.backgroundColor = [UIColor mainBackgroundColor];
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
     [self.webView loadRequest:request];
     [self.view addSubview:self.webView];
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [button setTitle:@"测试" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor redColor];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)buttonClick {
+    [self demo1];
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    NSLog(@"方法名:%@", message.name);
+    NSLog(@"参数:%@", message.body);
+    // 方法名
+    NSString *methods = [NSString stringWithFormat:@"%@:", message.name];
+    SEL selector = NSSelectorFromString(methods);
+    // 调用方法
+    if ([self respondsToSelector:selector]) {
+        [self performSelector:selector withObject:message.body];
+    } else {
+        NSLog(@"未实行方法：%@", methods);
+    }
+}
+
+- (void)jsCallOC:(id)content {
+    NSLog(@"");
 }
 
 //OC调用无参数的js方法
 - (void)demo1 {
     //创建JSContext对象
-    JSContext *context = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+//    JSContext *context = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
     //OC调用JS方法
-    [context evaluateScript:@"test1()"];
+//    [context evaluateScript:@"test1()"];
+    
+    [self.webView evaluateJavaScript:@"test1()" completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
+        NSLog(@"");
+    }];
 }
 
 //OC调用有多个参数的JS方法

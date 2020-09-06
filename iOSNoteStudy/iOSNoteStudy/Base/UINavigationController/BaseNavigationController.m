@@ -23,6 +23,10 @@
     // Do any additional setup after loading the view.
     self.navigationBar.translucent = NO;  //半透明属性
     
+    if (@available(iOS 13.0, *)) {
+         self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+     }
+    
     self.barBackgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, - kStatusHeight, kScreenWidth, kNavbarAndStatusBar)];
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
@@ -39,7 +43,7 @@
     [self.navigationBar setBarTintColor:[UIColor clearColor]];
     self.navigationBar.topItem.title = @"";
     //去除下面的黑线
-    [self.navigationBar setShadowImage:[UIImage convertColorToImage:[UIColor redColor]]];
+    [self.navigationBar setShadowImage:[UIImage convertColorToImage:[UIColor clearColor]]];
     //对navigationbar透明
     [self.navigationBar setBackgroundImage:[UIImage convertViewToImage:self.barBackgroundView] forBarMetrics:UIBarMetricsDefault];
     

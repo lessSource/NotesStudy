@@ -32,6 +32,7 @@ API_AVAILABLE(ios(10.0))
 @property (nonatomic, strong) NSArray *menuArray;
 @property (nonatomic, strong) HomePageMenuView *homePageMenu;
 @property (nonatomic, strong) CardCollectionView *cardView;
+//@property (nonatomic, strong) GirdView
 
 @property (nonatomic, strong) UIView *testView;
 
@@ -46,13 +47,12 @@ API_AVAILABLE(ios(10.0))
     [self loadData];
     [self initView];
     [self viewLayout];
-    [self testIdCard];
 }
 
 #pragma mark - loadData
 - (void)loadData {
-    self.cycleArray = @[[NSString stringWithFormat:@"%@9b4b7dad44c5823d577788c8923d7b0c.jpg",PicturePath],[NSString stringWithFormat:@"%@285fab46eed8db8d188f59592d486961.jpg",PicturePath],[NSString stringWithFormat:@"%@2352dfd38bc6da3f765d2b71868ee562.jpg",PicturePath]];
-    self.menuArray = @[@"商城",@"朋友圈",@"动画",@"数据",@"图表",@"网络",@"线程",@"硬件"];
+    self.cycleArray = @[[NSString stringWithFormat:@"%@9b4b7dad44c5823d577788c8923d7b0c.jpg",@""],[NSString stringWithFormat:@"%@285fab46eed8db8d188f59592d486961.jpg",@""],[NSString stringWithFormat:@"%@2352dfd38bc6da3f765d2b71868ee562.jpg",@""]];
+    self.menuArray = @[@"商城",@"朋友圈",@"动画",@"面试",@"图表",@"网络",@"线程",@"硬件"];
 }
 
 #pragma mark - initView
@@ -88,6 +88,15 @@ API_AVAILABLE(ios(10.0))
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.cardView.mas_bottom).offset(10);
     }];
+    
+    
+//    NSArray *array = @[@"1", @"2", @"3"];
+//    
+//    NSInteger row = [array indexOfObject:@"12"];
+//    
+//    NSLog(@"%ld", row);
+//    
+    
 }
 
 #pragma mark - BannerCycleViewDataSource
@@ -125,6 +134,8 @@ API_AVAILABLE(ios(10.0))
         AnimationViewController *animationVC = [[AnimationViewController alloc]init];
         [self pushViewController:animationVC animated:YES];
     }else if (indexPath.item == 3) {
+        InterviewViewController *interviewVC = [[InterviewViewController alloc]init];
+        [self pushViewController:interviewVC animated:true];
     }else if (indexPath.item == 4) {
     }else if (indexPath.item == 5) {
     }else if (indexPath.item == 6) {
@@ -138,7 +149,7 @@ API_AVAILABLE(ios(10.0))
 
 #pragma mark - CardCollectionDelegate
 - (void)cardCollectionView:(CardCollectionView *)menuView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *classNameArray = @[@"OptionsViewController",@"HorizontalMenuViewController",@"PopUpViewController",@"SelectMediaViewController",@"",@"",@"",@"",@"MoreViewController"];
+    NSArray *classNameArray = @[@"OptionsViewController",@"HorizontalMenuViewController",@"PopUpViewController",@"SelectMediaViewController",@"MetalViewController",@"LSWebViewController",@"",@"",@"MoreViewController"];
     Class classVC = NSClassFromString(classNameArray[indexPath.item]);
     [self pushViewController:[classVC new] animated:YES];
 }
@@ -162,27 +173,6 @@ API_AVAILABLE(ios(10.0))
         [self.scrollView addSubview:_contentView];
     }
     return _contentView;
-}
-
-
-#pragma mark - test
-- (void)testIdCard {
-    for (int i = 0; i < 100; i ++) {
-        NSInteger idCard = 420881199511232500 + i;
-        if ([LSSettingUtil verificationIdentityCard:[NSString stringWithFormat:@"%ld",idCard]]) {
-            NSLog(@"-----%ld",idCard);
-        }
-    }
-    if ([LSSettingUtil verificationIdentityCard:@"42088119951123250X"]) {
-        NSLog(@"42088119951123250X");
-    }
-    
-//    42088119951123250X
-//    420881199511232526
-//    420881199511232542
-//    420881199511232569
-//    420881199511232585
-    
 }
 
 

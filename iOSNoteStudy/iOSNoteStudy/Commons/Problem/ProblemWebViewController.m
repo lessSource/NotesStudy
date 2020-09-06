@@ -19,10 +19,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    NSURL *url = nil;
     self.title = self.urlPath;
-    NSString *path = [[NSBundle mainBundle] pathForResource:self.urlPath ofType:@"html"];
-    NSURL *url = [NSURL fileURLWithPath:path];
+    if ([self.urlPath hasPrefix:@"http"]) {
+        url = [NSURL URLWithString:self.urlPath];
+    }else {
+        NSString *path = [[NSBundle mainBundle] pathForResource:self.urlPath ofType:@"html"];
+        if (path == nil) {
+             return;
+         }
+        url = [NSURL fileURLWithPath:path];
+    }
+    
+    if (url == nil) {
+        return;
+    }
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];

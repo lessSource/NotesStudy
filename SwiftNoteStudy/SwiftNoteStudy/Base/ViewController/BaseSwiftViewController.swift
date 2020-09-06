@@ -10,11 +10,6 @@ import UIKit
 import SnapKit
 
 class BaseSwiftViewController: UIViewController {
-
-    deinit {
-        print(self.description + "释放")
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,8 +14,6 @@
 		2A18886F2085FBF200524FA1 /* SwiftNoteStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18886E2085FBF200524FA1 /* SwiftNoteStudyTests.swift */; };
 		2A18887A2085FBF200524FA1 /* SwiftNoteStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1888792085FBF200524FA1 /* SwiftNoteStudyUITests.swift */; };
 		2A24872F2243D3B200520780 /* DropDownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A24872E2243D3B200520780 /* DropDownMenuView.swift */; };
-		2A4A5B5A2250F6B700D8305F /* TestTestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A5B582250F6B700D8305F /* TestTestTableViewCell.swift */; };
-		2A4A5B5B2250F6B700D8305F /* TestTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A4A5B592250F6B700D8305F /* TestTestTableViewCell.xib */; };
 		2A57208A2089C27B0062F038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720662089C27A0062F038 /* AppDelegate.swift */; };
 		2A57208B2089C27B0062F038 /* BaseSwiftNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720692089C27A0062F038 /* BaseSwiftNavigationController.swift */; };
 		2A57208C2089C27B0062F038 /* BaseSwiftTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A57206B2089C27A0062F038 /* BaseSwiftTabBarController.swift */; };
@@ -31,10 +29,10 @@
 		2A5720972089C27B0062F038 /* HomeSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720802089C27B0062F038 /* HomeSwiftViewController.swift */; };
 		2A5720982089C27B0062F038 /* ReleaseSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720822089C27B0062F038 /* ReleaseSwiftViewController.swift */; };
 		2A5720992089C27B0062F038 /* MineSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720842089C27B0062F038 /* MineSwiftViewController.swift */; };
-		2A57209A2089C27B0062F038 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720862089C27B0062F038 /* ViewModel.swift */; };
-		2A57209B2089C27B0062F038 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720872089C27B0062F038 /* Protocols.swift */; };
 		2A57209C2089C27B0062F038 /* LoginSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720882089C27B0062F038 /* LoginSwiftViewController.swift */; };
-		2A57209D2089C27B0062F038 /* ValidatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5720892089C27B0062F038 /* ValidatedModel.swift */; };
+		2AAF633325051ACE00761046 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF633225051ACE00761046 /* BaseCollectionViewController.swift */; };
+		2AAF633525051BDB00761046 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF633425051BDB00761046 /* BaseCollectionViewCell.swift */; };
+		2AAF63382505212000761046 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF63372505212000761046 /* AnimationViewController.swift */; };
 		2AB0A82C21D122D400647C6D /* CameraQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0A82B21D122D400647C6D /* CameraQRViewController.swift */; };
 		66374734CE313A562561EA72 /* libPods-SwiftNoteStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 664EBA81359D5956976EEB25 /* libPods-SwiftNoteStudy.a */; };
 		CA11C89A21A2B3AC009EDB3A /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11C89921A2B3AC009EDB3A /* ShowImage.swift */; };
@@ -57,8 +55,6 @@
 		CADA1F8C2235FDDD00FB5DF6 /* UserSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADA1F8B2235FDDD00FB5DF6 /* UserSQLite.swift */; };
 		CADC52E72227AD7100A98C98 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC52E62227AD7100A98C98 /* UIImage+Extension.swift */; };
 		CADC52EB2227AF2400A98C98 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC52EA2227AF2400A98C98 /* UIBarButtonItem+Extension.swift */; };
-		CADC52EF2227BB8300A98C98 /* PublicMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC52EE2227BB8300A98C98 /* PublicMineViewController.swift */; };
-		CAEE61B321F9B41D007BE71B /* ReleaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEE61B221F9B41D007BE71B /* ReleaseTableViewCell.swift */; };
 		CAF5742321A7E2F9001C41D9 /* SelectMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF5742221A7E2F9001C41D9 /* SelectMediaCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +88,6 @@
 		2A1888792085FBF200524FA1 /* SwiftNoteStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNoteStudyUITests.swift; sourceTree = "<group>"; };
 		2A18887B2085FBF200524FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A24872E2243D3B200520780 /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
-		2A4A5B582250F6B700D8305F /* TestTestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTestTableViewCell.swift; sourceTree = "<group>"; };
-		2A4A5B592250F6B700D8305F /* TestTestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTestTableViewCell.xib; sourceTree = "<group>"; };
 		2A5720662089C27A0062F038 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A5720692089C27A0062F038 /* BaseSwiftNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwiftNavigationController.swift; sourceTree = "<group>"; };
 		2A57206B2089C27A0062F038 /* BaseSwiftTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwiftTabBarController.swift; sourceTree = "<group>"; };
@@ -111,10 +105,10 @@
 		2A5720802089C27B0062F038 /* HomeSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSwiftViewController.swift; sourceTree = "<group>"; };
 		2A5720822089C27B0062F038 /* ReleaseSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseSwiftViewController.swift; sourceTree = "<group>"; };
 		2A5720842089C27B0062F038 /* MineSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineSwiftViewController.swift; sourceTree = "<group>"; };
-		2A5720862089C27B0062F038 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		2A5720872089C27B0062F038 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		2A5720882089C27B0062F038 /* LoginSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSwiftViewController.swift; sourceTree = "<group>"; };
-		2A5720892089C27B0062F038 /* ValidatedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatedModel.swift; sourceTree = "<group>"; };
+		2AAF633225051ACE00761046 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		2AAF633425051BDB00761046 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		2AAF63372505212000761046 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		2AB0A82B21D122D400647C6D /* CameraQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraQRViewController.swift; sourceTree = "<group>"; };
 		565D48851B96A8AB23BA9DC6 /* Pods-SwiftNoteStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNoteStudy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftNoteStudy/Pods-SwiftNoteStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		664EBA81359D5956976EEB25 /* libPods-SwiftNoteStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftNoteStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,8 +132,6 @@
 		CADA1F8B2235FDDD00FB5DF6 /* UserSQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSQLite.swift; sourceTree = "<group>"; };
 		CADC52E62227AD7100A98C98 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		CADC52EA2227AF2400A98C98 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
-		CADC52EE2227BB8300A98C98 /* PublicMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicMineViewController.swift; sourceTree = "<group>"; };
-		CAEE61B221F9B41D007BE71B /* ReleaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseTableViewCell.swift; sourceTree = "<group>"; };
 		CAF5742221A7E2F9001C41D9 /* SelectMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBD14178D804A1C0DAC3D3BF /* Pods-SwiftNoteStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNoteStudy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SwiftNoteStudy/Pods-SwiftNoteStudy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,6 +322,7 @@
 		2A57207E2089C27B0062F038 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2AAF633125051A9700761046 /* Public */,
 				2A57207F2089C27B0062F038 /* Home */,
 				2A5720812089C27B0062F038 /* Release */,
 				2A5720832089C27B0062F038 /* Mine */,
@@ -341,6 +334,7 @@
 		2A57207F2089C27B0062F038 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2AAF6336250520BF00761046 /* Controller */,
 				2A5720802089C27B0062F038 /* HomeSwiftViewController.swift */,
 			);
 			path = Home;
@@ -350,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				2A5720822089C27B0062F038 /* ReleaseSwiftViewController.swift */,
-				CAEE61B221F9B41D007BE71B /* ReleaseTableViewCell.swift */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -358,10 +351,7 @@
 		2A5720832089C27B0062F038 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				CADC52ED2227BB5100A98C98 /* ViewController */,
 				2A5720842089C27B0062F038 /* MineSwiftViewController.swift */,
-				2A4A5B582250F6B700D8305F /* TestTestTableViewCell.swift */,
-				2A4A5B592250F6B700D8305F /* TestTestTableViewCell.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -369,12 +359,26 @@
 		2A5720852089C27B0062F038 /* Login&Register */ = {
 			isa = PBXGroup;
 			children = (
-				2A5720862089C27B0062F038 /* ViewModel.swift */,
-				2A5720872089C27B0062F038 /* Protocols.swift */,
 				2A5720882089C27B0062F038 /* LoginSwiftViewController.swift */,
-				2A5720892089C27B0062F038 /* ValidatedModel.swift */,
 			);
 			path = "Login&Register";
+			sourceTree = "<group>";
+		};
+		2AAF633125051A9700761046 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				2AAF633225051ACE00761046 /* BaseCollectionViewController.swift */,
+				2AAF633425051BDB00761046 /* BaseCollectionViewCell.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		2AAF6336250520BF00761046 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2AAF63372505212000761046 /* AnimationViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		2AB0A82A21D1226F00647C6D /* CameraQR */ = {
@@ -504,14 +508,6 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
-		CADC52ED2227BB5100A98C98 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CADC52EE2227BB8300A98C98 /* PublicMineViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		CAFB4CF521F02E7B00C7A0E3 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,7 +622,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A5720952089C27B0062F038 /* Main.storyboard in Resources */,
-				2A4A5B5B2250F6B700D8305F /* TestTestTableViewCell.xib in Resources */,
 				2A5720932089C27B0062F038 /* Assets.xcassets in Resources */,
 				2A5720942089C27B0062F038 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -675,15 +670,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CADA1F8C2235FDDD00FB5DF6 /* UserSQLite.swift in Sources */,
-				CADC52EF2227BB8300A98C98 /* PublicMineViewController.swift in Sources */,
-				2A57209B2089C27B0062F038 /* Protocols.swift in Sources */,
 				CA3389D22215596E00A09037 /* PopUpViewManager.swift in Sources */,
 				2A15EFA621C7D909002A28FD /* Array+Extension.swift in Sources */,
 				CA11C8A121A3DDE6009EDB3A /* SelectMediaView.swift in Sources */,
+				2AAF633525051BDB00761046 /* BaseCollectionViewCell.swift in Sources */,
 				2A5720982089C27B0062F038 /* ReleaseSwiftViewController.swift in Sources */,
 				CA992E94222F626D00E8FA7B /* CommonTargetTypeApi.swift in Sources */,
 				2A5720912089C27B0062F038 /* AboutApp.swift in Sources */,
 				CA149C5A21C754D40072493B /* Optional+EXtension.swift in Sources */,
+				2AAF63382505212000761046 /* AnimationViewController.swift in Sources */,
 				CA994EED219AAAB500563C25 /* UIColor+Extension.swift in Sources */,
 				CA11C89C21A2B61C009EDB3A /* ShowImageViewController.swift in Sources */,
 				2A5720902089C27B0062F038 /* UIViewController+Extension.swift in Sources */,
@@ -693,22 +688,18 @@
 				CA3389CD2213B34F00A09037 /* UIView+Placeholder.swift in Sources */,
 				2A57208A2089C27B0062F038 /* AppDelegate.swift in Sources */,
 				2A5720972089C27B0062F038 /* HomeSwiftViewController.swift in Sources */,
-				2A57209A2089C27B0062F038 /* ViewModel.swift in Sources */,
 				2A5720922089C27B0062F038 /* NSDate+Extension.swift in Sources */,
 				CA6B08FA218BF91C00CCA43C /* HomePageMenuCell.swift in Sources */,
 				2A18885C2085FBF100524FA1 /* ViewController.swift in Sources */,
 				CA994EEF219AAE5B00563C25 /* String+Extension.swift in Sources */,
 				2A57208E2089C27B0062F038 /* UIView+Frame.swift in Sources */,
-				CAEE61B321F9B41D007BE71B /* ReleaseTableViewCell.swift in Sources */,
 				2A15EFAA21C7EBFA002A28FD /* UIKit+Extensions.swift in Sources */,
-				2A57209D2089C27B0062F038 /* ValidatedModel.swift in Sources */,
 				CA994EE9219AA59700563C25 /* UIDevice+Extension.swift in Sources */,
 				CADC52EB2227AF2400A98C98 /* UIBarButtonItem+Extension.swift in Sources */,
 				CA3389CF221545EC00A09037 /* CacheModel.swift in Sources */,
 				CA994EEB219AA83900563C25 /* Constant.swift in Sources */,
 				CA7E031822700BC70041F035 /* BMAlertUtil.swift in Sources */,
 				2AB0A82C21D122D400647C6D /* CameraQRViewController.swift in Sources */,
-				2A4A5B5A2250F6B700D8305F /* TestTestTableViewCell.swift in Sources */,
 				2A5720992089C27B0062F038 /* MineSwiftViewController.swift in Sources */,
 				2A57208D2089C27B0062F038 /* BaseSwiftViewController.swift in Sources */,
 				2A57208C2089C27B0062F038 /* BaseSwiftTabBarController.swift in Sources */,
@@ -719,6 +710,7 @@
 				CADC52E72227AD7100A98C98 /* UIImage+Extension.swift in Sources */,
 				CA6B08F8218BE98700CCA43C /* HomePageMenuView.swift in Sources */,
 				2A15EFA821C7DC2D002A28FD /* Dictionary+Extension.swift in Sources */,
+				2AAF633325051ACE00761046 /* BaseCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,7 +899,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 63JB5EXBJ6;
+				DEVELOPMENT_TEAM = 5P2JD4K827;
 				INFOPLIST_FILE = "SwiftNoteStudy/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -933,7 +925,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 63JB5EXBJ6;
+				DEVELOPMENT_TEAM = 5P2JD4K827;
 				INFOPLIST_FILE = "SwiftNoteStudy/Supporting Flies/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
