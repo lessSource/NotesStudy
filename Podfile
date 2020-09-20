@@ -4,7 +4,7 @@ project 'iOSNoteStudy/iOSNoteStudy.xcodeproj'
 
 
 target 'iOSNoteStudy' do
-   platform :ios, '9.0'
+   platform :ios, '10.0'
    project 'iOSNoteStudy/iOSNoteStudy.xcodeproj' 
 
 
@@ -27,7 +27,7 @@ target 'iOSNoteStudy' do
 end
 
 target 'SwiftNoteStudy' do
-   platform :ios, '9.0'
+   platform :ios, '10.0'
    project 'SwiftNoteStudy/SwiftNoteStudy.xcodeproj'
 
    pod 'FHHFPSIndicator'
